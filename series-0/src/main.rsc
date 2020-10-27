@@ -90,7 +90,6 @@ tuple [int, list[str]] mostOccurringVariable(list[Declaration] asts){
 //
 // Answer:  <1401,["0"]>
 //
-//
 // @param AST
 // @return tuple
 // @ToDo use higher order functions
@@ -108,4 +107,25 @@ tuple [int, list[str]] mostOccurringNumber(list[Declaration] asts){
 	varList = toList(invert(varMap)[maxCount]);
 	
 	return <maxCount, varList>;
+}
+
+
+
+// Problem 4:
+// outputs the locations where null is returned
+//
+// @param AST
+// @return list
+list[loc] findNullReturned(list[Declaration] asts){
+	list[loc] locList = [];
+	
+	visit(asts) {
+		case \return(exp): {
+			if (exp.typ == null()) {
+				locList += exp.src;
+			}
+		}
+	}
+	
+	return locList;
 }
