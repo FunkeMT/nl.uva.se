@@ -36,6 +36,8 @@ int getNumberOfInterfaces(list[Declaration] asts){
 	return interfaces;
 }
 
+
+
 // Problem 1:
 // calculates the number of for-loops in smallsql
 //
@@ -54,6 +56,8 @@ int getNumberOfForLoops(list[Declaration] asts){
 	return forLoops;
 }
 
+
+
 // Problem 2:
 // calculates the most occurring variable(s) and how often they occur
 //
@@ -70,6 +74,33 @@ tuple [int, list[str]] mostOccurringVariable(list[Declaration] asts){
 		case \variable(name, _):
 			varMap[name] ? 0 += 1;
 		case \variable(name, _, _):
+			varMap[name] ? 0 += 1;
+	}
+	
+	maxCount = max(varMap.varCount);
+	varList = toList(invert(varMap)[maxCount]);
+	
+	return <maxCount, varList>;
+}
+
+
+
+// Problem 3:
+// most occurring number literal(s) and how often they occur
+//
+// Answer:  <1401,["0"]>
+//
+//
+// @param AST
+// @return tuple
+// @ToDo use higher order functions
+tuple [int, list[str]] mostOccurringNumber(list[Declaration] asts){
+	int maxCount = 0;
+	list[str] varList = [];
+	
+	map[str varName, int varCount] varMap = ();
+	visit(asts) {
+		case \number(name):
 			varMap[name] ? 0 += 1;
 	}
 	
