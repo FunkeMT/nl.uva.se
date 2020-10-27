@@ -3,6 +3,7 @@ module main
 import IO;
 import Set;
 import List;
+import Map;
 
 import lang::java::m3::Core;
 import lang::java::m3::AST;
@@ -51,4 +52,29 @@ int getNumberOfForLoops(list[Declaration] asts){
 			forLoops += 1;
 	}
 	return forLoops;
+}
+
+// Problem 2:
+// calculates the most occurring variable(s) and how often they occur
+//
+// Answer: <207,["i"]>
+//
+// @param AST
+// @return tuple
+tuple [int, list[str]] mostOccurringVariable(list[Declaration] asts){
+	int maxCount = 0;
+	list[str] varList = [];
+	
+	map[str varName, int varCount] varMap = ();
+	visit(asts) {
+		case \variable(name, _):
+			varMap[name] ? 0 += 1;
+		case \variable(name, _, _):
+			varMap[name] ? 0 += 1;
+	}
+	
+	maxCount = max(varMap.varCount);
+	varList = toList(invert(varMap)[maxCount]);
+	
+	return <maxCount, varList>;
 }
