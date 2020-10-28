@@ -41,7 +41,7 @@ int getNumberOfInterfaces(list[Declaration] asts){
 // Problem 1:
 // calculates the number of for-loops in smallsql
 //
-// Answer: 263
+// Answer: 262
 //
 // @param AST
 // @return int
@@ -129,3 +129,4 @@ list[loc] findNullReturned(list[Declaration] asts){
 	
 	return locList;
 }
+
