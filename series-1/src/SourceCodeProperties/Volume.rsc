@@ -55,6 +55,8 @@ private list[str] cleanCompilationUnit(list[str] compilationUnitLines) {
 
 
 
+
+
 public int getCompilationUnitSLOC(loc compilationUnit) {
 	/*
 	 * get file lines as list
@@ -77,11 +79,16 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 
 
 
-public int getProjectSLOC(loc project) {
+public int getProjectSLOC(loc project, bool srcOnly = true) {
 	int totalLines = 0;
 	M3 model = createM3FromEclipseProject(project);
 	
 	for (m <- model.containment, m[0].scheme == "java+compilationUnit") {
+		if (srcOnly) {
+			if (!startsWith(m[0].path, "/src/") || contains(m[0].path, "/junit/")) {
+				continue;
+			}
+		}
 		//println(m[0]);		// DEBUG
 		totalLines += getCompilationUnitSLOC(m[0]);
 	}
