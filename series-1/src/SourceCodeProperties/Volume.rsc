@@ -18,6 +18,7 @@ import IO;
 import Set;
 import List;
 import Map;
+import String;
 
 import lang::java::m3::Core;
 import lang::java::m3::AST;
@@ -25,42 +26,68 @@ import lang::java::jdt::m3::Core;
 import lang::java::jdt::m3::AST;
 
 
-public int getProjectLines(loc project) {
-	int totalLines = 0;
-	M3 model = createM3FromEclipseProject(project);
-	
-	for (m <- model.containment, m[0].scheme == "java+compilationUnit") {
-		print(m[0]);
-		totalLines += getCompilationUnitLines(m[0]);
-	}
-	
-	return totalLines;
-}
 
-public int getCompilationUnitLines(loc compilationUnit) {
-	list[str] fileLines = readFileLines(compilationUnit);
-	int fileSize = size(fileLines);
-	
-	println(fileSize);
-	
-	getCompilationUnitSLOC(fileLines);
-	
-	return fileSize;
-}
-
-public int getCompilationUnitSLOC(list[str] compilationUnitLines) {
+private list[str] cleanCompilationUnit(list[str] compilationUnitLines) {
 	/*
 	 * 1) Filter blank lines
 	 *    /^\s*$/ => metacharacter to find all whitespace characters
 	 *    see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes
 	 */
-	list[str] fileLines = [line | line <- compilationUnitLines, /^\s*$/ !:= line];
+	list[str] fileWithoutBlankLines = [line | line <- compilationUnitLines, /^\s*$/ !:= line];
 	
 	
-	for (str line <- fileLines) {
-		println(line);
+	/*
+	 * 2) Filter comments
+	 *    Trim line and check if the line starts either with:
+	 *    - "//"
+	 *    - "/*"
+	 *	  - "*"
+	 *    - "* /" (without space)
+	 */
+	list[str] fileSLOC = [line | line <- fileWithoutBlankLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
+	
+	
+	//for (line <- fileSLOC) {println(line);}		// DEBUG
+
+
+	return fileSLOC;
+}
+
+
+
+public int getCompilationUnitSLOC(loc compilationUnit) {
+	/*
+	 * get file lines as list
+	 */
+	list[str] fileLines = readFileLines(compilationUnit);
+	//println(size(fileLines));						// DEBUG
+	//for (line <- fileLines) {println(line);}		// DEBUG
+	
+	
+	/*
+	 * clean lines from blank lines and comments
+	 */
+	list[str] cleanedLines = cleanCompilationUnit(fileLines);
+	//println(size(cleanedLines));						// DEBUG
+	//for (line <- cleanedLines) {println(line);}		// DEBUG
+	
+	
+	return size(cleanedLines);
+}
+
+
+
+public int getProjectSLOC(loc project) {
+	int totalLines = 0;
+	M3 model = createM3FromEclipseProject(project);
+	
+	for (m <- model.containment, m[0].scheme == "java+compilationUnit") {
+		//println(m[0]);		// DEBUG
+		totalLines += getCompilationUnitSLOC(m[0]);
 	}
-	return 0;
+	
+	//print(totalLines);		// DEBUG
+	return totalLines;
 }
 
 
