@@ -25,36 +25,7 @@ import lang::java::m3::AST;
 import lang::java::jdt::m3::Core;
 import lang::java::jdt::m3::AST;
 
-
-
-private list[str] cleanCompilationUnit(list[str] compilationUnitLines) {
-	/*
-	 * 1) Filter blank lines
-	 *    /^\s*$/ => metacharacter to find all whitespace characters
-	 *    see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Character_Classes
-	 */
-	list[str] fileWithoutBlankLines = [line | line <- compilationUnitLines, /^\s*$/ !:= line];
-	
-	
-	/*
-	 * 2) Filter comments
-	 *    Trim line and check if the line starts either with:
-	 *    - "//"
-	 *    - "/*"
-	 *	  - "*"
-	 *    - "* /" (without space)
-	 */
-	list[str] fileSLOC = [line | line <- fileWithoutBlankLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
-	
-	
-	//for (line <- fileSLOC) {println(line);}		// DEBUG
-
-
-	return fileSLOC;
-}
-
-
-
+import SourceCodeProperties::util;
 
 
 public int getCompilationUnitSLOC(loc compilationUnit) {
@@ -69,7 +40,7 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 	/*
 	 * clean lines from blank lines and comments
 	 */
-	list[str] cleanedLines = cleanCompilationUnit(fileLines);
+	list[str] cleanedLines = cleanCodeLines(fileLines);
 	//println(size(cleanedLines));						// DEBUG
 	//for (line <- cleanedLines) {println(line);}		// DEBUG
 	
@@ -79,18 +50,12 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 
 
 
-public int getProjectSLOC(loc project, bool srcOnly = true) {
+public int getVolume(list[loc] moduleLocs) {
 	int totalLines = 0;
-	M3 model = createM3FromEclipseProject(project);
 	
-	for (m <- model.containment, m[0].scheme == "java+compilationUnit") {
-		if (srcOnly) {
-			if (!startsWith(m[0].path, "/src/") || contains(m[0].path, "/junit/")) {
-				continue;
-			}
-		}
-		//println(m[0]);		// DEBUG
-		totalLines += getCompilationUnitSLOC(m[0]);
+	for (m <- moduleLocs) {
+		//println(m);		// DEBUG
+		totalLines += getCompilationUnitSLOC(m);
 	}
 	
 	//print(totalLines);		// DEBUG
