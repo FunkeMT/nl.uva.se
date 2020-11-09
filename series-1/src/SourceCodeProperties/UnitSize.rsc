@@ -29,26 +29,7 @@ import SourceCodeProperties::util;
  *	-	 ----			45.9 %		 31.4 %			18.1 %
  *	--
  */
- 
- 
- 
- list[loc] getMethods(loc projectLocation){
-	M3 model = createM3FromEclipseProject(projectLocation);
-	list[loc] methodLOCs = [];
-	
-	for (m <- model.declarations, m[0].scheme == "java+method") {
-		methodLOCs += m[0];
-	}
-	
-	//for (m <- methodLOCs) {println(m);}		// DEBUG
-	
-	return methodLOCs;
-}
- 
- 
- public tuple[int, int, int, int] getUnitSize(loc project, bool srcOnly = true) {
-	list[loc] methods = getMethods(project);
-	
+ public tuple[int, int, int, int] getUnitSize(list[loc] methods) {
 	int lowSLOC = 0;
 	int moderateSLOC = 0;
 	int highSLOC = 0;

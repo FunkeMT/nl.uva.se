@@ -1,10 +1,18 @@
 module main
 
 import IO;
+import List;
+import String;
+
+import lang::java::m3::Core;
+import lang::java::m3::AST;
+import lang::java::jdt::m3::Core;
+import lang::java::jdt::m3::AST;
 
 import SourceCodeProperties::Volume;
 import SourceCodeProperties::UnitSize;
 import SourceCodeProperties::Complexity;
+import SourceCodeProperties::util;
 import Rating;
 
 
@@ -12,14 +20,17 @@ import Rating;
 void startAnalysis() {
 	loc testProj = |project://MyTest|;
 	loc smallsqlProj = |project://smallsql0.21_src|;
+	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	loc project = smallsqlProj;
+	//loc project = smallsqlProj;
+	loc project = hsqldbProj;
 	
-	//println(getProjectSLOC(project));
-	int volume = getVolume(project);
-	tuple[int, int, int, int] unitSize = getUnitSize(project);
-	tuple[int, int, int, int] complexity = getComplexity(project);
+	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/hsqldb/src/");
+	
+	int volume = getVolume(modulesAndAsts.modules);
+	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
+	tuple[int, int, int, int] complexity = getComplexity(modulesAndAsts.asts);
 	
 	tuple[str rank, int sloc] rankVolume = rankVolume(volume);
 	println("Ranking Volume: <rankVolume>");

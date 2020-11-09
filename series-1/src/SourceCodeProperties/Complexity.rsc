@@ -3,20 +3,10 @@ module SourceCodeProperties::Complexity
 import IO;
 import Set;
 import List;
+
 import lang::java::m3::Core;
 import lang::java::m3::AST;
 import lang::java::jdt::m3::Core;
-
-list[Declaration] getASTs(loc projectLocation){
-	M3 model = createM3FromEclipseProject(projectLocation);
-	list[Declaration] asts = [];
-	
-	for (m <- model.containment, m[0].scheme == "java+compilationUnit"){
-		asts += createAstFromFile(m[0], true);
-	}
-	
-	return asts;
-}
 
 /*
  *	based on: Landman et al. (2014)
@@ -42,9 +32,7 @@ int statementCyclomaticComplexity(list[Statement] asts){
 	return count;
 }
 
-tuple[int, int, int, int] getComplexity(loc project){
-	list[Declaration] asts = getASTs(project);
-	
+tuple[int, int, int, int] getComplexity(list[Declaration] asts){
 	int low = 0;
 	int moderate = 0;
 	int high = 0;

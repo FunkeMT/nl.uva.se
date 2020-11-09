@@ -50,18 +50,12 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 
 
 
-public int getVolume(loc project, bool srcOnly = true) {
+public int getVolume(list[loc] moduleLocs) {
 	int totalLines = 0;
-	M3 model = createM3FromEclipseProject(project);
 	
-	for (m <- model.containment, m[0].scheme == "java+compilationUnit") {
-		if (srcOnly) {
-			if (!startsWith(m[0].path, "/src/") || contains(m[0].path, "/junit/")) {
-				continue;
-			}
-		}
-		//println(m[0]);		// DEBUG
-		totalLines += getCompilationUnitSLOC(m[0]);
+	for (m <- moduleLocs) {
+		//println(m);		// DEBUG
+		totalLines += getCompilationUnitSLOC(m);
 	}
 	
 	//print(totalLines);		// DEBUG
