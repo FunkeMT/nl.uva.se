@@ -50,7 +50,7 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 
 
 
-public int getProjectSLOC(loc project, bool srcOnly = true) {
+public int getVolume(loc project, bool srcOnly = true) {
 	int totalLines = 0;
 	M3 model = createM3FromEclipseProject(project);
 	

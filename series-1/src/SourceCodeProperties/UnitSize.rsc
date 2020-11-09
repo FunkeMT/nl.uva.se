@@ -46,7 +46,7 @@ import SourceCodeProperties::util;
 }
  
  
- public int getUnitSize(loc project, bool srcOnly = true) {
+ public tuple[int lowSLOC, int moderateSLOC, int highSLOC, int veryHighSLOC] getUnitSize(loc project, bool srcOnly = true) {
 	list[loc] methods = getMethods(project);
 	
 	int lowSLOC = 0;
@@ -67,14 +67,9 @@ import SourceCodeProperties::util;
 		} else {
 			lowSLOC += methodSize;
 		}
-		
-		
-		//for (line <- cleanMethod) {println(line);}		// DEBUG
 	}
 	
-	println(<lowSLOC, moderateSLOC, highSLOC, veryHighSLOC>);
-	
-	return 0;
+	return <lowSLOC, moderateSLOC, highSLOC, veryHighSLOC>;
 }
  
  
