@@ -22,6 +22,21 @@ tuple[str, int] rankVolume(int volume) {
 	return <rank, volume>;
 }
 
+tuple[str, real] rankDuplication(real duplication) {
+	str rank = "--";
+	if(duplication >= 0 && duplication < 0.03) {
+		rank = "++";
+	} else if(duplication >= 0.03 && duplication < 0.05) {
+		rank = "+";
+	} else if(duplication >= 0.05 && duplication < 0.10) {
+		rank = "o";
+	} else if(duplication >= 0.10 && duplication < 0.20) {
+		rank = "-";
+	}
+
+	return <rank, duplication>;
+}
+
 
 tuple[str, real, real, real, real] rankUnitSize(tuple[int lowSLOC, int moderateSLOC, int highSLOC, int veryHighSLOC] risks, int volume) {
 	//tuple[real low, real moderate, real high, real veryHigh] realRisks = [toReal(s)/volume * 100 | int s <- risks];

@@ -12,6 +12,7 @@ import lang::java::jdt::m3::AST;
 import SourceCodeProperties::Volume;
 import SourceCodeProperties::UnitSize;
 import SourceCodeProperties::Complexity;
+import SourceCodeProperties::Duplication;
 import SourceCodeProperties::util;
 import Rating;
 
@@ -40,4 +41,7 @@ void startAnalysis() {
 	
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankComplexity = rankComplexity(complexity, volume);
 	println("Ranking CC: <rankComplexity>");
+
+	tuple[str rank, real percentage] rankDuplication = rankDuplication(getDuplicateCodeCount(getASTs(project)));
+	println("Ranking Duplication: <rankDuplication>");
 }
