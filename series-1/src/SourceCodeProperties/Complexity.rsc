@@ -42,7 +42,7 @@ int statementCyclomaticComplexity(list[Statement] asts){
 	return count;
 }
 
-tuple[int lowSLOC, int moderateSLOC, int highSLOC, int veryHighSLOC] getComplexity(loc project){
+tuple[int, int, int, int] getComplexity(loc project){
 	list[Declaration] asts = getASTs(project);
 	
 	int low = 0;
