@@ -25,10 +25,10 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	loc project = smallsqlProj;
-	//loc project = hsqldbProj;
+	//loc project = smallsqlProj;
+	loc project = hsqldbProj;
 	
-	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/src/");
+	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/hsqldb/src/");
 	
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
@@ -53,21 +53,21 @@ void startAnalysis() {
 	println("SIG Metrics");
 	println("#####################################");
 	println();
-	println("§ Volume");
+	println("§ Volume (<rankVolume.rank>)");
 	println("\t§§ SLOC:\t\t<rankVolume.sloc>");
 	println();
-	println("§ Duplication");
+	println("§ Duplication (<rankDuplication.rank>)");
 	println("\t§§ Analyzed Lines:\t<duplication.analyizedLines>");
 	println("\t§§ Dupl. Blocks:\t<duplication.dupCodeBlockCount>");
 	println("\t§§ Duplication:\t\t<rankDuplication.percentage>%");
 	println();
-	println("§ Unit Size");
+	println("§ Unit Size (<rankUnitSize.rank>)");
 	println("\t§§ Low Risk:\t\t<rankUnitSize.low>%");
 	println("\t§§ Moderate Risk:\t<rankUnitSize.moderate>%");
 	println("\t§§ High Risk:\t\t<rankUnitSize.high>%");
 	println("\t§§ High Risk:\t\t<rankUnitSize.veryHigh>%");
 	println();
-	println("§ Complexity");
+	println("§ Complexity (<rankComplexity.rank>)");
 	println("\t§§ Low Risk:\t\t<rankComplexity.low>%");
 	println("\t§§ Moderate Risk:\t<rankComplexity.moderate>%");
 	println("\t§§ High Risk:\t\t<rankComplexity.high>%");
