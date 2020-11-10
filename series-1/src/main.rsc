@@ -3,6 +3,7 @@ module main
 import IO;
 import List;
 import String;
+import util::Math;
 
 import lang::java::m3::Core;
 import lang::java::m3::AST;
@@ -24,16 +25,17 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	//loc project = smallsqlProj;
-	loc project = hsqldbProj;
+	loc project = smallsqlProj;
+	//loc project = hsqldbProj;
 	
-	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/hsqldb/src/");
+	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/src/");
 	
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
 	tuple[int, int, int, int] complexity = getComplexity(modulesAndAsts.asts);
-	real duplication = getDuplicateCodeCount(modulesAndAsts.asts);
+	tuple[int dupCodeBlockCount, int analyizedLines, real result] duplication = getDuplicateCodeCount(modulesAndAsts.asts);
 	
+	println("################################ Analysis");
 	tuple[str rank, int sloc] rankVolume = rankVolume(volume);
 	println("Ranking Volume: <rankVolume>");
 	
@@ -43,6 +45,51 @@ void startAnalysis() {
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankComplexity = rankComplexity(complexity, volume);
 	println("Ranking CC: <rankComplexity>");
 
-	tuple[str rank, real percentage] rankDuplication = rankDuplication(duplication);
+	tuple[str rank, real percentage] rankDuplication = rankDuplication(duplication.result);
 	println("Ranking Duplication: <rankDuplication>");
+	
+	println();
+	println("#####################################");
+	println("SIG Metrics");
+	println("#####################################");
+	println();
+	println("§ Volume");
+	println("\t§§ SLOC:\t\t<rankVolume.sloc>");
+	println();
+	println("§ Duplication");
+	println("\t§§ Analyzed Lines:\t<duplication.analyizedLines>");
+	println("\t§§ Dupl. Blocks:\t<duplication.dupCodeBlockCount>");
+	println("\t§§ Duplication:\t\t<rankDuplication.percentage>%");
+	println();
+	println("§ Unit Size");
+	println("\t§§ Low Risk:\t\t<rankUnitSize.low>%");
+	println("\t§§ Moderate Risk:\t<rankUnitSize.moderate>%");
+	println("\t§§ High Risk:\t\t<rankUnitSize.high>%");
+	println("\t§§ High Risk:\t\t<rankUnitSize.veryHigh>%");
+	println();
+	println("§ Complexity");
+	println("\t§§ Low Risk:\t\t<rankComplexity.low>%");
+	println("\t§§ Moderate Risk:\t<rankComplexity.moderate>%");
+	println("\t§§ High Risk:\t\t<rankComplexity.high>%");
+	println("\t§§ High Risk:\t\t<rankComplexity.veryHigh>%");
+	println();
+	println("#####################################");
+	
+	
+	tuple[str volume, str cc, str duplication, str unitSize] ranks = <rankVolume.rank, rankComplexity.rank, rankDuplication.rank, rankUnitSize.rank>;
+	tuple[str maintainability, str analysability, str changeability, str testability] overallRanking = calcMaintainability(ranks);
+	
+	println();
+	println();
+	println("#####################################");
+	println("SIG Maintainability Model");
+	println("#####################################");
+	println();
+	println("Analysability:\t\t<overallRanking.analysability>");
+	println("Changeability:\t\t<overallRanking.changeability>");
+	println("Testability:\t\t<overallRanking.testability>");
+	println();
+	println("Maintainability:\t<overallRanking.maintainability>");
+	println();
+	println("#####################################");
 }

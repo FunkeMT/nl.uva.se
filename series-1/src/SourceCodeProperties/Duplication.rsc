@@ -13,9 +13,13 @@ import util::Math;
  * Based on: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.120.4996&rep=rep1&type=pdf
  *
  * @param asts asts to investigate.
- * @return Ratio between 0.0 and 1.0, of duplicate code within methods.
+ * @return tuple[
+ *				int: dupCodeBlockCount,
+ *				int: analyizedLines,
+ *				real: Ratio between 0.0 and 1.0, of duplicate code within methods
+ *			]
  */
-real getDuplicateCodeCount(list[Declaration] asts) {
+tuple[int, int, real] getDuplicateCodeCount(list[Declaration] asts) {
 	// Get code lines with methods only.
 	list[Statement] lines = [];
 	visit(asts){
@@ -48,7 +52,8 @@ real getDuplicateCodeCount(list[Declaration] asts) {
 	
 	// Calculate the ratio, of duplicate code within the total code within the
 	// methods.
-	return toReal(dupCodeBlockCount) / toReal(size(lines));
+	real result = toReal(dupCodeBlockCount) / toReal(size(lines));
+	return <dupCodeBlockCount, size(lines), result>;
 }
 
 /*

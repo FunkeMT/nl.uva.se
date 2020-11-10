@@ -81,3 +81,4 @@ tuple[str, real, real, real, real] rankComplexity(tuple[int lowSLOC, int moderat
 	
 	return <rank, realRisks.low, realRisks.moderate, realRisks.high, realRisks.veryHigh>;
 }
+
