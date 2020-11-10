@@ -43,12 +43,6 @@ tuple[list[loc], list[loc], list[Declaration]] collectModulesAndAST(loc project,
 	list[loc] methodLocs = [];
 	
 	for (m <- model.declarations) {
-		if (!startsWith(m[1].path, srcPath) || contains(m[1].path, "/generated/")
-			|| contains(m[1].path, "/junit/")|| contains(m[1].path, "/junits/")
-			|| contains(m[1].path, "/test/") || contains(m[1].path, "/tests/")
-			|| contains(m[1].path, "/sample/")|| contains(m[1].path, "/samples/")) {
-			continue;
-		}
 		
 		//println(m);		// DEBUG
 		
