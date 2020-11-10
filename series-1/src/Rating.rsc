@@ -34,7 +34,7 @@ tuple[str, real] rankDuplication(real duplication) {
 		rank = "-";
 	}
 
-	return <rank, duplication>;
+	return <rank, duplication * 100>;
 }
 
 

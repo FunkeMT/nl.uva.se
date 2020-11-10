@@ -8,6 +8,8 @@ import lang::java::m3::Core;
 import lang::java::m3::AST;
 import lang::java::jdt::m3::Core;
 
+import SourceCodeProperties::util;
+
 /*
  *	based on: Landman et al. (2014)
  *	see: http://homepages.cwi.nl/~landman/docs/Landman2014-ccsloc-icsme2014-preprint.pdf
@@ -33,30 +35,31 @@ int statementCyclomaticComplexity(list[Statement] asts){
 }
 
 tuple[int, int, int, int] getComplexity(list[Declaration] asts){
-	int low = 0;
-	int moderate = 0;
-	int high = 0;
-	int veryHigh = 0;
+	int lowSLOC = 0;
+	int moderateSLOC = 0;
+	int highSLOC = 0;
+	int veryHighSLOC = 0;
 	
 	visit(asts) {
-		case \method(_, a, _, _, contents): {
+		case m: \method(_, a, _, _, contents): {
 			//println(<a, statementCyclomaticComplexity(contents[0])>);		DEBUG
 			
 			int cc = statementCyclomaticComplexity(contents[0]);
+			int methodSLOC = size(cleanCodeLines(readFileLines(m.src)));
 			
 			if (cc >= 1 && cc < 11) {
-				low += cc;
+				lowSLOC += methodSLOC;
 			} else if (cc >= 11 && cc < 21) {
-				moderate += cc;
+				moderateSLOC += methodSLOC;
 			} else if (cc >= 21 && cc < 51 ) {
-				high += cc;
+				highSLOC += methodSLOC;
 			} else {
-				veryHigh += cc;
+				veryHighSLOC += methodSLOC;
 			}
 		}
 	}
 	
-	return <low, moderate, high, veryHigh>;
+	return <lowSLOC, moderateSLOC, highSLOC, veryHighSLOC>;
 }
 
 
