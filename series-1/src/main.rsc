@@ -25,28 +25,32 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	//loc project = smallsqlProj;
-	loc project = hsqldbProj;
+	loc project = smallsqlProj;
+	//loc project = hsqldbProj;
 	
-	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/hsqldb/src/");
+	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/src/");
 	
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
 	tuple[int, int, int, int] complexity = getComplexity(modulesAndAsts.asts);
 	tuple[int dupCodeBlockCount, int analyizedLines, real result] duplication = getDuplicateCodeCount(modulesAndAsts.asts);
 	
-	println("################################ Analysis");
+	//println("################################ Analysis");
 	tuple[str rank, int sloc] rankVolume = rankVolume(volume);
-	println("Ranking Volume: <rankVolume>");
+	//println("Ranking Volume: <rankVolume>");
 	
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankUnitSize = rankUnitSize(unitSize, volume);
-	println("Ranking UnitSize: <rankUnitSize>");
+	//println("Ranking UnitSize: <rankUnitSize>");
 	
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankComplexity = rankComplexity(complexity, volume);
-	println("Ranking CC: <rankComplexity>");
+	//println("Ranking CC: <rankComplexity>");
 
 	tuple[str rank, real percentage] rankDuplication = rankDuplication(duplication.result);
-	println("Ranking Duplication: <rankDuplication>");
+	//println("Ranking Duplication: <rankDuplication>");
+	
+	println("#####################################");
+	println("Project: <project>");
+	println("#####################################");
 	
 	println();
 	println("#####################################");
@@ -65,13 +69,13 @@ void startAnalysis() {
 	println("\t§§ Low Risk:\t\t<rankUnitSize.low>%");
 	println("\t§§ Moderate Risk:\t<rankUnitSize.moderate>%");
 	println("\t§§ High Risk:\t\t<rankUnitSize.high>%");
-	println("\t§§ High Risk:\t\t<rankUnitSize.veryHigh>%");
+	println("\t§§ Very High Risk:\t<rankUnitSize.veryHigh>%");
 	println();
 	println("§ Complexity (<rankComplexity.rank>)");
 	println("\t§§ Low Risk:\t\t<rankComplexity.low>%");
 	println("\t§§ Moderate Risk:\t<rankComplexity.moderate>%");
 	println("\t§§ High Risk:\t\t<rankComplexity.high>%");
-	println("\t§§ High Risk:\t\t<rankComplexity.veryHigh>%");
+	println("\t§§ Very High Risk:\t<rankComplexity.veryHigh>%");
 	println();
 	println("#####################################");
 	
