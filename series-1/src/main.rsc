@@ -32,6 +32,7 @@ void startAnalysis() {
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
 	tuple[int, int, int, int] complexity = getComplexity(modulesAndAsts.asts);
+	real duplication = getDuplicateCodeCount(modulesAndAsts.asts);
 	
 	tuple[str rank, int sloc] rankVolume = rankVolume(volume);
 	println("Ranking Volume: <rankVolume>");
@@ -42,6 +43,6 @@ void startAnalysis() {
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankComplexity = rankComplexity(complexity, volume);
 	println("Ranking CC: <rankComplexity>");
 
-	tuple[str rank, real percentage] rankDuplication = rankDuplication(getDuplicateCodeCount(getASTs(project)));
+	tuple[str rank, real percentage] rankDuplication = rankDuplication(duplication);
 	println("Ranking Duplication: <rankDuplication>");
 }

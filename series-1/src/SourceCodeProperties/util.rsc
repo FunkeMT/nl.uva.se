@@ -62,13 +62,3 @@ tuple[list[loc], list[loc], list[Declaration]] collectModulesAndAST(loc project,
 	
 	return <moduleLocs, methodLocs, asts>;
 }
-
-
-list[Declaration] getASTs(loc projectLocation){
-	M3 model = createM3FromEclipseProject(projectLocation);
-	list[Declaration] asts = [];
-	for (m <- model.containment, m[0].scheme == "java+compilationUnit"){
-		asts += createAstFromFile(m[0], true);
-	}
-	return asts;
-}
