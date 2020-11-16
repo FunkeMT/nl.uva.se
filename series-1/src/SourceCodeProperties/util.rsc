@@ -34,6 +34,22 @@ list[str] cleanCodeLines(list[str] codeLines) {
 
 	return sloc;
 }
+list[str] removeLeadingWhitespace(list[str] codeLines) {
+	//return [line | line <- codeLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];;
+	//return [line | line <- cleanCodeLines(codeLines), /^\s*$/ !:= line];
+	list[str] res = [];
+	for (line <- codeLines) {
+	res+=[line[findFirst(line, trim(line))..]];
+	//println(line[findFirst(line, trim(line))..]);
+		//res += [line[findFirst(trim(line))..]];
+	//
+	}
+	
+	//list[str] p = [line | line <- codeLines, line[findFirst(trim(line))..]];
+	return res;
+	//return [line | line <- codeLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
+}
+
 
 tuple[list[loc], list[loc], list[Declaration]] collectModulesAndAST(loc project, str srcPath) {
 	M3 model = createM3FromEclipseProject(project);
