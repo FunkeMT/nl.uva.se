@@ -7,8 +7,8 @@ Maintainability is one of the characteristics the ISO standard 9126 describes fo
 ### Execution
 Configure the project in [main.rsc](https://github.com/FunkeMT/nl.uva.se/blob/main/series-1/src/main.rsc#L29) to either one of the following settings:
 
-* `loc smallsqlProj = |project://smallsql0.21_src|;`
-* `loc hsqldbProj = |project://hsqldb-2.3.1|;`
+* `loc project = smallsqlProj;`
+* `lloc project = hsqldbProj;`
 
 Start the program by using:
 
