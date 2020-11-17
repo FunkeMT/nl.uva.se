@@ -19,6 +19,7 @@ startAnalysis();
 
 ### Unit Tests
 ```
+import tests::util::averageRating;
 import tests::util::removeLeadingWhitespace;
 import tests::util::cleanCodeLines;
 
