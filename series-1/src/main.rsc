@@ -14,6 +14,7 @@ import SourceCodeProperties::Volume;
 import SourceCodeProperties::UnitSize;
 import SourceCodeProperties::Complexity;
 import SourceCodeProperties::Duplication;
+import SourceCodeProperties::Interfacing;
 import SourceCodeProperties::util;
 import Rating;
 
@@ -33,6 +34,7 @@ void startAnalysis() {
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
 	tuple[int, int, int, int] complexity = getComplexity(modulesAndAsts.asts);
+	tuple[int, int, int, int] interfacing = getInterfacing(modulesAndAsts.asts);
 	tuple[int dupCodeBlockCount, int analyizedLines, real result] duplication = getDuplicateCodeCount(modulesAndAsts.asts);
 	
 	//println("################################ Analysis");
@@ -44,9 +46,14 @@ void startAnalysis() {
 	
 	tuple[str rank, real low, real moderate, real high, real veryHigh] rankComplexity = rankComplexity(complexity, volume);
 	//println("Ranking CC: <rankComplexity>");
+	
+	tuple[str rank, real low, real moderate, real high, real veryHigh] rankInterfacing = rankInterfacing(interfacing, volume);
+	//println("Ranking CC: <rankInterfacing>");
 
 	tuple[str rank, real percentage] rankDuplication = rankDuplication(duplication.result);
 	//println("Ranking Duplication: <rankDuplication>");
+	
+	
 	
 	println("#####################################");
 	println("Project: <project>");
@@ -77,11 +84,17 @@ void startAnalysis() {
 	println("\t§§ High Risk:\t\t<rankComplexity.high>%");
 	println("\t§§ Very High Risk:\t<rankComplexity.veryHigh>%");
 	println();
+	println("§ Unit Interfacing (<rankInterfacing.rank>)");
+	println("\t§§ Low Risk:\t\t<rankInterfacing.low>%");
+	println("\t§§ Moderate Risk:\t<rankInterfacing.moderate>%");
+	println("\t§§ High Risk:\t\t<rankInterfacing.high>%");
+	println("\t§§ Very High Risk:\t<rankInterfacing.veryHigh>%");
+	println();
 	println("#####################################");
 	
 	
-	tuple[str volume, str cc, str duplication, str unitSize] ranks = <rankVolume.rank, rankComplexity.rank, rankDuplication.rank, rankUnitSize.rank>;
-	tuple[str maintainability, str analysability, str changeability, str testability] overallRanking = calcMaintainability(ranks);
+	tuple[str volume, str cc, str duplication, str unitSize, str interfacing] ranks = <rankVolume.rank, rankComplexity.rank, rankDuplication.rank, rankUnitSize.rank, rankInterfacing.rank>;
+	tuple[str maintainability, str analysability, str changeability, str testability, str reusability] overallRanking = calcMaintainability(ranks);
 	
 	println();
 	println();
@@ -92,6 +105,7 @@ void startAnalysis() {
 	println("Analysability:\t\t<overallRanking.analysability>");
 	println("Changeability:\t\t<overallRanking.changeability>");
 	println("Testability:\t\t<overallRanking.testability>");
+	println("Reusability:\t\t<overallRanking.reusability>");
 	println();
 	println("Maintainability:\t<overallRanking.maintainability>");
 	println();

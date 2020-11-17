@@ -155,15 +155,38 @@ str averageRating(list[str] ranks) {
 	return avgStar;
 }
 
-// tuple[str maintainability, str analysability, str changeability, str testability]
-tuple[str, str, str, str] calcMaintainability(tuple[str volume, str cc, str duplication, str unitSize] props) {
-	tuple[str maintainability, str analysability, str changeability, str testability] ranking = <"", "", "", "">;
+/*
+ *	Based on:
+ *	SIG Evaluation Criteria Trusted Product Maintainability Version 11.0
+ *	https://www.softwareimprovementgroup.com/wp-content/uploads/2019/11/20190919-SIG-TUViT-Evaluation-Criteria-Trusted-Product-Maintainability.pdf
+ *	
+ *	and
+ *
+ * 	Heitlager et. al (2007)
+ *	http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.120.4996&rep=rep1&type=pdf
+ *
+ *					| Vol. | CC | Dupl. | UnitSize | Interfacing |
+ *	===================================================================
+ *	analysability	|  x   |    |   x   |     x    |             |
+ *	changeability	|      | x  |   x   |          |             |
+ *	testability		|      | x  |       |     x    |             | 
+ *	reusability		|      |    |       |     x    |      x      |
+ *
+ *
+ *	maintainability = AVERAGE(analysability, changeability, testability, reusability)
+ *
+ *
+ *  @return tuple[str maintainability, str analysability, str changeability, str testability, str reusability]
+ */
+tuple[str, str, str, str, str] calcMaintainability(tuple[str volume, str cc, str duplication, str unitSize, str interfacing] props) {
+	tuple[str maintainability, str analysability, str changeability, str testability, str reusability] ranking = <"", "", "", "", "">;
 	
 	ranking.analysability = averageRating([props.volume, props.duplication, props.unitSize]);
 	ranking.changeability = averageRating([props.cc, props.duplication]);
 	ranking.testability   = averageRating([props.cc, props.unitSize]);
+	ranking.reusability	  = averageRating([props.unitSize, props.interfacing]);
 	
-	ranking.maintainability = averageRating([ranking.analysability, ranking.changeability, ranking.testability]);
+	ranking.maintainability = averageRating([ranking.analysability, ranking.changeability, ranking.testability, ranking.reusability]);
 	
 	return ranking;
 }
