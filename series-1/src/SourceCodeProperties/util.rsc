@@ -65,7 +65,7 @@ tuple[list[loc], list[loc], list[Declaration]] collectModulesAndAST(loc project)
 		if (m[0].scheme == "java+compilationUnit") {
 			moduleLocs += m[0];
 			asts += createAstFromFile(m[0], true);
-		} else if (m[0].scheme == "java+method" || m[0].scheme == "java+constructor" || entity.scheme == "java+initializer") {
+		} else if (m[0].scheme == "java+method" || m[0].scheme == "java+constructor" || m[0].scheme == "java+initializer") {
 			methodLocs += m[0];
 		}
 	}
