@@ -29,25 +29,76 @@ list[str] cleanCodeLines(list[str] codeLines) {
 	list[str] sloc = [line | line <- linesWithoutBlankLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
 	
 	
-	//for (line <- sloc) {println(line);}		// DEBUG
-
-
 	return sloc;
 }
+
+
+test bool cleanCodeLinesEmptyLinesTest() {
+	return size(cleanCodeLines([])) == 0;
+}
+test bool cleanCodeLinesEmptyLinesTest2() {
+	return size(cleanCodeLines(["  "])) == 0;
+}
+test bool cleanCodeLinesNormalTest() {
+	return size(cleanCodeLines(["  int a = 1;"])) == 1;
+}
+test bool cleanCodeLinesNormalWithSpacesTest() {
+	return size(cleanCodeLines(["  int a = 1;", "  "])) == 1;
+}
+test bool cleanCodeLinesNormalWithEmptyLineTest() {
+	return size(cleanCodeLines(["  int a = 1;", ""])) == 1;
+}
+test bool cleanCodeLinesNormalTest2() {
+	return size(cleanCodeLines(["  int a = 1;", "int b= 2;"])) == 2;
+}
+test bool cleanCodeLinesCommentsTest2() {
+	return size(cleanCodeLines(["  int a = 1;", "//int b= 2;"])) == 1;
+}
+test bool cleanCodeLinesCommentsTest3() {
+	return size(cleanCodeLines(["  int a = 1;", "/*int b= 2;*/"])) == 1;
+}
+test bool cleanCodeLinesCommentsTest4() {
+	return size(cleanCodeLines(["  int a = 1;", "/*heh */int b= 2;"])) == 1;
+}
+test bool cleanCodeLinesCommentsTest5() {
+	return size(cleanCodeLines(["  int a = 1;", "/*heh * /int b= 2;"])) == 1;
+}
+test bool cleanCodeLinesCommentsTest6() {
+	return size(cleanCodeLines(["  /*int a = 1;", "heh * /int b= 2;"])) == 0;
+}
+test bool cleanCodeLinesCommentsTest7() {
+	return size(cleanCodeLines(["  /*int a = 1;", "heh */int b= 2;"])) == 0;
+}
+test bool cleanCodeLinesCommentsTest8() {
+	return size(cleanCodeLines(["  /*int a = 1;", "heh// */int b= 2;"])) == 0;
+}
+test bool cleanCodeLinesCommentsTest9() {
+	return size(cleanCodeLines(["  int a = 1;", "int b= 2;//aa"])) == 2;
+}
+
+
 list[str] removeLeadingWhitespace(list[str] codeLines) {
-	//return [line | line <- codeLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];;
-	//return [line | line <- cleanCodeLines(codeLines), /^\s*$/ !:= line];
 	list[str] res = [];
 	for (line <- codeLines) {
-	res+=[line[findFirst(line, trim(line))..]];
-	//println(line[findFirst(line, trim(line))..]);
-		//res += [line[findFirst(trim(line))..]];
-	//
+		res += [line[findFirst(line, trim(line))..]];
 	}
-	
-	//list[str] p = [line | line <- codeLines, line[findFirst(trim(line))..]];
+
 	return res;
-	//return [line | line <- codeLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
+}
+test bool removeLeadingWhitespaceTest1() {
+	return size(removeLeadingWhitespace(["  int a = 1;", "int b= 2;//aa"])) == 2;
+}
+test bool removeLeadingWhitespaceTest2() {
+	return removeLeadingWhitespace(["  int a = 1;", "int b= 2;//aa"])[0] == "int a = 1;";
+}
+test bool removeLeadingWhitespaceTest3() {
+	return removeLeadingWhitespace(["  int a = 1;", "int b= 2;//aa"])[1] == "int b= 2;//aa";
+}
+test bool removeLeadingWhitespaceTest4() {
+	return size(removeLeadingWhitespace(["", "    "])) == 2;
+}
+test bool removeLeadingWhitespaceTest5() {
+	return removeLeadingWhitespace(["  int a = 1;", "int b= 2;   "])[1] == "int b= 2;   ";
 }
 
 
