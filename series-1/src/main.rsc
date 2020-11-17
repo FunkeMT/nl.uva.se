@@ -25,10 +25,10 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	loc project = smallsqlProj;
-	//loc project = hsqldbProj;
+	//loc project = smallsqlProj;
+	loc project = hsqldbProj;
 	
-	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project, "/src/");
+	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project);
 	
 	int volume = getVolume(modulesAndAsts.modules);
 	tuple[int, int, int, int] unitSize = getUnitSize(modulesAndAsts.methods);
