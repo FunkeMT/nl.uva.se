@@ -26,15 +26,13 @@ list[str] cleanCodeLines(list[str] codeLines) {
 	 *	  - "*"
 	 *    - "* /" (without space)
 	 */
-	list[str] sloc = [line | line <- linesWithoutBlankLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
-	
-	
-	return sloc;
+	return [line | line <- linesWithoutBlankLines, /^(\/\/)|(\/\*)|(\*)|(\*\/)/ !:= trim(line)];
 }
 
 
 list[str] removeLeadingWhitespace(list[str] codeLines) {
 	list[str] res = [];
+
 	for (line <- codeLines) {
 		res += [line[findFirst(line, trim(line))..]];
 	}
@@ -51,13 +49,12 @@ tuple[list[loc], list[loc], list[Declaration]] collectModulesAndAST(loc project)
 	list[loc] methodLocs = [];
 	
 	for (m <- model.declarations) {
-		
-		//println(m);		// DEBUG
-		
 		if (m[0].scheme == "java+compilationUnit") {
 			moduleLocs += m[0];
 			asts += createAstFromFile(m[0], true);
-		} else if (m[0].scheme == "java+method" || m[0].scheme == "java+constructor" || m[0].scheme == "java+initializer") {
+		} else if (m[0].scheme == "java+method" ||
+			m[0].scheme == "java+constructor" ||
+			m[0].scheme == "java+initializer") {
 			methodLocs += m[0];
 		}
 	}
@@ -70,7 +67,7 @@ str averageRating(list[str] ranks) {
 	int avgRank = 0;
 	str avgStar = "";
 	
-	// convert 'stars' to int
+	// Convert 'stars' to int.
 	for (rank <- ranks) {
 		switch(rank) {
 			case "++":	sumRanks += 5;  
@@ -81,10 +78,10 @@ str averageRating(list[str] ranks) {
 		}
 	}
 	
-	// calc avg
+	// Calc avg.
 	avgRank = sumRanks / size(ranks);
 	
-	// convert int to 'stars'
+	// Convert int to 'stars'.
 	switch(avgRank) {
 		case 5:	avgStar = "++";  
 		case 4:	avgStar = "+";   

@@ -33,18 +33,13 @@ public int getCompilationUnitSLOC(loc compilationUnit) {
 	 * get file lines as list
 	 */
 	list[str] fileLines = readFileLines(compilationUnit);
-	//println(size(fileLines));						// DEBUG
-	//for (line <- fileLines) {println(line);}		// DEBUG
 	
 	
 	/*
 	 * clean lines from blank lines and comments
 	 */
-	list[str] cleanedLines = cleanCodeLines(fileLines);
-	//println(size(cleanedLines));						// DEBUG
-	//for (line <- cleanedLines) {println(line);}		// DEBUG
-	
-	
+	list[str] cleanedLines = cleanCodeLines(fileLines);	
+
 	return size(cleanedLines);
 }
 
@@ -54,16 +49,8 @@ public int getVolume(list[loc] moduleLocs) {
 	int totalLines = 0;
 	
 	for (m <- moduleLocs) {
-		//println(m);		// DEBUG
 		totalLines += getCompilationUnitSLOC(m);
 	}
-	
-	//print(totalLines);		// DEBUG
+
 	return totalLines;
 }
-
-
-
-
-
-
