@@ -24,15 +24,9 @@ tuple[int, int, real] getDuplicateCodeCount(list[Declaration] asts) {
 	// Get code lines with methods only.
 	list[str] lines = [];
 	for (ast <- asts) {
-		//lines += filterOutComments(readFileLines(ast.src));
 		lines += removeLeadingWhitespace(readFileLines(ast.src));
 		
 	}
-	//visit(asts){
-	//	case /initializer(contents): lines += methodLines(contents);
-	//	case /constructor(_,_,_,contents): lines += methodLines(contents);
-	//	case /method(_, _, _, _, contents): lines += methodLines(contents);
-	//}
 	
 	// Prepaer the count for each line.
 	map[str, list[str]] dict = ();
@@ -68,60 +62,5 @@ tuple[int, int, real] getDuplicateCodeCount(list[Declaration] asts) {
  * Used to cast list[Declaration] to list[Statement].
  */
 list[Statement] methodLines(Declaration statements) {
-
 	return statements[0];
 }
-//
-// Before (small sql):
-//§ Duplication (++)
-//        §§ Analyzed Lines:      7349
-//        §§ Dupl. Blocks:        82
-//        §§ Duplication:         1.11579806800%
-
-//
-//tuple[int, int, real] getDuplicateCodeCount(list[Declaration] asts) {
-//	// Get code lines with methods only.
-//	list[Statement] lines = [];
-//	visit(asts){
-//		case /initializer(contents): lines += methodLines(contents);
-//		case /constructor(_,_,_,contents): lines += methodLines(contents);
-//		case /method(_, _, _, _, contents): lines += methodLines(contents);
-//	}
-//	
-//	// Prepaer the count for each line.
-//	map[Statement, list[Statement]] dict = ();
-//	for (line <- lines) {
-//		dict[line] = [];
-//	}
-//	
-//	// Add unique line to each element for counting.
-//	for (line <- lines) {
-//		dict[line] += [line]; 
-//	}
-//	
-//	// Count the number of times a block of code is duplicated, on the condition
-//	// that the block of code is atleast 6 lines long.
-//	int dupCodeBlockCount = 0;
-//	int dupLineCounter = 0;
-//	for (line <- lines) {
-//		if (size(dict[line]) > 1) {
-//			dupLineCounter +=1;
-//			continue;
-//		}
-//		dupCodeBlockCount += (dupLineCounter > 6) ? 1 : 0;
-//		dupLineCounter = 0;
-//	}
-//	
-//	// Calculate the ratio, of duplicate code within the total code within the
-//	// methods.
-//	real result = toReal(dupCodeBlockCount) / toReal(size(lines));
-//	return <dupCodeBlockCount, size(lines), result>;
-//}
-//
-///*
-// * Used to cast list[Declaration] to list[Statement].
-// */
-//list[Statement] methodLines(Declaration statements) {
-//
-//	return statements[0];
-//}
