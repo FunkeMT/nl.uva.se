@@ -98,9 +98,9 @@ str averageRating(list[str] ranks) {
 
 /*
  *	Based on:
- *	SIG Evaluation Criteria Trusted Product Maintainability Version 11.0
- *	https://www.softwareimprovementgroup.com/wp-content/uploads/2019/11/20190919-SIG-TUViT-Evaluation-Criteria-Trusted-Product-Maintainability.pdf
- *	
+ *	SIG Evaluation Criteria Trusted Product Maintainability Version 12.0
+ *	https://www.softwareimprovementgroup.com/wp-content/uploads/2020-SIG-TUViT-Evaluation-Criteria-Trusted-Product-Maintainability.pdf
+ *
  *	and
  *
  * 	Heitlager et. al (2007)
