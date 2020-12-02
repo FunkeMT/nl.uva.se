@@ -48,7 +48,6 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 		}
 		case Declaration n: {
 			addHashToBucket(n);
-			//println("foo");
 		}
 	}
 	
@@ -65,30 +64,33 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 				println(sim);
 				println(subtreeI[1]);
 				println(subtreeJ[1]);
-			}
-			//println(subtree[1]);
-			
-			//num sim = getSimilarityScore(subtree[1], hashBucket[subtreeJ][0]);
-		}
-		/*
-		for (subtreeJ <- hashBucket) {
-			if (subtreeI != subtreeJ) {
-				println("<subtreeI> <subtreeJ>");
-				//println(itoString(hashBucket[subtreeI]));
-				//println(readFileLines(hashBucket[subtreeI]));
 				
-				num sim = getSimilarityScore(hashBucket[subtreeI][0], hashBucket[subtreeJ][0]);
-				
-				if (sim == 1.0) {
-						println("<subtreeI> <subtreeJ>");
-						println(sim);
-						println(hashBucket[subtreeI][1]);
-						println(hashBucket[subtreeJ][1]);
+				// if CompareTree(i,j) > SimilarityThreashold
+				if (sim >= 1) {
+					// Then { 
+					
+					
+					
+					// For each subtree s of i
+					
+					// 		if IsMember(Clones,s)
+					
+					// 			Then RemoveClonePair(Clones,s)
+					
+					
+					
+					// For each subtree s of j
+					
+				    // 		If IsMember(Clones,s)
+				    
+					// 			Then RemoveClonePair(Clones,s)
+					
+					// AddClonePair(Clones,i,j)
+					// }
+					continue;
 				}
-				
 			}
 		}
-		*/
 	}
 	
 	//println(hashBucket);
