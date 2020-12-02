@@ -38,7 +38,12 @@ map[str, list[tuple[node, loc]]] hashBucket = ();
 //int hash = 0;
 
 
-
+/*
+{
+  "a=1": [tree, tree],
+  "{a=1}": [tree, tree],
+}
+*/
 
 void basicSubtreeCloneDetector(set[Declaration] ast) {
 	// 2: For each subtree i:
@@ -50,6 +55,7 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 			addHashToBucket(n);
 		}
 	}
+	map[str, list[tuple[node, loc]]] clones = ();
 	
 	
 	// 3. For each subtree i and j in the same bucket
@@ -61,21 +67,30 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 				}
 				
 				num sim = getSimilarityScore(subtreeI[0], subtreeJ[0]);
-				println(sim);
-				println(subtreeI[1]);
-				println(subtreeJ[1]);
+				//println(sim);
+				//println(subtreeI[1]);
+				//println(subtreeJ[1]);
 				
 				// if CompareTree(i,j) > SimilarityThreashold
 				if (sim >= 1) {
 					// Then { 
-					
-					
-					
+
 					// For each subtree s of i
 					
 					// 		if IsMember(Clones,s)
 					
 					// 			Then RemoveClonePair(Clones,s)
+					bottom-up visit(subtreeI[0]) {
+						case node s: {
+							str key = toString(s);
+							if (key in clones) {
+								clones = delete(clones, key);
+							}
+						}
+					}
+					
+					
+					
 					
 					
 					
@@ -84,14 +99,42 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 				    // 		If IsMember(Clones,s)
 				    
 					// 			Then RemoveClonePair(Clones,s)
+					bottom-up visit(subtreeJ[0]) {
+						case node s: {
+							str key = toString(s);
+							if (key in clones) {
+								clones = delete(clones, key);
+							}
+						}
+					}
 					
 					// AddClonePair(Clones,i,j)
+					str key = toString(subtreeJ[0]);
+					if (!(clones[key]?)) {
+						clones[key] = [];
+					}
+					clones[key] += [subtreeI, subtreeJ];
+					 
+		//if (hashBucket[hash]?) {
+		//	hashBucket[hash] += [<cleanNode, nodeLoc>];
+		//	//println("foo");
+		//} else {
+		//	hashBucket[hash] = [<cleanNode, nodeLoc>];
+		//	//println("foo");
+		//}
 					// }
 					continue;
 				}
 			}
 		}
 	}
+	println("-====-");
+	for (key <- clones) {
+		for (dup <- clones[key]) {
+			println(dup);
+		}
+	}
+	int a = 1;
 	
 	//println(hashBucket);
 }
