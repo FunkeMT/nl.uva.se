@@ -20,66 +20,34 @@ import lang::java::jdt::m3::AST;
 public int MASS_THRESHOLD = 1;
 
 
+/**
+ *	###########
+ *	GLOBALS
+ *	###########
+ */
 
 
 // 1: Clones
+// TODO Clone List/Map/Set ???
 
-
-// BUCKET LIST [hash, <node, loc>
+// Bucket List
+// [hash, <node, loc>]
 map[int, tuple[node, loc]] hashBucket = ();
+
+// Hash value
+int hash = 0;
+
+
 
 
 void basicSubtreeCloneDetector(set[Declaration] ast) {
-
-	int hash = 0;
 	// 2: For each subtree i:
 	bottom-up visit(ast) {
 		case Statement n: {
-			loc nodeLoc = getLocationOfNode(n);
-			
-			/*
-			 * Remove all keyword parameters from the AST
-			 * since they are not relevant for the comparison
-			 */
-			node cleanNode = unsetRec(n);
-		
-			// If mass(i) >= MassThreshold
-			if (mass(cleanNode) >= MASS_THRESHOLD) {
-				hash += 1;
-				
-				/*
-				println("#####");
-				println(n);
-				node fresh = unsetRec(n);
-				println("#");
-				println(fresh);
-				println("#####");
-				*/
-				
-				// Then hash i to bucket
-				if (hashBucket[hash]?) {
-					hashBucket[hash] += <cleanNode, nodeLoc>;
-				} else {
-					hashBucket[hash] = <cleanNode, nodeLoc>;
-				}
-			}
+			addHashToBucket(n);
 		}
 		case Declaration n: {
-			loc nodeLoc = getLocationOfNode(n);
-			node cleanNode = unsetRec(n);
-			println(mass(cleanNode));
-		
-			// If mass(i) >= MassThreshold
-			if (mass(cleanNode) >= MASS_THRESHOLD) {
-				hash += 1;
-				
-				// Then hash i to bucket
-				if (hashBucket[hash]?) {
-					hashBucket[hash] += <cleanNode, nodeLoc>;
-				} else {
-					hashBucket[hash] = <cleanNode, nodeLoc>;
-				}
-			}
+			addHashToBucket(n);
 		}
 	}
 	
@@ -92,7 +60,7 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 				//println(itoString(hashBucket[subtreeI]));
 				//println(readFileLines(hashBucket[subtreeI]));
 				
-				num sim = calculateSimilarity(hashBucket[subtreeI][0], hashBucket[subtreeJ][0]);
+				num sim = getSimilarityScore(hashBucket[subtreeI][0], hashBucket[subtreeJ][0]);
 				
 				if (sim == 1.0) {
 						println("<subtreeI> <subtreeJ>");
@@ -104,9 +72,36 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 		}
 	}
 	
-	
 	//println(hashBucket);
 }
+
+
+
+
+private void addHashToBucket(node n) {
+	loc nodeLoc = getLocationOfNode(n);
+			
+	/*
+	 * Remove all keyword parameters from the AST
+	 * since they are not relevant for the comparison
+	 */
+	node cleanNode = unsetRec(n);
+
+	// If mass(i) >= MassThreshold
+	if (mass(cleanNode) >= MASS_THRESHOLD) {
+		hash += 1;
+		
+		// Then hash i to bucket
+		if (hashBucket[hash]?) {
+			hashBucket[hash] += <cleanNode, nodeLoc>;
+		} else {
+			hashBucket[hash] = <cleanNode, nodeLoc>;
+		}
+	}
+}
+
+
+
 
 private int mass(node ast) {
 	int mass = 0;
@@ -126,34 +121,19 @@ private int mass(node ast) {
 
 /*
  *
- * COPY PASTE !!!!!!
+ * Formula:
+ * Similarity = 2 x S / (2 x S + L + R)
  *
  */
-public num calculateSimilarity(node t1, node t2) {
-	//Similarity = 2 x S / (2 x S + L + R)
-	
-	list[node] tree1 = [];
-	list[node] tree2 = [];
-	
-	visit (t1) {
-		case node x: {
-			tree1 += x;
-		}
-	}
-	
-	visit (t2) {
-		case node x: {
-			tree2 += x;
-		}
-	}
+public num getSimilarityScore(node t1, node t2) {
+	list[value] tree1 = getChildren(t1);
+	list[value] tree2 = getChildren(t2);
 	
 	num s = size(tree1 & tree2);
 	num l = size(tree1 - tree2);
 	num r = size(tree2 - tree1); 
 		
-	num similarity = (2 * s) / (2 * s + l + r); 
-	
-	return similarity;
+	return (2 * s) / (2 * s + l + r);
 }
 
 
