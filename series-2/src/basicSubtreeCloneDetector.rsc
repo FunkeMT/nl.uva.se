@@ -32,10 +32,10 @@ public int MASS_THRESHOLD = 1;
 
 // Bucket List
 // [hash, <node, loc>]
-map[int, tuple[node, loc]] hashBucket = ();
+map[str, list[tuple[node, loc]]] hashBucket = ();
 
 // Hash value
-int hash = 0;
+//int hash = 0;
 
 
 
@@ -48,15 +48,32 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 		}
 		case Declaration n: {
 			addHashToBucket(n);
+			//println("foo");
 		}
 	}
 	
 	
 	// 3. For each subtree i and j in the same bucket
-	for (subtreeI <- hashBucket) {
+	for (hash <- hashBucket) {
+		for (subtreeI <- hashBucket[hash]) {
+			for (subtreeJ <- hashBucket[hash]) {
+				if (subtreeI == subtreeJ) {
+					continue;
+				}
+				
+				num sim = getSimilarityScore(subtreeI[0], subtreeJ[0]);
+				println(sim);
+				println(subtreeI[1]);
+				println(subtreeJ[1]);
+			}
+			//println(subtree[1]);
+			
+			//num sim = getSimilarityScore(subtree[1], hashBucket[subtreeJ][0]);
+		}
+		/*
 		for (subtreeJ <- hashBucket) {
 			if (subtreeI != subtreeJ) {
-				//println("<subtreeI> <subtreeJ>");
+				println("<subtreeI> <subtreeJ>");
 				//println(itoString(hashBucket[subtreeI]));
 				//println(readFileLines(hashBucket[subtreeI]));
 				
@@ -68,8 +85,10 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 						println(hashBucket[subtreeI][1]);
 						println(hashBucket[subtreeJ][1]);
 				}
+				
 			}
 		}
+		*/
 	}
 	
 	//println(hashBucket);
@@ -89,13 +108,17 @@ private void addHashToBucket(node n) {
 
 	// If mass(i) >= MassThreshold
 	if (mass(cleanNode) >= MASS_THRESHOLD) {
-		hash += 1;
+		//hash += 1;
+		
+		str hash = toString(cleanNode);
 		
 		// Then hash i to bucket
 		if (hashBucket[hash]?) {
-			hashBucket[hash] += <cleanNode, nodeLoc>;
+			hashBucket[hash] += [<cleanNode, nodeLoc>];
+			//println("foo");
 		} else {
-			hashBucket[hash] = <cleanNode, nodeLoc>;
+			hashBucket[hash] = [<cleanNode, nodeLoc>];
+			//println("foo");
 		}
 	}
 }
