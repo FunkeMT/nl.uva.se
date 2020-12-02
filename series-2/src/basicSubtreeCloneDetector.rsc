@@ -84,7 +84,31 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 						case node s: {
 							str key = toString(s);
 							if (key in clones) {
-								clones = delete(clones, key);
+								list[tuple[node, loc]] items = [];
+								for (clone <- clones[key]) {
+									if (subtreeI[1].uri == clone[1].uri) {
+										// If the clone is within the subtree, remove the clone.
+										num cloneEnd = clone[1].offset + clone[1].length;
+										num subtreeEnd = subtreeI[1].offset + subtreeI[1].length;
+
+										if (clone[1].begin.line <= subtreeI[1].end.line && clone[1].end.line >= subtreeI[1].begin.line) {
+											bool inner = true;
+											if (clone[1].begin.line == subtreeI[1].begin.line &&
+												clone[1].end.line == subtreeI[1].end.line) {
+												inner = clone[1].end.column <= subtreeI[1].end.column && clone[1].begin.column >= subtreeI[1].begin.column;
+											}
+											if (!inner) {
+											  	items += [clone];
+											}
+											println(inner);
+										} else {
+										  	items += [clone];
+										}
+									} else {
+									  	items += [clone];
+								  	}
+								}
+								clones[key] = items;
 							}
 						}
 					}
@@ -103,7 +127,31 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 						case node s: {
 							str key = toString(s);
 							if (key in clones) {
-								clones = delete(clones, key);
+								list[tuple[node, loc]] items = [];
+								for (clone <- clones[key]) {
+									if (subtreeJ[1].uri == clone[1].uri) {
+										// If the clone is within the subtree, remove the clone.
+										num cloneEnd = clone[1].offset + clone[1].length;
+										num subtreeEnd = subtreeJ[1].offset + subtreeJ[1].length;
+
+										if (clone[1].begin.line <= subtreeJ[1].end.line && clone[1].end.line >= subtreeJ[1].begin.line) {
+											bool inner = true;
+											if (clone[1].begin.line == subtreeJ[1].begin.line &&
+												clone[1].end.line == subtreeJ[1].end.line) {
+												inner = clone[1].end.column <= subtreeJ[1].end.column && clone[1].begin.column >= subtreeJ[1].begin.column;
+											}
+											if (!inner) {
+											  	items += [clone];
+											}
+											println(inner);
+										} else {
+										  	items += [clone];
+										}
+									} else {
+									  	items += [clone];
+								  	}
+								}
+								clones[key] = items;
 							}
 						}
 					}
