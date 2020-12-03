@@ -32,44 +32,54 @@ map[str, list[tuple[node, loc]]] clones = ();
 
 // Bucket List
 // [hash, <node, loc>]
-map[str, list[tuple[node, loc]]] hashBucket = ();
 
-
-void basicSubtreeCloneDetector(set[Declaration] ast) {
+private map[str, list[tuple[node, loc]]] setupBucket(map[str, list[tuple[node, loc]]] hashBucket, set[Declaration] ast) {
 	// 2: For each subtree i:
 	bottom-up visit(ast) {
 		case Statement n: {
-			addHashToBucket(n);
+			hashBucket = addHashToBucket(n, hashBucket);
 		}
 		case Declaration n: {
-			addHashToBucket(n);
+			hashBucket = addHashToBucket(n, hashBucket);
 		}
 	}
-	
+	return hashBucket;
+}
+
+list[tuple[node, loc]] updateItems(list[tuple[node, loc]] items, loc subtreeLoc, tuple[node, loc] clone) {
+	loc cloneLoc = clone[1];
+
+	// If the clone is within the subtree, remove the clone.
+	bool withinSameLineArea = cloneLoc.begin.line < subtreeLoc.end.line &&
+			cloneLoc.end.line > subtreeLoc.begin.line;
+	bool exactSameLineArea = cloneLoc.begin.line == subtreeLoc.begin.line &&
+			cloneLoc.end.line == subtreeLoc.end.line;
+
+  	if ((subtreeLoc.uri != cloneLoc.uri) ||
+		(!withinSameLineArea) || (exactSameLineArea && 
+		!(cloneLoc.end.column <= subtreeLoc.end.column &&
+		cloneLoc.begin.column >= subtreeLoc.begin.column))) {
+	  	items += [clone];
+  	}
+	return items;
+}
+void basicSubtreeCloneDetector(set[Declaration] ast) {
+	// 2: For each subtree i:
+	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast);
 	
 	// 3. For each subtree i and j in the same bucket
 	for (hash <- hashBucket) {
 		for (subtreeI <- hashBucket[hash]) {
-			//writeFile(|home:///subtreeI.txt|, "SubtreeI: <subtreeI[1]> \n <toString(subtreeI[0])>  \n <readFileLines(subtreeI[1])>");
 			for (subtreeJ <- hashBucket[hash]) {
-				//writeFile(|home:///subtreeJ.txt|, "SubtreeJ: <subtreeJ[1]> \n <toString(subtreeJ[0])>  \n <readFileLines(subtreeJ[1])>");
-				
-				
 				if (subtreeI == subtreeJ) {
 					continue;
 				}
 				
-				
 				// if CompareTree(i,j) > SimilarityThreashold
-				num sim = getSimilarityScore(subtreeI[0], subtreeJ[0]);
-				if (sim >= 1) {
-				
-					// Then { 
-
+				// Then { 
+				if (getSimilarityScore(subtreeI[0], subtreeJ[0]) >= 1) {
 					// For each subtree s of i
-					
 					// 		if IsMember(Clones,s)
-					
 					// 			Then RemoveClonePair(Clones,s)
 					bottom-up visit(subtreeI[0]) {
 						case node s: {
@@ -77,73 +87,28 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 							if (key in clones) {
 								list[tuple[node, loc]] items = [];
 								for (clone <- clones[key]) {
-									if (subtreeI[1].uri == clone[1].uri) {
-										// If the clone is within the subtree, remove the clone.
-										num cloneEnd = clone[1].offset + clone[1].length;
-										num subtreeEnd = subtreeI[1].offset + subtreeI[1].length;
-
-										if (clone[1].begin.line <= subtreeI[1].end.line && clone[1].end.line >= subtreeI[1].begin.line) {
-											bool inner = true;
-											if (clone[1].begin.line == subtreeI[1].begin.line &&
-												clone[1].end.line == subtreeI[1].end.line) {
-												inner = clone[1].end.column <= subtreeI[1].end.column && clone[1].begin.column >= subtreeI[1].begin.column;
-											}
-											if (!inner) {
-											  	items += [clone];
-											}
-										} else {
-										  	items += [clone];
-										}
-									} else {
-									  	items += [clone];
-								  	}
+									items = updateItems(items, subtreeI[1], clone);
 								}
 								clones[key] = items;
 							}
 						}
 					}
 					
-					
-					
-					
 					// For each subtree s of j
-					
 				    // 		If IsMember(Clones,s)
-				    
 					// 			Then RemoveClonePair(Clones,s)
 					bottom-up visit(subtreeJ[0]) {
 						case node s: {
-							str key = toString(s);
+							key = toString(s);
 							if (key in clones) {
 								list[tuple[node, loc]] items = [];
 								for (clone <- clones[key]) {
-									if (subtreeJ[1].uri == clone[1].uri) {
-										// If the clone is within the subtree, remove the clone.
-										num cloneEnd = clone[1].offset + clone[1].length;
-										num subtreeEnd = subtreeJ[1].offset + subtreeJ[1].length;
-
-										if (clone[1].begin.line <= subtreeJ[1].end.line && clone[1].end.line >= subtreeJ[1].begin.line) {
-											bool inner = true;
-											if (clone[1].begin.line == subtreeJ[1].begin.line &&
-												clone[1].end.line == subtreeJ[1].end.line) {
-												inner = clone[1].end.column <= subtreeJ[1].end.column && clone[1].begin.column >= subtreeJ[1].begin.column;
-											}
-											if (!inner) {
-											  	items += [clone];
-											}
-										} else {
-										  	items += [clone];
-										}
-									} else {
-									  	items += [clone];
-								  	}
+									items = updateItems(items, subtreeJ[1], clone);
 								}
 								clones[key] = items;
 							}
 						}
 					}
-					
-					
 					
 					// AddClonePair(Clones,i,j)
 					str key = toString(subtreeJ[0]);
@@ -187,9 +152,7 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 
 
 
-private void addHashToBucket(node n) {
-	loc nodeLoc = getLocationOfNode(n);
-			
+private map[str, list[tuple[node, loc]]] addHashToBucket(node n, map[str, list[tuple[node, loc]]] bucket) {
 	/*
 	 * Remove all keyword parameters from the AST
 	 * since they are not relevant for the comparison
@@ -203,12 +166,13 @@ private void addHashToBucket(node n) {
 		str hash = toString(cleanNode);
 		
 		// Then hash i to bucket
-		if (hashBucket[hash]?) {
-			hashBucket[hash] += [<cleanNode, nodeLoc>];
-		} else {
-			hashBucket[hash] = [<cleanNode, nodeLoc>];
+		if (!bucket[hash]?) {
+			bucket[hash] = [];
 		}
+		loc nodeLoc = getLocationOfNode(n);
+		bucket[hash] += [<cleanNode, nodeLoc>];
 	}
+	return bucket;
 }
 
 
