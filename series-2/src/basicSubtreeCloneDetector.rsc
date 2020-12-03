@@ -78,7 +78,8 @@ private map[str, list[tuple[node, loc]]] addClonePair (
 	return clones;
 }
 
-map[str, list[tuple[node, loc]]] removeEmptyClones(map[str, list[tuple[node, loc]]] clones) {
+map[str, list[tuple[node, loc]]] removeEmptyClones(
+	map[str, list[tuple[node, loc]]] clones) {
 	for (key <- clones) {
 		if (size(clones[key]) == 0) {
 			clones = delete(clones, key);
