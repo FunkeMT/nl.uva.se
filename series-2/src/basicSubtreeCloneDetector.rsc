@@ -14,10 +14,12 @@ import lang::java::jdt::m3::AST;
 
 
 
-
-
-
-public int MASS_THRESHOLD = 1;
+/**
+ *	###########
+ *	CONFIG
+ *	###########
+ */
+public int MASS_THRESHOLD = 3;
 
 
 /**
@@ -25,25 +27,13 @@ public int MASS_THRESHOLD = 1;
  *	GLOBALS
  *	###########
  */
-
-
 // 1: Clones
-// TODO Clone List/Map/Set ???
+map[str, list[tuple[node, loc]]] clones = ();
 
 // Bucket List
 // [hash, <node, loc>]
 map[str, list[tuple[node, loc]]] hashBucket = ();
 
-// Hash value
-//int hash = 0;
-
-
-/*
-{
-  "a=1": [tree, tree],
-  "{a=1}": [tree, tree],
-}
-*/
 
 void basicSubtreeCloneDetector(set[Declaration] ast) {
 	// 2: For each subtree i:
@@ -55,24 +45,25 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 			addHashToBucket(n);
 		}
 	}
-	map[str, list[tuple[node, loc]]] clones = ();
 	
 	
 	// 3. For each subtree i and j in the same bucket
 	for (hash <- hashBucket) {
 		for (subtreeI <- hashBucket[hash]) {
+			//writeFile(|home:///subtreeI.txt|, "SubtreeI: <subtreeI[1]> \n <toString(subtreeI[0])>  \n <readFileLines(subtreeI[1])>");
 			for (subtreeJ <- hashBucket[hash]) {
+				//writeFile(|home:///subtreeJ.txt|, "SubtreeJ: <subtreeJ[1]> \n <toString(subtreeJ[0])>  \n <readFileLines(subtreeJ[1])>");
+				
+				
 				if (subtreeI == subtreeJ) {
 					continue;
 				}
 				
-				num sim = getSimilarityScore(subtreeI[0], subtreeJ[0]);
-				//println(sim);
-				//println(subtreeI[1]);
-				//println(subtreeJ[1]);
 				
 				// if CompareTree(i,j) > SimilarityThreashold
+				num sim = getSimilarityScore(subtreeI[0], subtreeJ[0]);
 				if (sim >= 1) {
+				
 					// Then { 
 
 					// For each subtree s of i
@@ -100,7 +91,6 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 											if (!inner) {
 											  	items += [clone];
 											}
-											println(inner);
 										} else {
 										  	items += [clone];
 										}
@@ -112,8 +102,6 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 							}
 						}
 					}
-					
-					
 					
 					
 					
@@ -143,7 +131,6 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 											if (!inner) {
 											  	items += [clone];
 											}
-											println(inner);
 										} else {
 										  	items += [clone];
 										}
@@ -156,35 +143,45 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 						}
 					}
 					
+					
+					
 					// AddClonePair(Clones,i,j)
 					str key = toString(subtreeJ[0]);
 					if (!(clones[key]?)) {
 						clones[key] = [];
 					}
 					clones[key] += [subtreeI, subtreeJ];
-					 
-		//if (hashBucket[hash]?) {
-		//	hashBucket[hash] += [<cleanNode, nodeLoc>];
-		//	//println("foo");
-		//} else {
-		//	hashBucket[hash] = [<cleanNode, nodeLoc>];
-		//	//println("foo");
-		//}
-					// }
-					continue;
 				}
 			}
 		}
 	}
-	println("-====-");
+	
+	// remove empty clones
 	for (key <- clones) {
-		for (dup <- clones[key]) {
-			println(dup);
+		if (size(clones[key]) == 0) {
+			clones = delete(clones, key);
 		}
 	}
-	int a = 1;
 	
-	//println(hashBucket);
+	
+	
+	/*
+	 *	OUTPUT
+	 */
+	println("-== Clone Classes ==-");
+	for (key <- clones) {
+		println("######");
+		println("key: <key>");
+		println("##");
+		for (dup <- clones[key]) {
+			println("-----");
+			println(dup);
+		}
+		println("######");
+	}
+	
+	println("-== Stats ==-");
+	println("Code Classes: <size(clones)>");
 }
 
 
@@ -208,10 +205,8 @@ private void addHashToBucket(node n) {
 		// Then hash i to bucket
 		if (hashBucket[hash]?) {
 			hashBucket[hash] += [<cleanNode, nodeLoc>];
-			//println("foo");
 		} else {
 			hashBucket[hash] = [<cleanNode, nodeLoc>];
-			//println("foo");
 		}
 	}
 }
