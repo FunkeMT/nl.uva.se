@@ -12,23 +12,12 @@ import lang::java::m3::AST;
 import lang::java::jdt::m3::Core;
 import lang::java::jdt::m3::AST;
 
-
-
 /**
  *	###########
  *	CONFIG
  *	###########
  */
 public int MASS_THRESHOLD = 3;
-
-
-/**
- *	###########
- *	GLOBALS
- *	###########
- */
-// 1: Clones
-
 
 private map[str, list[tuple[node, loc]]] setupBucket(
 	map[str, list[tuple[node, loc]]] hashBucket, set[Declaration] ast) {
@@ -89,6 +78,39 @@ private map[str, list[tuple[node, loc]]] addClonePair (
 	return clones;
 }
 
+map[str, list[tuple[node, loc]]] removeEmptyClones(map[str, list[tuple[node, loc]]] clones) {
+	for (key <- clones) {
+		if (size(clones[key]) == 0) {
+			clones = delete(clones, key);
+		}
+	}
+	return clones;
+}
+map[str, list[tuple[node, loc]]] handleStageThreeItteration(
+	map[str, list[tuple[node, loc]]] clones, tuple[node, loc] subtreeI,
+	tuple[node, loc] subtreeJ) {
+	// if CompareTree(i,j) > SimilarityThreashold
+	// Then { 
+	if (getSimilarityScore(subtreeI[0], subtreeJ[0]) >= 1) {
+		// For each subtree s of i
+		// 		if IsMember(Clones,s)
+		// 			Then RemoveClonePair(Clones,s)
+		// For each subtree s of j
+	    // 		If IsMember(Clones,s)
+		// 			Then RemoveClonePair(Clones,s)
+		//clones = removeDuplicatesFromClones(
+		//			removeDuplicatesFromClones(clones, subtreeI), subtreeJ);
+		
+		// AddClonePair(Clones,i,j)
+		clones = addClonePair(
+					removeDuplicatesFromClones(
+						removeDuplicatesFromClones(clones, subtreeI),
+							subtreeJ), subtreeI, subtreeJ);
+	}
+	return clones;
+}
+
+
 void basicSubtreeCloneDetector(set[Declaration] ast) {
 	// Bucket List
 	// [hash, <node, loc>]
@@ -103,33 +125,13 @@ void basicSubtreeCloneDetector(set[Declaration] ast) {
 				if (subtreeI == subtreeJ) {
 					continue;
 				}
-				
-				// if CompareTree(i,j) > SimilarityThreashold
-				// Then { 
-				if (getSimilarityScore(subtreeI[0], subtreeJ[0]) >= 1) {
-					// For each subtree s of i
-					// 		if IsMember(Clones,s)
-					// 			Then RemoveClonePair(Clones,s)
-					clones = removeDuplicatesFromClones(clones, subtreeI);
-					
-					// For each subtree s of j
-				    // 		If IsMember(Clones,s)
-					// 			Then RemoveClonePair(Clones,s)
-					clones = removeDuplicatesFromClones(clones, subtreeJ);
-					
-					// AddClonePair(Clones,i,j)
-					clones = addClonePair(clones, subtreeI, subtreeJ);
-				}
+				clones = handleStageThreeItteration(clones, subtreeI, subtreeJ);
 			}
 		}
 	}
 	
 	// remove empty clones
-	for (key <- clones) {
-		if (size(clones[key]) == 0) {
-			clones = delete(clones, key);
-		}
-	}
+	clones = removeEmptyClones(clones);
 	
 	/*
 	 *	OUTPUT
@@ -175,7 +177,6 @@ private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
 
 private int mass(node ast) {
 	int mass = 0;
-	
 	visit(ast) {
 		case Statement n: {
 			mass += 1;
