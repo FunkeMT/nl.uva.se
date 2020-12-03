@@ -1,0 +1,49 @@
+
+{
+    "project-name": "test project",
+    "metadata": {
+        "cc": 10,
+        "volume": 12,
+        "mass": 14
+    },
+    "options": {
+        "metadata": ["cc", "volume", "mass"],
+        "types": ["1", "2"]
+    },
+    "files": [
+        {
+            "filename": "blah",
+            "metdata": {
+                "cc": 10,
+                "volume": 12,
+                "mass": 14
+            },
+            "results": {
+                "type-1": [
+                    {
+                        "lines": [10, 13],
+                        "metadata": {
+                            "cc": 10,
+                            "volume": 12,
+                            "mass": 14
+                        },
+                        "snippit": "alert(1)",
+                        "edges": ["blah2"]
+                    }
+                ],
+                "type-2": [
+                    {
+                        "lines": [10, 13],
+                        "metadata": {
+                            "cc": 10,
+                            "volume": 12,
+                            "mass": 14
+                        },
+                        "snippit": "alert(1)",
+                        "edges": ["blah2"]
+                    }
+                ]
+            }
+        }
+    ]
+}
