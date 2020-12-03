@@ -13,7 +13,7 @@
     "files": [
         {
             "filename": "blah",
-            "metdata": {
+            "metadata": {
                 "cc": 10,
                 "volume": 12,
                 "mass": 14
