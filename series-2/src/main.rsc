@@ -8,6 +8,7 @@ import Node;
 import Map;
 
 import basicSubtreeCloneDetector;
+import cloneVisualization;
 import utils;
 
 void startAnalysis() {
@@ -17,15 +18,14 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	//loc project = simpleTestProj;
-	loc project = smallsqlProj;
+	loc project = simpleTestProj;
+	//loc project = smallsqlProj;
 	//loc project = hsqldbProj;
 	
 	
 	
 	// ############################## Type-1
 	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project));
-	
 	
 	
 	// ############################## Output
@@ -43,4 +43,8 @@ void startAnalysis() {
 	
 	println("-== Stats ==-");
 	println("Code Classes: <size(clones)>");
+	
+	
+	// ############################## Visualization
+	clonesToJson(clones);
 }

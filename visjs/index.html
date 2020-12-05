@@ -131,8 +131,9 @@
                     parts.pop(parts.length-1);
                     to = parts.join(".");
                     let id = from + "->" + to;
+                    let label = results.files[i].results[showState["type"]][j].snippit;
                     if (!ids.includes(id)) {
-                        let item = { id: id, from: from, to: to, value: 1, title: "", metadata: results.files[i].results[showState["type"]][j].metadata};
+                        let item = { id: id, from: from, to: to, value: 1, label: label, metadata: results.files[i].results[showState["type"]][j].metadata};
                         if ("disabled" != showState["relation-size"]) {
                             // console.log(results.files[i].results[showState["type"]][j].metadata);
                             item["value"] = results.files[i].results[showState["type"]][j].metadata[showState["relation-size"]];
@@ -145,6 +146,7 @@
                 }
             }
         }
+        console.log(edges);
         return edges;
     }
 
@@ -175,7 +177,10 @@
               },
             },
           },
-        };
+        interaction: {
+            hover: true,
+        },
+    };
     var network = new vis.Network(container, data, options);
 
 
