@@ -19,9 +19,80 @@ import lang::java::jdt::m3::AST;
  */
 public int MASS_THRESHOLD = 3;
 
+
+/**
+ *	###########
+ *	PUBLIC
+ *	###########
+ */
+ 
+@doc{
+	Main function.
+	Algorithm based on:
+	Baxter et al. (1998)
+	
+	Takes an AST, detect clones and returns the clones grouped by clone-classes.
+}
+public map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(set[Declaration] ast) {	
+	// Bucket List
+	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast);
+
+	// 3. For each subtree i and j in the same bucket
+	map[str, list[tuple[node, loc]]] clones = ();
+	for (hash <- hashBucket) {
+		for (subtreeI <- hashBucket[hash]) {
+			for (subtreeJ <- hashBucket[hash]) {
+				if (subtreeI == subtreeJ) {
+					continue;
+				}
+				clones = handleStageThreeItteration(clones, subtreeI, subtreeJ);
+			}
+		}
+	}
+	
+	
+	return removeEmptyClones(clones);
+}
+
+
+
+
+/**
+ *	###########
+ *	PRIVATE
+ *	###########
+ */
+
+@doc{
+	Step #1: "If mass(i) >= MassThreshold"
+}
+private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
+	map[str, list[tuple[node, loc]]] bucket) {
+	/*
+	 * Remove all keyword parameters from the AST
+	 * since they are not relevant for the comparison
+	 */
+	node cleanNode = unsetRec(n);
+
+	if (mass(cleanNode) >= MASS_THRESHOLD) {
+		str hash = toString(cleanNode);
+		
+		// Then hash i to bucket
+		if (!bucket[hash]?) {
+			bucket[hash] = [];
+		}
+		loc nodeLoc = getLocationOfNode(n);
+		bucket[hash] += [<cleanNode, nodeLoc>];
+	}
+	return bucket;
+}
+
+@doc{
+	Step #2: "For each subtree i"
+	Visit the given AST and add it to the given bucket.
+}
 private map[str, list[tuple[node, loc]]] setupBucket(
 	map[str, list[tuple[node, loc]]] hashBucket, set[Declaration] ast) {
-	// 2: For each subtree i:
 	bottom-up visit(ast) {
 		case Statement n: {
 			hashBucket = addHashToBucket(n, hashBucket);
@@ -33,6 +104,34 @@ private map[str, list[tuple[node, loc]]] setupBucket(
 	return hashBucket;
 }
 
+@doc{
+	Step #3: "SimilarityThreshold" and "IsMember(Clones, s)" and "RemoveClonePair(Clones, s)"
+}
+map[str, list[tuple[node, loc]]] handleStageThreeItteration(
+	map[str, list[tuple[node, loc]]] clones, tuple[node, loc] subtreeI,
+	tuple[node, loc] subtreeJ) {
+	// if CompareTree(i,j) > SimilarityThreashold
+	if (getSimilarityScore(subtreeI[0], subtreeJ[0]) >= 1) {
+		// For each subtree s of i
+		// 		if IsMember(Clones,s)
+		// 			Then RemoveClonePair(Clones,s)
+		// For each subtree s of j
+	    // 		If IsMember(Clones,s)
+		// 			Then RemoveClonePair(Clones,s)
+		
+		// AddClonePair(Clones,i,j)
+		clones = addClonePair(
+					removeDuplicatesFromClones(
+						removeDuplicatesFromClones(clones, subtreeI),
+							subtreeJ), subtreeI, subtreeJ);
+	}
+	return clones;
+}
+
+@doc{
+	To group smaller clones which are part of a bigger clone-instance,
+	the smaller clone is removed and grouped to one big-clone.
+}
 list[tuple[node, loc]] updateItems(list[tuple[node, loc]] items, loc subtreeLoc,
 	tuple[node, loc] clone) {
 	loc cloneLoc = clone[1];
@@ -51,6 +150,10 @@ list[tuple[node, loc]] updateItems(list[tuple[node, loc]] items, loc subtreeLoc,
   	}
 	return items;
 }
+
+@doc{
+	Remove duplicates.
+}
 map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(map[str,
 	list[tuple[node, loc]]] clones, tuple[node, loc] subtree) {
 	bottom-up visit(subtree[0]) {
@@ -67,6 +170,10 @@ map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(map[str,
 	}
 	return clones;
 }
+
+@doc{
+	Add detected clone pair to the clones list.
+}
 private map[str, list[tuple[node, loc]]] addClonePair (
 	map[str, list[tuple[node, loc]]] clones, tuple[node, loc] subtreeI,
 	tuple[node, loc] subtreeJ) {
@@ -78,6 +185,10 @@ private map[str, list[tuple[node, loc]]] addClonePair (
 	return clones;
 }
 
+@doc{
+	Cleans the clone list and removes empty clones.
+	Empty clones could be caused by grouping smaller clones into bigger groups.
+}
 map[str, list[tuple[node, loc]]] removeEmptyClones(
 	map[str, list[tuple[node, loc]]] clones) {
 	for (key <- clones) {
@@ -87,95 +198,10 @@ map[str, list[tuple[node, loc]]] removeEmptyClones(
 	}
 	return clones;
 }
-map[str, list[tuple[node, loc]]] handleStageThreeItteration(
-	map[str, list[tuple[node, loc]]] clones, tuple[node, loc] subtreeI,
-	tuple[node, loc] subtreeJ) {
-	// if CompareTree(i,j) > SimilarityThreashold
-	// Then { 
-	if (getSimilarityScore(subtreeI[0], subtreeJ[0]) >= 1) {
-		// For each subtree s of i
-		// 		if IsMember(Clones,s)
-		// 			Then RemoveClonePair(Clones,s)
-		// For each subtree s of j
-	    // 		If IsMember(Clones,s)
-		// 			Then RemoveClonePair(Clones,s)
-		//clones = removeDuplicatesFromClones(
-		//			removeDuplicatesFromClones(clones, subtreeI), subtreeJ);
-		
-		// AddClonePair(Clones,i,j)
-		clones = addClonePair(
-					removeDuplicatesFromClones(
-						removeDuplicatesFromClones(clones, subtreeI),
-							subtreeJ), subtreeI, subtreeJ);
-	}
-	return clones;
+
+@doc{
+	Calculates the mass (number of nodes) for a given AST.
 }
-
-
-void basicSubtreeCloneDetector(set[Declaration] ast) {
-	// Bucket List
-	// [hash, <node, loc>]
-	// 2: For each subtree i:
-	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast);
-
-	// 3. For each subtree i and j in the same bucket
-	map[str, list[tuple[node, loc]]] clones = ();
-	for (hash <- hashBucket) {
-		for (subtreeI <- hashBucket[hash]) {
-			for (subtreeJ <- hashBucket[hash]) {
-				if (subtreeI == subtreeJ) {
-					continue;
-				}
-				clones = handleStageThreeItteration(clones, subtreeI, subtreeJ);
-			}
-		}
-	}
-	
-	// remove empty clones
-	clones = removeEmptyClones(clones);
-	
-	/*
-	 *	OUTPUT
-	 */
-	println("-== Clone Classes ==-");
-	for (key <- clones) {
-		println("######");
-		println("key: <key>");
-		println("##");
-		for (dup <- clones[key]) {
-			println("-----");
-			println(dup);
-		}
-		println("######");
-	}
-	
-	println("-== Stats ==-");
-	println("Code Classes: <size(clones)>");
-}
-
-
-private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
-	map[str, list[tuple[node, loc]]] bucket) {
-	/*
-	 * Remove all keyword parameters from the AST
-	 * since they are not relevant for the comparison
-	 */
-	node cleanNode = unsetRec(n);
-
-	// If mass(i) >= MassThreshold
-	if (mass(cleanNode) >= MASS_THRESHOLD) {
-		str hash = toString(cleanNode);
-		
-		// Then hash i to bucket
-		if (!bucket[hash]?) {
-			bucket[hash] = [];
-		}
-		loc nodeLoc = getLocationOfNode(n);
-		bucket[hash] += [<cleanNode, nodeLoc>];
-	}
-	return bucket;
-}
-
 private int mass(node ast) {
 	int mass = 0;
 	visit(ast) {
@@ -190,13 +216,13 @@ private int mass(node ast) {
 	return mass;
 }
 
-/*
- *
- * Formula:
- * Similarity = 2 x S / (2 x S + L + R)
- *
- */
-public num getSimilarityScore(node t1, node t2) {
+
+@doc{
+	Calculate the similarity score.
+	Fromula:
+	Similarity = 2 x S / (2 x S + L + R)
+}
+private num getSimilarityScore(node t1, node t2) {
 	list[value] tree1 = getChildren(t1);
 	list[value] tree2 = getChildren(t2);
 	
@@ -207,7 +233,13 @@ public num getSimilarityScore(node t1, node t2) {
 	return (2 * s) / (2 * s + l + r);
 }
 
-public loc getLocationOfNode(node subTree) {
+@doc{
+	TODO
+	Needs review!
+	
+	Tries to get the location from a given sub-tree.
+}
+private loc getLocationOfNode(node subTree) {
 	loc location = |project://MySimpleTest/src/testClass.java|;
 	if (!subTree.src?) return location;
 

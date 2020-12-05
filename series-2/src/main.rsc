@@ -3,6 +3,9 @@ module main
 import IO;
 import List;
 import Set;
+import Tuple;
+import Node;
+import Map;
 
 import basicSubtreeCloneDetector;
 import utils;
@@ -21,5 +24,23 @@ void startAnalysis() {
 	
 	
 	// ############################## Type-1
-	basicSubtreeCloneDetector(collectAST(project));
+	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project));
+	
+	
+	
+	// ############################## Output
+	println("-== Clone Classes ==-");
+	for (key <- clones) {
+		println("######");
+		println("key: <key>");
+		println("##");
+		for (dup <- clones[key]) {
+			println("-----");
+			println(dup);
+		}
+		println("######");
+	}
+	
+	println("-== Stats ==-");
+	println("Code Classes: <size(clones)>");
 }
