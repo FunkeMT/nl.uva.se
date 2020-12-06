@@ -24,9 +24,8 @@ void startAnalysis() {
 	
 	
 
-	println(size(collectAST(smallsqlProj)));	
 	// ############################## Type-1
-	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project));
+	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project), project);
 	
 	
 	// ############################## Output

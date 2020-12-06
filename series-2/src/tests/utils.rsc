@@ -5,11 +5,11 @@ import IO;
 import List;
 import Set;
 import String;
+import tests::constants;
 
 
 test bool collectASTTest1() {
-	// @todo create a constants file.
-	return size(collectAST(|project://smallsql0.21_src|)) == 186;
+	return size(collectAST(PROJECT_LOCATION)) == 186;
 }
 
 test bool cleanCodeLinesEmptyLinesTest() {
