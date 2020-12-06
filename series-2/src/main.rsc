@@ -18,8 +18,8 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	loc project = simpleTestProj;
-	//loc project = smallsqlProj;
+	//loc project = simpleTestProj;
+	loc project = smallsqlProj;
 	//loc project = hsqldbProj;
 	
 	

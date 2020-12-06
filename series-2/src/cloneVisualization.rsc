@@ -2,6 +2,10 @@ module cloneVisualization
 
 import IO;
 import String;
+import Map;
+import List;
+
+import utils;
 
 /**
  *	###########
@@ -60,7 +64,7 @@ str TMPL_FILES = "
 
 str TMPL_CLONECLASS = "
 {
-    \"lines\": [XXX, XXX],
+    \"lines\": [1, 1],
     \"metadata\": {
         \"cc\": ###CLONE_CC###,
         \"volume\": ###CLONE_VOLUME###,
@@ -86,7 +90,54 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 	intro = replaceFirst(intro, "###PROJECT_VOLUME###", "16154");
 	intro = replaceFirst(intro, "###PROJECT_MASS###", "5365");
 	
+	map[str, list[str]] fileClasses = ();
+	for (class <- clones) {
+		for (clone <- clones[class]) {
+			if (fileClasses[clone[1].uri]?) {
+				fileClasses[clone[1].uri] += class;
+			} else {
+				fileClasses[clone[1].uri] = [class];
+			}
+		}
+	}
 	
+	str files = "";
+	for (file <- fileClasses) {
+		//println("file: <file>");
+		str filestr = TMPL_FILES;
+		filestr = replaceFirst(filestr, "###FILE_NAME###", "<file>");
+		filestr = replaceFirst(filestr, "###FILE_CC###", "100");
+		filestr = replaceFirst(filestr, "###FILE_VOLUME###", "100");
+		filestr = replaceFirst(filestr, "###FILE_MASS###", "100");
+		
+		str type1 = "";
+		for (hash <- fileClasses[file]) {
+			//println("hash: <hash>");
+			str clonestr = TMPL_CLONECLASS;
+			clonestr = replaceFirst(clonestr, "###CLONE_CC###", "100");
+			clonestr = replaceFirst(clonestr, "###CLONE_VOLUME###", "100");
+			clonestr = replaceFirst(clonestr, "###CLONE_MASS###", "100");
+			
+			loc cloneLoc = clones[hash][0][1];
+			str snippet = "";
+			for (line <- cleanCodeLines(readFileLines(cloneLoc))) snippet += "<line>\n";
+			clonestr = replaceFirst(clonestr, "###CLONE_SNIPPET###", "");
+			
+			str edges = "";
+			for (clone <- clones[hash]) {
+				edges += "\"<clone[1].uri>\",";
+			}
+			clonestr = replaceFirst(clonestr, "###CLONE_EDGES###", edges);
+			
+			type1 += "<clonestr>,";
+		}
+		
+		filestr = replaceFirst(filestr, "###CLONE_CLASS_TYPE_1###", type1);
+		filestr = replaceFirst(filestr, "###CLONE_CLASS_TYPE_2###", "");
+		files += "<filestr>,";
+	}
+	
+	/*
 	str cloneClasses = "";
 	for (class <- clones) {
 		str clonestr = TMPL_CLONECLASS;
@@ -103,13 +154,14 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 		
 		cloneClasses += "<clonestr>,";
 	}
+	*/
 	
 	
 	json = "var results = {
 		<intro>,
 		<TMPL_OPTIONS>,
 		\"files\": [
-			<cloneClasses>
+			<files>
 		]
 	}";
 	
