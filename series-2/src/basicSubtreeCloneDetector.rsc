@@ -33,9 +33,11 @@ public int MASS_THRESHOLD = 3;
 	
 	Takes an AST, detect clones and returns the clones grouped by clone-classes.
 }
-public map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(set[Declaration] ast) {	
+public map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
+	set[Declaration] ast, loc baseLocation) {	
 	// Bucket List
-	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast);
+	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast,
+		baseLocation);
 
 	// 3. For each subtree i and j in the same bucket
 	map[str, list[tuple[node, loc]]] clones = ();
@@ -67,7 +69,7 @@ public map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(set[Declaratio
 	Step #1: "If mass(i) >= MassThreshold"
 }
 private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
-	map[str, list[tuple[node, loc]]] bucket) {
+	map[str, list[tuple[node, loc]]] bucket, loc baseLocation) {
 	/*
 	 * Remove all keyword parameters from the AST
 	 * since they are not relevant for the comparison
@@ -81,7 +83,7 @@ private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
 		if (!bucket[hash]?) {
 			bucket[hash] = [];
 		}
-		loc nodeLoc = getLocationOfNode(n);
+		loc nodeLoc = getLocationOfNode(n, baseLocation);
 		bucket[hash] += [<cleanNode, nodeLoc>];
 	}
 	return bucket;
@@ -92,13 +94,14 @@ private map[str, list[tuple[node, loc]]] addHashToBucket(node n,
 	Visit the given AST and add it to the given bucket.
 }
 private map[str, list[tuple[node, loc]]] setupBucket(
-	map[str, list[tuple[node, loc]]] hashBucket, set[Declaration] ast) {
+	map[str, list[tuple[node, loc]]] hashBucket, set[Declaration] ast,
+	loc baseLocation) {
 	bottom-up visit(ast) {
 		case Statement n: {
-			hashBucket = addHashToBucket(n, hashBucket);
+			hashBucket = addHashToBucket(n, hashBucket, baseLocation);
 		}
 		case Declaration n: {
-			hashBucket = addHashToBucket(n, hashBucket);
+			hashBucket = addHashToBucket(n, hashBucket, baseLocation);
 		}
 	}
 	return hashBucket;
@@ -239,8 +242,8 @@ private num getSimilarityScore(node t1, node t2) {
 	
 	Tries to get the location from a given sub-tree.
 }
-private loc getLocationOfNode(node subTree) {
-	loc location = |project://MySimpleTest/src/testClass.java|;
+private loc getLocationOfNode(node subTree, loc location) {
+	//loc location = |project://MySimpleTest/src/testClass.java|;
 	if (!subTree.src?) return location;
 
 	if (Declaration d := subTree) {
