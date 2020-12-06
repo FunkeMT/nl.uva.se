@@ -23,7 +23,8 @@ void startAnalysis() {
 	//loc project = hsqldbProj;
 	
 	
-	
+
+	println(size(collectAST(smallsqlProj)));	
 	// ############################## Type-1
 	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project));
 	

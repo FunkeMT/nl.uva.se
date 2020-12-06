@@ -16,7 +16,7 @@ import lang::java::jdt::m3::AST;
  * ToDo
  */
 set[Declaration] collectAST(loc project) {
-	M3 model = createM3FromEclipseProject(project);
+	//M3 model = createM3FromEclipseProject(project);
 	
 	set[Declaration] ast = createAstsFromEclipseProject(project, true);
 	
