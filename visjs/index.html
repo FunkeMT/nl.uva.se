@@ -128,7 +128,6 @@
                 for (let k in results.files[i].results[showState["type"]][j].edges) {
                     let to = results.files[i].results[showState["type"]][j].edges[k];
                     let parts = to.split(".");
-                    parts.pop(parts.length-1);
                     to = parts.join(".");
                     let id = from + "->" + to;
                     let label = results.files[i].results[showState["type"]][j].snippit;
