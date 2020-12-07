@@ -137,25 +137,6 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 		files += "<filestr>,";
 	}
 	
-	/*
-	str cloneClasses = "";
-	for (class <- clones) {
-		str clonestr = TMPL_CLONECLASS;
-		clonestr = replaceFirst(clonestr, "###CLONE_CC###", "100");
-		clonestr = replaceFirst(clonestr, "###CLONE_VOLUME###", "100");
-		clonestr = replaceFirst(clonestr, "###CLONE_MASS###", "100");
-		clonestr = replaceFirst(clonestr, "###CLONE_SNIPPET###", "100");
-		
-		str edges = "";
-		for (clone <- clones[class]) {
-			edges += "\"<clone[1].path>\",";
-		}
-		clonestr = replaceFirst(clonestr, "###CLONE_EDGES###", edges);
-		
-		cloneClasses += "<clonestr>,";
-	}
-	*/
-	
 	
 	json = "var results = {
 		<intro>,
@@ -167,3 +148,50 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 	
 	writeFile(JSON_FILE, json); 
 }
+
+
+
+
+public void clonesToJson2(map[str, list[tuple[node, loc]]] clones) {
+	str CLONE_TMPL = "{\"name\":\"###NAME###\",\"size\":1,\"imports\":[###EDGES###]}";
+	
+	str clonesStr = "";
+	for (hash <- clones) {
+		for (cloneI <- clones[hash]) {
+			str cloneTmpl = CLONE_TMPL;
+			
+			str nameI = substring(cloneI[1].path, 1) + "/" + "L-<cloneI[1].begin.line>";
+			cloneTmpl = replaceFirst(cloneTmpl, "###NAME###", nameI);
+			
+			str edges = "";
+			for (cloneJ <- clones[hash]) {
+				str nameJ = substring(cloneJ[1].path, 1) + "/" + "L-<cloneJ[1].begin.line>";
+				
+				if (nameI == nameJ) continue;
+				
+				edges += "\"<nameJ>\",";
+			}
+			edges = replaceLast(edges, ",", "");
+			cloneTmpl = replaceFirst(cloneTmpl, "###EDGES###", edges);
+			clonesStr += "<cloneTmpl>,\n";
+		}
+		
+	}
+	clonesStr = replaceLast(clonesStr, ",", "");
+	
+	
+	
+
+	json = "[
+		<clonesStr>
+	]";
+	
+	//println(json);
+	
+	writeFile(JSON_FILE, json); 
+}
+
+
+
+
+
