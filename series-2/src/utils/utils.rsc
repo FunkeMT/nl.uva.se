@@ -82,10 +82,7 @@ int getCyclomaticComplexity(node asts){
 int mass(node ast) {
 	int mass = 0;
 	visit(ast) {
-		case Statement n: {
-			mass += 1;
-		}
-		case Declaration n: {
+		case node n: {
 			mass += 1;
 		}
 	}
@@ -98,7 +95,7 @@ int mass(node ast) {
 	Based on:
 	https://www.json.org/json-en.html
 }
-private str escapeCode(str code) {
+str escapeCode(str code) {
     return escape(code, (
         "\"": "\\\"",
         "\\": "\\\\",

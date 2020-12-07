@@ -12,7 +12,7 @@ import utils::utils;
  *	CONFIG
  *	###########
  */
-loc JSON_FILE = |project://series-2/visjs/clones.js|;
+loc JSON_FILE = |project://series-2/visjs/data.js|;
 
 
 /**
@@ -148,24 +148,7 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 	writeFile(JSON_FILE, json); 
 }
 
-@doc{
-	Escape source-code snippet for JSON.
-	Based on:
-	https://www.json.org/json-en.html
-}
-private str escapeCode(str code) {
-    return escape(code, (
-        "\"": "\\\"",
-        "\\": "\\\\",
-        "/": "\\/",
-        "\b": "\\b",
-        "\f": "\\f",
-        "\n": "\\n",
-        "\r": "\\r",
-        "\t": "\\t",
-        "\\s": "\\\\s"
-    ));
-}
+
 
 
 
