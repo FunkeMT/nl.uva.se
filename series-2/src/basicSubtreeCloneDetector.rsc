@@ -12,6 +12,8 @@ import lang::java::m3::AST;
 import lang::java::jdt::m3::Core;
 import lang::java::jdt::m3::AST;
 
+import utils::utils;
+
 /**
  *	###########
  *	CONFIG
@@ -200,23 +202,6 @@ map[str, list[tuple[node, loc]]] removeEmptyClones(
 		}
 	}
 	return clones;
-}
-
-@doc{
-	Calculates the mass (number of nodes) for a given AST.
-}
-int mass(node ast) {
-	int mass = 0;
-	visit(ast) {
-		case Statement n: {
-			mass += 1;
-		}
-		case Declaration n: {
-			mass += 1;
-		}
-	}
-	
-	return mass;
 }
 
 

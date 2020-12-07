@@ -5,7 +5,7 @@ import String;
 import Map;
 import List;
 
-import utils;
+import utils::utils;
 
 /**
  *	###########
@@ -23,9 +23,7 @@ loc JSON_FILE = |project://series-2/visjs/clones.js|;
 str TMPL_INTRO = "
 	\"project-name\": \"###PROJECT_NAME###\",
 	\"metadata\": {
-        \"cc\": ###PROJECT_CC###,
-        \"volume\": ###PROJECT_VOLUME###,
-        \"mass\": ###PROJECT_MASS###
+        \"cloneClassesType1\": ###PROJECT_CLONECLASSES###
     }
 ";
 
@@ -47,9 +45,8 @@ str TMPL_FILES = "
 {
     \"filename\": \"###FILE_NAME###\",
     \"metadata\": {
-        \"cc\": ###FILE_CC###,
         \"volume\": ###FILE_VOLUME###,
-        \"mass\": ###FILE_MASS###
+        \"cloneClassesType1\": ###FILE_CLONECLASSES_TYPE_1###
     },
     \"results\": {
         \"type-1\": [
@@ -64,13 +61,13 @@ str TMPL_FILES = "
 
 str TMPL_CLONECLASS = "
 {
-    \"lines\": [1, 1],
     \"metadata\": {
         \"cc\": ###CLONE_CC###,
         \"volume\": ###CLONE_VOLUME###,
-        \"mass\": ###CLONE_MASS###
+        \"mass\": ###CLONE_MASS###,
+        \"clones\": ###CLONE_CLONES###,
+        \"snippet\": \"###CLONE_SNIPPET###\"
     },
-    \"snippet\": \"###CLONE_SNIPPET###\",
     \"edges\": [###CLONE_EDGES###]
 }
 ";
@@ -81,14 +78,12 @@ str TMPL_CLONECLASS = "
  *	###########
  */
 
-public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
+public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 	str json = "";
 	
 	str intro = TMPL_INTRO;
-	intro = replaceFirst(intro, "###PROJECT_NAME###", "foo");
-	intro = replaceFirst(intro, "###PROJECT_CC###", "19.2");
-	intro = replaceFirst(intro, "###PROJECT_VOLUME###", "16154");
-	intro = replaceFirst(intro, "###PROJECT_MASS###", "5365");
+	intro = replaceFirst(intro, "###PROJECT_NAME###", project);
+	intro = replaceFirst(intro, "###PROJECT_CLONECLASSES###", "<size(clones)>");
 	
 	map[str, list[str]] fileClasses = ();
 	for (class <- clones) {
@@ -106,22 +101,26 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 		//println("file: <file>");
 		str filestr = TMPL_FILES;
 		filestr = replaceFirst(filestr, "###FILE_NAME###", "<file>");
-		filestr = replaceFirst(filestr, "###FILE_CC###", "100");
-		filestr = replaceFirst(filestr, "###FILE_VOLUME###", "100");
-		filestr = replaceFirst(filestr, "###FILE_MASS###", "100");
+		filestr = replaceFirst(filestr, "###FILE_VOLUME###", "0");
+		filestr = replaceFirst(filestr, "###FILE_CLONECLASSES_TYPE_1###", "<size(fileClasses[file])>");
+		
 		
 		str type1 = "";
 		for (hash <- fileClasses[file]) {
-			//println("hash: <hash>");
-			str clonestr = TMPL_CLONECLASS;
-			clonestr = replaceFirst(clonestr, "###CLONE_CC###", "100");
-			clonestr = replaceFirst(clonestr, "###CLONE_VOLUME###", "100");
-			clonestr = replaceFirst(clonestr, "###CLONE_MASS###", "100");
 			
 			loc cloneLoc = clones[hash][0][1];
+			list[str] cloneLines = readFileLines(cloneLoc);
 			str snippet = "";
-			for (line <- cleanCodeLines(readFileLines(cloneLoc))) snippet += "<line>\n";
-			clonestr = replaceFirst(clonestr, "###CLONE_SNIPPET###", "");
+			for (line <- cleanCodeLines(cloneLines)) snippet += "<line>\n";
+			
+			//println(escapeSourceCode(snippet));
+			
+			str clonestr = TMPL_CLONECLASS;
+			clonestr = replaceFirst(clonestr, "###CLONE_CC###", "<getCyclomaticComplexity(clones[hash][0][0])>");
+			clonestr = replaceFirst(clonestr, "###CLONE_VOLUME###", "<size(cloneLines)>");
+			clonestr = replaceFirst(clonestr, "###CLONE_MASS###", "<mass(clones[hash][0][0])>");
+			clonestr = replaceFirst(clonestr, "###CLONE_CLONES###", "<size(clones[hash])>");
+			clonestr = replaceFirst(clonestr, "###CLONE_SNIPPET###", escapeCode(snippet));
 			
 			str edges = "";
 			for (clone <- clones[hash]) {
@@ -147,6 +146,25 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones) {
 	}";
 	
 	writeFile(JSON_FILE, json); 
+}
+
+@doc{
+	Escape source-code snippet for JSON.
+	Based on:
+	https://www.json.org/json-en.html
+}
+private str escapeCode(str code) {
+    return escape(code, (
+        "\"": "\\\"",
+        "\\": "\\\\",
+        "/": "\\/",
+        "\b": "\\b",
+        "\f": "\\f",
+        "\n": "\\n",
+        "\r": "\\r",
+        "\t": "\\t",
+        "\\s": "\\\\s"
+    ));
 }
 
 

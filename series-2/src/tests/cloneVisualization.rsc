@@ -5,7 +5,7 @@ import String;
 import Map;
 import List;
 
-import utils;
+import utils::utils;
 
 /**
  *	###########

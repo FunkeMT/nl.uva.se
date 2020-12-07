@@ -9,7 +9,7 @@ import Map;
 
 import basicSubtreeCloneDetector;
 import cloneVisualization;
-import utils;
+import utils::utils;
 
 void startAnalysis() {
 	loc testProj = |project://MyTest|;
@@ -46,5 +46,5 @@ void startAnalysis() {
 	
 	
 	// ############################## Visualization
-	clonesToJson(clones);
+	clonesToJson(clones, "<project>");
 }

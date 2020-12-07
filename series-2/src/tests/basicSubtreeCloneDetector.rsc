@@ -2,7 +2,7 @@ module tests::basicSubtreeCloneDetector
 
 import basicSubtreeCloneDetector;
 import String;
-import utils;
+import utils::utils;
 import List;
 import Set;
 import IO;

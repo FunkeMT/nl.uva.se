@@ -1,6 +1,6 @@
 module tests::utils
 
-import utils;
+import utils::utils;
 import IO;
 import List;
 import Set;
