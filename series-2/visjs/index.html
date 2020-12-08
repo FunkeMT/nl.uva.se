@@ -35,18 +35,26 @@
     option {
         text-transform: capitalize;
     }
+    .infobox .selection {
+        border: 1px solid #AAA;
+        background: #DDD;
+        overflow-x: scroll;
+    }
+    select {
+        float: right;
+    }
     </style>
   </head>
   <body>
     <div class="pure-g">
-        <div class="pure-u-5-6"><div id="mynetwork" class="graph"></div></div>
-        <div class="pure-u-1-6 sidebar">
+        <div class="pure-u-3-5"><div id="mynetwork" class="graph"></div></div>
+        <div class="pure-u-2-5 sidebar">
             <div class="infobox">
                 <pre id="project-data"></pre>
             </div>
             <div class="infobox">
-                <h1>Class infobox</h1>
-                <pre id="data"></pre>
+                <h1>Infobox</h1>
+                <pre id="data" class="selection"></pre>
             </div>
             <div class="filter-area">
                 <h1>Filtering</h1>
