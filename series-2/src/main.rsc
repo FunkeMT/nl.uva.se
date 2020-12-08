@@ -29,22 +29,37 @@ void startAnalysis() {
 	
 	
 	// ############################## Output
+	println("-===================-");
 	println("-== Clone Classes ==-");
+	println("-===================-");
+	int i = 1;
 	for (key <- clones) {
 		println("######");
-		println("key: <key>");
+		println("Clone-Class: <i>");
+		println("Clones: <size(clones[key])>");
+		println("Snippet:");
+		list[str] cloneLines = readFileLines(clones[key][0][1]);
+		str snippet = "";
+		for (line <- cleanCodeLines(cloneLines)) snippet += "<line>\n";
+		println(snippet);
+		
 		println("##");
 		for (dup <- clones[key]) {
-			println("-----");
-			println(dup);
+			println("Clone LOC:");
+			println(dup[1]);
 		}
 		println("######");
+		
+		i += 1;
 	}
 	
-	println("-== Stats ==-");
+	println("-===================-");
+	println("-====== Stats ======-");
+	println("-===================-");
 	println("Code Classes: <size(clones)>");
 	
 	
 	// ############################## Visualization
 	clonesToJson(clones, "<project>");
+	clonesToJsonD3(clones);
 }
