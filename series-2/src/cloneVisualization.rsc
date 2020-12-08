@@ -12,8 +12,8 @@ import utils::utils;
  *	CONFIG
  *	###########
  */
-loc JSON_FILE = |project://series-2/visjs/data.js|;
-loc JSON_FILE_D3 = |project://series-2/visjs/data_d3.js|;
+loc JSON_FILE = |project://series-2/visualization/graph/data.js|;
+loc JSON_FILE_D3 = |project://series-2/visualization/circle/data_d3.js|;
 
 
 /**

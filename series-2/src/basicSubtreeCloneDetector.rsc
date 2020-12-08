@@ -19,7 +19,7 @@ import utils::utils;
  *	CONFIG
  *	###########
  */
-public int MASS_THRESHOLD = 20;
+public int MASS_THRESHOLD = 12;
 
 
 /**
@@ -159,8 +159,9 @@ list[tuple[node, loc]] updateItems(list[tuple[node, loc]] items, loc subtreeLoc,
 @doc{
 	Remove duplicates.
 }
-map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(map[str,
-	list[tuple[node, loc]]] clones, tuple[node, loc] subtree) {
+map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(
+	map[str,list[tuple[node, loc]]] clones, tuple[node, loc] subtree) {
+	
 	bottom-up visit(subtree[0]) {
 		case node s: {
 			str key = toString(s);
@@ -173,6 +174,7 @@ map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(map[str,
 			}
 		}
 	}
+	
 	return clones;
 }
 
@@ -182,11 +184,16 @@ map[str, list[tuple[node, loc]]] removeDuplicatesFromClones(map[str,
 map[str, list[tuple[node, loc]]] addClonePair (
 	map[str, list[tuple[node, loc]]] clones, tuple[node, loc] subtreeI,
 	tuple[node, loc] subtreeJ) {
+
 	str key = toString(subtreeJ[0]);
 	if (!(clones[key]?)) {
 		clones[key] = [];
 	}
-	clones[key] += [subtreeI, subtreeJ];
+	
+	// ?????????? BugFix ????????????
+	if (!(subtreeI in clones[key])) clones[key] += [subtreeI];
+	if (!(subtreeJ in clones[key])) clones[key] += [subtreeJ];
+	
 	return clones;
 }
 
