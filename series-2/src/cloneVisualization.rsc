@@ -73,6 +73,14 @@ str TMPL_CLONECLASS = "
 }
 ";
 
+str TMPL_EDGE = "
+{
+	\"loc\": \"###EDGE_LOC###\",
+    \"fromLine\": ###EDGE_FROM_LINE###,
+    \"toLine\": ###EDGE_TO_LINE###
+}
+";
+
 /**
  *	###########
  *	PUBLIC
@@ -125,7 +133,11 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 			
 			str edges = "";
 			for (clone <- clones[hash]) {
-				edges += "\"<clone[1].uri>\",";
+				str edge = TMPL_EDGE;
+				edge = replaceFirst(edge, "###EDGE_LOC###", clone[1].uri);
+				edge = replaceFirst(edge, "###EDGE_FROM_LINE###", "<clone[1].begin.line>");
+				edge = replaceFirst(edge, "###EDGE_TO_LINE###", "<clone[1].end.line>");
+				edges += "<edge>,";
 			}
 			clonestr = replaceFirst(clonestr, "###CLONE_EDGES###", edges);
 			
