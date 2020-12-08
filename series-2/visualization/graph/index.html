@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Network</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="data.js"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" crossorigin="anonymous">
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .graph{
+        height: 100vh
+    }
+    .filter-area, .infobox {
+        padding: 0 1em;
+    }
+    .sidebar {
+        background: #EEE;
+        height:100vh;
+    }
+    .infobox pre {
+        min-height: 1.2em;
+    }
+    pre {
+        overflow-x: auto;
+    }
+    option {
+        text-transform: capitalize;
+    }
+    .infobox .selection {
+        border: 1px solid #AAA;
+        background: #DDD;
+        overflow-x: scroll;
+    }
+    select {
+        float: right;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="pure-g">
+        <div class="pure-u-3-5"><div id="mynetwork" class="graph"></div></div>
+        <div class="pure-u-2-5 sidebar">
+            <div class="infobox">
+                <pre id="project-data"></pre>
+            </div>
+            <div class="infobox">
+                <h1>Infobox</h1>
+                <pre id="data" class="selection"></pre>
+            </div>
+            <div class="filter-area">
+                <h1>Filtering</h1>
+                <div class="item">
+                    <h2>Show type</h2>
+                    <form class="pure-form">
+                        <label for="type-selection-1" class="pure-radio">
+                            <input type="radio" id="type-selection-1" class="type-selection" name="type-selection" value="type-1" checked="" /> Type-1</label>
+                        <label for="type-selection-2" class="pure-radio">
+                            <input type="radio" id="type-selection-2" class="type-selection" name="type-selection" value="type-2" /> Type-2</label>
+                    </form>
+                </div>
+
+                <div class="item">
+                    <h2>Visualization options</h2>
+                    <form class="pure-form">
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="node-size">Node size: </label>
+                            <select id="node-size" name="node-size" class="pure-input-1-2 option-filler" id="node-size">
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="relation-size">Relation size: </label>
+                            <select id="relation-size" name="relation-size" class="pure-input-1-2 option-filler" id="relation-size">
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <a href="#" onclick="network.stopSimulation()">Stop movement</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    var showState = {
+        "type": "type-1",
+        "node-size": "disabled",
+        "relation-size": "disabled"
+    };
+    function updateShowState() {
+        document.querySelectorAll(".type-selection").forEach((e)=>{
+            if (e.checked) {
+                showState["type"] = e.value;
+            }
+        });
+        showState["node-size"] = document.getElementById("node-size").value;
+        showState["relation-size"] = document.getElementById("relation-size").value;
+    }
+    document.querySelectorAll(".option-filler").forEach(e=>{
+        for (let k in results.options.metadata) {
+            if (results.options.metadata[k] == "mass" && e.getAttribute("id")=="node-size") continue;
+            e.innerHTML += "<option value=\""+results.options.metadata[k]+"\">"+results.options.metadata[k]+"</option>";
+        }
+        // console.log(results.options.metadata);
+    });
+
+    function cleanFilename(name) {
+        if (name.startsWith("project://")) {
+            name = name.substring(10);
+            let index = name.indexOf("/");
+            if (index != -1) {
+                name = name.substring(index + 1);
+            }
+        }
+        return name;
+    }
+
+    function getNodes() {
+        let nodes = [];
+        for (let i in results.files) {
+            results.files[i].filename = cleanFilename(results.files[i].filename);
+            let item = {
+                id: results.files[i].filename,
+                label: results.files[i].filename,
+                metadata: results.files[i].metadata,
+                title: null,
+                value: 1
+            };
+            if ("disabled" != showState["node-size"]) {
+                item["value"] = results.files[i].metadata[showState["node-size"]] * 10;
+                item["title"] = item["value"];
+            }
+
+            nodes.push(item);
+        }
+        return nodes;
+    }
+    function getEdges() {
+        let edges = [];
+        let ids = [];
+        for (let i in results.files) {
+            let from = cleanFilename(results.files[i].filename);
+            for (let j in results.files[i].results[showState["type"]]) {
+                for (let k in results.files[i].results[showState["type"]][j].edges) {
+                    let to = cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc);
+                    let id = from + "->" + to;
+                    let label = results.files[i].results[showState["type"]][j].snippit;
+                    if (!ids.includes(id)) {
+                        let item = { id: id, from: from, to: to, value: 1, label: label, metadata: results.files[i].results[showState["type"]][j].metadata, rawTo: {
+                            "loc": cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc),
+                            "fromLine": results.files[i].results[showState["type"]][j].edges[k].fromLine,
+                            "toLine": results.files[i].results[showState["type"]][j].edges[k].toLine
+                        }};
+                        if ("disabled" != showState["relation-size"]) {
+                            item["value"] = results.files[i].results[showState["type"]][j].metadata[showState["relation-size"]];
+                            item["title"] = showState["relation-size"] + ": " + item["value"];
+                        }
+                        edges.push(item);
+                        ids.push(id);
+                    }
+                }
+            }
+        }
+        console.log(edges);
+        return edges;
+    }
+
+    document.title = results["project-name"] + " results";
+    document.getElementById("project-data").innerHTML = "<pre>"+JSON.stringify({
+        "name": results["project-name"],
+        "overall": results.metadata,
+    }, null, ' ')+"</pre>";
+    // create an array with nodes
+    var nodes = new vis.DataSet(getNodes());
+
+    // create an array with edges
+    var edges = new vis.DataSet(getEdges());
+
+    // create a network
+    var container = document.getElementById("mynetwork");
+    var data = {
+        nodes: nodes,
+        edges: edges,
+    };
+    var options = {
+        nodes: {
+            shape: "dot",
+            scaling: {
+              label: {
+                min: 8,
+                max: 20,
+              },
+            },
+          },
+        interaction: {
+            hover: true,
+        },
+    };
+    var network = new vis.Network(container, data, options);
+
+
+    network.on('click', (e) => {
+        let nodeEvent = e.nodes.length > 0;
+        let res = "";
+        if (nodeEvent) {
+            let n = nodes.get(e.nodes[0]);
+            let data = n.metadata;
+            data["Java class"] = n.label;
+            res = JSON.stringify(data, null, ' ');
+        } else {
+            let n = edges.get(e.items[0].edgeId);
+            // let snippet = n.metadata.snippet.replace("\\n","\n");
+            // console.log(snippit);
+            // n.metadata.snippit = n.metadata.snippit.replace.replace("\\n", "\n");
+            res = JSON.stringify({
+                "metadata": n.metadata,
+                "from": n.from,
+                "to": n.rawTo,
+            }, null, ' ');
+            res = res.split("\\n").join("\n").split("\\t").join("\t");
+            // document.getElementById("data").innerHTML = res;
+        }
+        res = res.substring(2);
+        res = res.substring(0, res.length-2);
+        document.getElementById("data").innerHTML = res;
+    });
+    function updateGraph() {
+        let newEdges = getEdges();
+        let ids = [];
+        newEdges.forEach((e)=>{
+            ids.push(e.id);
+        });
+        let removables = [];
+        edges.forEach(e => {
+            if (!ids.includes(e.id)) {
+                removables.push(e.id);
+            }
+        });
+        edges.remove(removables);
+        edges.update(newEdges);
+
+        nodes.update(getNodes());
+    }
+
+    document.querySelectorAll("input").forEach(e=>{
+        e.onchange = event => {
+            updateShowState();
+            updateGraph();
+        };
+    })
+    document.querySelectorAll("select").forEach(e=>{
+        e.onchange = event => {
+            updateShowState();
+            updateGraph();
+        };
+    })
+    </script>
+  </body>
+</html>
