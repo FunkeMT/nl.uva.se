@@ -13,6 +13,7 @@ import utils::utils;
  *	###########
  */
 loc JSON_FILE = |project://series-2/visjs/data.js|;
+loc JSON_FILE_D3 = |project://series-2/visjs/data_d3.js|;
 
 
 /**
@@ -153,7 +154,7 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 
 
 
-public void clonesToJson2(map[str, list[tuple[node, loc]]] clones) {
+public void clonesToJsonD3(map[str, list[tuple[node, loc]]] clones) {
 	str CLONE_TMPL = "{\"name\":\"###NAME###\",\"size\":1,\"imports\":[###EDGES###]}";
 	
 	str clonesStr = "";
@@ -187,9 +188,7 @@ public void clonesToJson2(map[str, list[tuple[node, loc]]] clones) {
 		<clonesStr>
 	]";
 	
-	//println(json);
-	
-	writeFile(JSON_FILE, json); 
+	writeFile(JSON_FILE_D3, json); 
 }
 
 
