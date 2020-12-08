@@ -153,11 +153,15 @@
             let from = cleanFilename(results.files[i].filename);
             for (let j in results.files[i].results[showState["type"]]) {
                 for (let k in results.files[i].results[showState["type"]][j].edges) {
-                    let to = cleanFilename(results.files[i].results[showState["type"]][j].edges[k]);
+                    let to = cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc);
                     let id = from + "->" + to;
                     let label = results.files[i].results[showState["type"]][j].snippit;
                     if (!ids.includes(id)) {
-                        let item = { id: id, from: from, to: to, value: 1, label: label, metadata: results.files[i].results[showState["type"]][j].metadata};
+                        let item = { id: id, from: from, to: to, value: 1, label: label, metadata: results.files[i].results[showState["type"]][j].metadata, rawTo: {
+                            "loc": cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc),
+                            "fromLine": results.files[i].results[showState["type"]][j].edges[k].fromLine,
+                            "toLine": results.files[i].results[showState["type"]][j].edges[k].toLine
+                        }};
                         if ("disabled" != showState["relation-size"]) {
                             item["value"] = results.files[i].results[showState["type"]][j].metadata[showState["relation-size"]];
                             item["title"] = showState["relation-size"] + ": " + item["value"];
@@ -222,7 +226,7 @@
             res = JSON.stringify({
                 "metadata": n.metadata,
                 "from": n.from,
-                "to": n.to
+                "to": n.rawTo,
             }, null, ' ');
             res = res.split("\\n").join("\n").split("\\t").join("\t");
             // document.getElementById("data").innerHTML = res;
