@@ -188,7 +188,9 @@ d3.json("data_d3.json", function(classes) {
       .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
       .text(function(d) { return d.key.replace(/_/g, ' '); })
       .on("mouseover", mouseover)
-      .on("mouseout", mouseout);
+      .on("mouseout", mouseout)
+    .append("svg:title")
+      .text(function(d){console.log(d);return d.snippet;});  ;
 
   d3.select("input[type=range]").on("change", function() {
     line.tension(this.value / 100);

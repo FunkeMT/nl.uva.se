@@ -167,7 +167,7 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 
 
 public void clonesToJsonD3(map[str, list[tuple[node, loc]]] clones) {
-	str CLONE_TMPL = "{\"name\":\"###NAME###\",\"size\":1,\"imports\":[###EDGES###]}";
+	str CLONE_TMPL = "{\"name\":\"###NAME###\",\"size\":1,\"imports\":[###EDGES###],\"snippet\":\"###SNIPPET###\"}";
 	
 	str clonesStr = "";
 	for (hash <- clones) {
@@ -187,6 +187,13 @@ public void clonesToJsonD3(map[str, list[tuple[node, loc]]] clones) {
 			}
 			edges = replaceLast(edges, ",", "");
 			cloneTmpl = replaceFirst(cloneTmpl, "###EDGES###", edges);
+			
+			
+			list[str] cloneLines = readFileLines(cloneI[1]);
+			str snippet = "";
+			for (line <- cleanCodeLines(cloneLines)) snippet += "<line>\n";
+			cloneTmpl = replaceFirst(cloneTmpl, "###SNIPPET###", escapeCode(snippet));
+			
 			clonesStr += "<cloneTmpl>,\n";
 		}
 		
