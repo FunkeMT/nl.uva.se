@@ -137,8 +137,8 @@ d3.json("data_d3.json", function(classes) {
   var groupArc = d3.svg.arc()
     .innerRadius(ry - 177)
     .outerRadius(ry - 157)
-    .startAngle(function(d) { return (findStartAngle(d.__data__.children)-20) * pi / 180;})
-    .endAngle(function(d) { return (findEndAngle(d.__data__.children)+20) * pi / 180});
+    .startAngle(function(d) { return (findStartAngle(d.__data__.children)-10) * pi / 180;})
+    .endAngle(function(d) { return (findEndAngle(d.__data__.children)+10) * pi / 180});
   
   svg.selectAll("g.arc")
     .data(groupData[0])

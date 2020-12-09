@@ -55,12 +55,18 @@
         /* width: 100%; */
     }
     /* Start source: https://codeconvey.com/pure-css-range-slider-with-2-handles/ */
+    label {
+        float: left;
+    }
+
     [slider] {
         position: relative;
         height: 14px;
         border-radius: 10px;
         text-align: left;
         margin: 45px 0 10px 0;
+        width: 80%;
+        margin-left: 80px;
     }
     
     [slider] > div {
@@ -238,6 +244,7 @@
             <div class="infobox">
                 <h1>Infobox</h1>
                 <pre id="data" class="selection"></pre>
+                <a id="circleURL" href="#" target="_blank"></a>
             </div>
             <div class="filter-area">
                 <h1>Filtering</h1>
@@ -304,6 +311,7 @@
         }
     }
     let template = "<!-- Start source :https://codeconvey.com/pure-css-range-slider-with-2-handles/ -->" +
+        "<div>" +
         "<label for=\"##ID##\">##NAME##:</label>" +
         "<div slider id=\"##ID##\">" +
         "    <div>" +
@@ -335,6 +343,7 @@
         "        children[5].style.right=(100-value)+'%';" +
         "        children[9].style.left=value+'%';children[13].style.left=value+'%';" +
         "        children[13].childNodes[1].innerHTML=this.value;\" />" +
+        "</div>" +
         "</div>" +
         "<!-- End source :https://codeconvey.com/pure-css-range-slider-with-2-handles/ -->";
     for (let field in ranges) {
@@ -494,6 +503,10 @@
             let data = n.metadata;
             data["Java class"] = n.label;
             res = JSON.stringify(data, null, ' ');
+
+            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/circle/?src=" + n.label;
+            document.getElementById("circleURL").innerHTML = "Show Circle-Visualization for this node";
+            document.getElementById("circleURL").setAttribute("href", url);
         } else {
             console.log(e);
             let n = edges.get(e.items[0].edgeId);
@@ -506,6 +519,9 @@
                 "to": n.rawTo,
             }, null, ' ');
             res = res.split("\\n").join("\n").split("\\t").join("\t");
+
+            document.getElementById("circleURL").innerHTML = "";
+            document.getElementById("circleURL").setAttribute("href", "");
             // document.getElementById("data").innerHTML = res;
         }
         res = res.substring(2);
