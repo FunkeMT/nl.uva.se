@@ -26,7 +26,8 @@
         fetch("/Development/UvA/nl.uva.se/data/smallsql0.21_src/" + srcParam)
         .then(response => response.text())
         .then(data => {
-            document.getElementById("code").innerHTML = data;
+            var code = "<!-- " + data + "-->";
+            document.getElementById("code").innerHTML = code;
             Prism.highlightAll();
         });
     </script>

@@ -2,7 +2,7 @@ var results = {
 		
 	"project-name": "|project://smallsql0.21_src|",
 	"metadata": {
-        "cloneClassesType1": 142
+        "cloneClassesType1": 141
     }
 ,
 		
@@ -430,7 +430,7 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 6
+        "cloneClassesType1": 5
     },
     "results": {
         "type-1": [
@@ -441,17 +441,17 @@ var results = {
         "volume": 11,
         "mass": 46,
         "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
+        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue += factor;\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 50,
     "toLine": 60
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 50,
     "toLine": 60
 }
@@ -464,17 +464,17 @@ var results = {
         "volume": 6,
         "mass": 21,
         "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
+        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 55,
     "toLine": 60
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 55,
     "toLine": 60
 }
@@ -487,17 +487,17 @@ var results = {
         "volume": 6,
         "mass": 21,
         "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}\n"
+        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue += factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 50,
     "toLine": 55
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 50,
     "toLine": 55
 }
@@ -510,17 +510,17 @@ var results = {
         "volume": 5,
         "mass": 14,
         "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tvalue \/= factor;\n\t\t}else{\n\t\t}\n"
+        "snippet": "if(places > 0){\n\t\t\tvalue \/= factor;\n\t\t}else{\n\t\t\tvalue += factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 62,
     "toLine": 66
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 62,
     "toLine": 66
 }
@@ -533,42 +533,19 @@ var results = {
         "volume": 3,
         "mass": 16,
         "clones": 2,
-        "snippet": "for(int i=0; i>places; i--){\n\t\t\t}\n"
+        "snippet": "for(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n"
     },
     "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 56,
-    "toLine": 58
-}
-,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 56,
     "toLine": 58
 }
-,]
-}
 ,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 3,
-        "mass": 16,
-        "clones": 2,
-        "snippet": "for(int i=0; i<places; i++){\n\t\t\t}\n"
-    },
-    "edges": [
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 51,
-    "toLine": 53
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 51,
-    "toLine": 53
+    "fromLine": 56,
+    "toLine": 58
 }
 ,]
 }
@@ -6307,29 +6284,6 @@ var results = {
     "metadata": {
         "cc": 1,
         "volume": 1,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
-    "fromLine": 110,
-    "toLine": 110
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
-    "fromLine": 678,
-    "toLine": 678
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
         "mass": 25,
         "clones": 2,
         "snippet": "String[] colNames = {\"TABLE_CAT\", \"TABLE_SCHEM\", \"TABLE_NAME\", \"COLUMN_NAME\", \"DATA_TYPE\", \"TYPE_NAME\", \"COLUMN_SIZE\", \"BUFFER_LENGTH\", \"DECIMAL_DIGITS\", \"NUM_PREC_RADIX\", \"NULLABLE\", \"REMARKS\", \"COLUMN_DEF\", \"SQL_DATA_TYPE\", \"SQL_DATETIME_SUB\", \"CHAR_OCTET_LENGTH\", \"ORDINAL_POSITION\", \"IS_NULLABLE\"};\n"
@@ -6345,6 +6299,29 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
     "fromLine": 753,
     "toLine": 753
+}
+,]
+}
+,
+{
+    "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 17,
+        "clones": 2,
+        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
+    "fromLine": 110,
+    "toLine": 110
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
+    "fromLine": 678,
+    "toLine": 678
 }
 ,]
 }
@@ -11153,29 +11130,6 @@ var results = {
     "metadata": {
         "cc": 1,
         "volume": 1,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
-    "fromLine": 110,
-    "toLine": 110
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
-    "fromLine": 678,
-    "toLine": 678
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
         "mass": 25,
         "clones": 2,
         "snippet": "String[] colNames = {\"TABLE_CAT\", \"TABLE_SCHEM\", \"TABLE_NAME\", \"COLUMN_NAME\", \"DATA_TYPE\", \"TYPE_NAME\", \"COLUMN_SIZE\", \"BUFFER_LENGTH\", \"DECIMAL_DIGITS\", \"NUM_PREC_RADIX\", \"NULLABLE\", \"REMARKS\", \"COLUMN_DEF\", \"SQL_DATA_TYPE\", \"SQL_DATETIME_SUB\", \"CHAR_OCTET_LENGTH\", \"ORDINAL_POSITION\", \"IS_NULLABLE\"};\n"
@@ -11191,6 +11145,29 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
     "fromLine": 753,
     "toLine": 753
+}
+,]
+}
+,
+{
+    "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 17,
+        "clones": 2,
+        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
+    "fromLine": 110,
+    "toLine": 110
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
+    "fromLine": 678,
+    "toLine": 678
 }
 ,]
 }
@@ -14613,7 +14590,7 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 6
+        "cloneClassesType1": 5
     },
     "results": {
         "type-1": [
@@ -14624,17 +14601,17 @@ var results = {
         "volume": 11,
         "mass": 46,
         "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
+        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue += factor;\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 50,
     "toLine": 60
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 50,
     "toLine": 60
 }
@@ -14647,17 +14624,17 @@ var results = {
         "volume": 6,
         "mass": 21,
         "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
+        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 55,
     "toLine": 60
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 55,
     "toLine": 60
 }
@@ -14670,17 +14647,17 @@ var results = {
         "volume": 6,
         "mass": 21,
         "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}\n"
+        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t\tfactor += 10;\n\t\t\t}\n\t\t\tvalue += factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 50,
     "toLine": 55
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 50,
     "toLine": 55
 }
@@ -14693,17 +14670,17 @@ var results = {
         "volume": 5,
         "mass": 14,
         "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tvalue \/= factor;\n\t\t}else{\n\t\t}\n"
+        "snippet": "if(places > 0){\n\t\t\tvalue \/= factor;\n\t\t}else{\n\t\t\tvalue += factor;\n\t\t}\n"
     },
     "edges": [
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 62,
     "toLine": 66
 }
 ,
 {
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
+	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 62,
     "toLine": 66
 }
@@ -14716,42 +14693,19 @@ var results = {
         "volume": 3,
         "mass": 16,
         "clones": 2,
-        "snippet": "for(int i=0; i>places; i--){\n\t\t\t}\n"
+        "snippet": "for(int i=0; i>places; i--){\n\t\t\t\tfactor += 10;\n\t\t\t}\n"
     },
     "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 56,
-    "toLine": 58
-}
-,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 56,
     "toLine": 58
 }
-,]
-}
 ,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 3,
-        "mass": 16,
-        "clones": 2,
-        "snippet": "for(int i=0; i<places; i++){\n\t\t\t}\n"
-    },
-    "edges": [
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 51,
-    "toLine": 53
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 51,
-    "toLine": 53
+    "fromLine": 56,
+    "toLine": 58
 }
 ,]
 }
