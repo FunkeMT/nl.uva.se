@@ -4,69 +4,56 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link type="text/css" rel="stylesheet" href="style.css"/>
     <style type="text/css">
+        path.arc {
+          fill: #fff;
+        }
 
-path.arc {
-  cursor: move;
-  fill: #fff;
-}
+        .node {
+          font-size: 10px;
+        }
 
-.node {
-  font-size: 10px;
-}
+        .node:hover {
+          fill: #1f77b4;
+        }
 
-.node:hover {
-  fill: #1f77b4;
-}
+        .link {
+          fill: none;
+          stroke: #1f77b4;
+          stroke-opacity: .4;
+          pointer-events: none;
+        }
 
-.link {
-  fill: none;
-  stroke: #1f77b4;
-  stroke-opacity: .4;
-  pointer-events: none;
-}
+        .link.source, .link.target {
+          stroke-opacity: 1;
+          stroke-width: 2px;
+        }
 
-.link.source, .link.target {
-  stroke-opacity: 1;
-  stroke-width: 2px;
-}
+        .node.target,
+        .node.source {
+          fill: #d62728 !important;
+          font-weight: bold;
+        }
 
-.node.target {
-  fill: #d62728 !important;
-}
+        .link.source,
+        .link.target {
+          stroke: #d62728;
+        }
 
-.link.source {
-  stroke: #d62728;
-}
+        text.arcText {
+            font-size: 14px;
+        }
 
-.node.source {
-  fill: #2ca02c;
-}
-
-.link.target {
-  stroke: #2ca02c;
-}
-
-text.arcText {
-    font-size: 14px;
-}
-
-    </style>
+        </style>
   </head>
   <body>
-    <h2>
-      Flare imports<br>
-      hierarchical edge bundling
-    </h2>
     <div id="bundle"></div>
-    <div style="position:absolute;bottom:0;font-size:18px;">tension: <input style="position:relative;top:3px;" type="range" min="0" max="100" value="85"></div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="packages.js"></script>
-    <script type="text/javascript" src="test.js"></script>
     <script type="text/javascript">
 
-var w = 740,
-    h = 700,
+var w = window.innerWidth,
+    h = window.innerHeight,
     rx = w / 2,
     ry = h / 2,
     m0,
@@ -89,17 +76,17 @@ var line = d3.svg.line.radial()
 
 // Chrome 15 bug: <http://code.google.com/p/chromium/issues/detail?id=98951>
 var div = d3.select("#bundle")
-    .style("width", window.innerWidth + "px")
-    .style("height", window.innerHeight + "px")
+    .style("width", w + "px")
+    .style("height", h + "px")
     .style("position", "absolute");
 
 var svg = div.append("svg:svg")
-    .attr("width", window.innerWidth)
-    .attr("height", window.innerHeight)
+    .attr("width", w)
+    .attr("height", h)
     .append("svg:g")
     .attr("transform", "translate(" + rx + "," + ry + ")");
   
-var filteredData = function (data, needle) {
+var filterData = function (data, needle) {
     var tmpData = [];
     for (var i = 0; i < data.length; i++){
         if (data[i].name.startsWith(needle) ||
@@ -110,29 +97,45 @@ var filteredData = function (data, needle) {
     return tmpData;
 };
 
+var filterFiles = function (data) {
+    var uniqueFiles = new Set();
+
+    data.forEach(function(d) {
+      var filenameArr = d.name.split("/");
+      uniqueFiles.add(filenameArr[filenameArr.length - 2]);
+    });
+    return uniqueFiles;
+};
+
+/*
+ * Get URL Parameter to filter results
+ */
+var queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+var srcParam = urlParams.get('src')
+
 svg.append("svg:path")
     .attr("class", "arc")
     .attr("d", d3.svg.arc().outerRadius(ry - 180).innerRadius(0).startAngle(0).endAngle(2 * Math.PI))
-    .on("mousedown", mousedown);
 
 d3.json("data_d3.json", function(classes) {
-  var dataFiltered = filteredData(classes, "src/smallsql/database/SSDatabaseMetaData.java");
+  var dataFiltered = filterData(classes, srcParam);
+  var uniqueFiles = filterFiles(dataFiltered);
 
   var nodes = cluster.nodes(packages.root(dataFiltered)),
     links = packages.imports(nodes),
     splines = bundle(links);
-    console.log(nodes);
 
   var path = svg.selectAll("path.link")
     .data(links)
     .enter().append("svg:path")
-    .attr("class", function(d) { return "link source-" + d.source.key + " target-" + d.target.key; })
-    .attr("d", function(d, i) { return line(splines[i]); });
+      .attr("class", function(d) { return "link source-" + d.source.key + " target-" + d.target.key; })
+      .attr("d", function(d, i) { return line(splines[i]); });
 
   var groupData = svg.selectAll("g.group")
-    .data(nodes.filter(function(d) { return (d.key=="TestDBMetaData.java" || d.key == 'SSDatabaseMetaData.java') && d.children; }))
+    .data(nodes.filter(function(d) { return uniqueFiles.has(d.key) && d.children; }))
     .enter().append("group")
-    .attr("class", "group");
+      .attr("class", "group");
     
   var groupArc = d3.svg.arc()
     .innerRadius(ry - 177)
@@ -143,50 +146,49 @@ d3.json("data_d3.json", function(classes) {
   svg.selectAll("g.arc")
     .data(groupData[0])
     .enter().append("svg:path")
-    .attr("d", groupArc)
-    .attr("class", "groupArc")
-    .attr("id", function(d, i) {console.log(d.__data__.key); return d.__data__.key;})
-    .style("fill", "#1f77b4")
-    .style("fill-opacity", 0.5)
-    .each(function(d,i) {
-      var firstArcSection = /(^.+?)L/;
-
-      var newArc = firstArcSection.exec( d3.select(this).attr("d") )[1];
-
-      newArc = newArc.replace(/,/g , " ");
-
-      svg.append("path")
-          .attr("class", "hiddenArcs")
-          .attr("id", "hidden"+d.__data__.key)
-          .attr("d", newArc)
-          .style("fill", "none");
-      });
+      .attr("d", groupArc)
+      .attr("class", "groupArc")
+      .attr("id", function(d, i) { /*console.log(d.__data__.key);*/ return d.__data__.key;})
+      .style("fill", "#1f77b4")
+      .style("fill-opacity", 0.5)
+      .each(function(d,i) {
+        var firstArcSection = /(^.+?)L/;
+        var newArc = firstArcSection.exec( d3.select(this).attr("d") )[1];
+        newArc = newArc.replace(/,/g , " ");
+        svg.append("path")
+            .attr("class", "hiddenArcs")
+            .attr("id", "hidden"+d.__data__.key)
+            .attr("d", newArc)
+            .style("fill", "none");
+        });
 
   svg.selectAll(".arcText")
     .data(groupData[0])
     .enter().append("text")
-    .attr("class", "arcText")
-    .attr("dy", 15)
+      .attr("class", "arcText")
+      .attr("dy", 15)
     .append("textPath")
-    .attr("startOffset","50%")
-    .style("text-anchor","middle")
-    .attr("xlink:href",function(d,i){return "#hidden" + d.__data__.key;})
-    .text(function(d){return d.__data__.key;});  
+      .attr("startOffset","50%")
+      .style("text-anchor","middle")
+      .attr("xlink:href",function(d,i){return "#hidden" + d.__data__.key;})
+      .text(function(d){return d.__data__.key;})
+    .append("svg:title")
+      .text(function(d){return d.__data__.name;});  
 
   svg.selectAll("g.node")
     .data(nodes.filter(function(n) { return !n.children; }))
     .enter().append("svg:g")
-    .attr("class", "node")
-    .attr("id", function(d) { return "node-" + d.key; })
-    .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
+      .attr("class", "node")
+      .attr("id", function(d) { return "node-" + d.key; })
+      .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + d.y + ")"; })
     .append("svg:text")
-    .attr("dx", function(d) { return d.x < 180 ? 25 : -25; })
-    .attr("dy", ".31em")
-    .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-    .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
-    .text(function(d) { return d.key.replace(/_/g, ' '); })
-    .on("mouseover", mouseover)
-    .on("mouseout", mouseout);
+      .attr("dx", function(d) { return d.x < 180 ? 25 : -25; })
+      .attr("dy", ".31em")
+      .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+      .attr("transform", function(d) { return d.x < 180 ? null : "rotate(180)"; })
+      .text(function(d) { return d.key.replace(/_/g, ' '); })
+      .on("mouseover", mouseover)
+      .on("mouseout", mouseout);
 
   d3.select("input[type=range]").on("change", function() {
     line.tension(this.value / 100);
