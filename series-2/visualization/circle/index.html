@@ -9,11 +9,7 @@
         }
 
         .node {
-          font-size: 10px;
-        }
-
-        .node:hover {
-          fill: #1f77b4;
+          font-size: 14px;
         }
 
         .link {
@@ -28,6 +24,7 @@
           stroke-width: 2px;
         }
 
+        .node:hover,
         .node.target,
         .node.source {
           fill: #d62728 !important;
@@ -153,7 +150,10 @@ d3.json("data_d3.json", function(classes) {
       .style("fill-opacity", 0.5)
       .each(function(d,i) {
         var firstArcSection = /(^.+?)L/;
-        var newArc = firstArcSection.exec( d3.select(this).attr("d") )[1];
+        var newArc = "";
+        if (firstArcSection.exec(d3.select(this).attr("d"))) {
+          newArc = firstArcSection.exec(d3.select(this).attr("d"))[1];
+        };
         newArc = newArc.replace(/,/g , " ");
         svg.append("path")
             .attr("class", "hiddenArcs")
@@ -238,20 +238,26 @@ function mouseup() {
 }
 
 function mouseover(d) {
+  svg.selectAll("path.link:not(.target-" + d.key + ")").style("stroke", "rgba(0, 0, 0, 0.3)");
   svg.selectAll("path.link.target-" + d.key)
       .classed("target", true)
-      .each(updateNodes("source", true));
+      .each(updateNodes("source", true))
+      .style("stroke", "#d62728");
 
+  svg.selectAll("path.link:not(.source-" + d.key + ")").style("stroke", "rgba(0, 0, 0, 0.3)");
   svg.selectAll("path.link.source-" + d.key)
       .classed("source", true)
-      .each(updateNodes("target", true));
+      .each(updateNodes("target", true))
+      .style("stroke", "#d62728");
 }
 
 function mouseout(d) {
+  svg.selectAll("path.link:not(.source-" + d.key + ")").style("stroke", "#1f77b4");
   svg.selectAll("path.link.source-" + d.key)
       .classed("source", false)
       .each(updateNodes("target", false));
 
+  svg.selectAll("path.link:not(.target-" + d.key + ")").style("stroke", "#1f77b4");
   svg.selectAll("path.link.target-" + d.key)
       .classed("target", false)
       .each(updateNodes("source", false));
