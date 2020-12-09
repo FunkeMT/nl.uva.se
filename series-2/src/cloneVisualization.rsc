@@ -13,7 +13,7 @@ import utils::utils;
  *	###########
  */
 loc JSON_FILE = |project://series-2/visualization/graph/data.js|;
-loc JSON_FILE_D3 = |project://series-2/visualization/circle/data_d3.js|;
+loc JSON_FILE_D3 = |project://series-2/visualization/circle/data_d3.json|;
 
 
 /**
