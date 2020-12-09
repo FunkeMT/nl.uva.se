@@ -244,7 +244,7 @@
             <div class="infobox">
                 <h1>Infobox</h1>
                 <pre id="data" class="selection"></pre>
-                <a id="circleURL" href="#" target="_blank"></a>
+                <a id="externalURL" href="#" target="_blank"></a>
             </div>
             <div class="filter-area">
                 <h1>Filtering</h1>
@@ -446,7 +446,9 @@
                             "loc": cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc),
                             "fromLine": results.files[i].results[showState["type"]][j].edges[k].fromLine,
                             "toLine": results.files[i].results[showState["type"]][j].edges[k].toLine
-                        }};
+                        },
+                        toLineFrom: results.files[i].results[showState["type"]][j].edges[k].fromLine,
+                        toLineTo: results.files[i].results[showState["type"]][j].edges[k].toLine};
                         if ("disabled" != showState["relation-size"]) {
                             item["value"] = results.files[i].results[showState["type"]][j].metadata[showState["relation-size"]];
                             item["title"] = showState["relation-size"] + ": " + item["value"];
@@ -504,9 +506,9 @@
             data["Java class"] = n.label;
             res = JSON.stringify(data, null, ' ');
 
-            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/circle/?src=" + n.label;
-            document.getElementById("circleURL").innerHTML = "Show Circle-Visualization for this node";
-            document.getElementById("circleURL").setAttribute("href", url);
+            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/circle/index.html?src=" + n.label;
+            document.getElementById("externalURL").innerHTML = "Show Circle-Visualization for this node ...";
+            document.getElementById("externalURL").setAttribute("href", url);
         } else {
             console.log(e);
             let n = edges.get(e.items[0].edgeId);
@@ -519,10 +521,10 @@
                 "to": n.rawTo,
             }, null, ' ');
             res = res.split("\\n").join("\n").split("\\t").join("\t");
-
-            document.getElementById("circleURL").innerHTML = "";
-            document.getElementById("circleURL").setAttribute("href", "");
-            // document.getElementById("data").innerHTML = res;
+            
+            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/file/index.html?src=" + n.to + "&from=" + n.toLineFrom + "&to=" + n.toLineTo + "#pre." + n.toLineFrom;
+            document.getElementById("externalURL").innerHTML = "Show clone in file ...";
+            document.getElementById("externalURL").setAttribute("href", url);
         }
         res = res.substring(2);
         res = res.substring(0, res.length-2);

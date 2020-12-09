@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="prism.css"/>
+</head>
+<body>
+    <pre data-line="" id="pre">
+        <code class="language-java" id="code"></code>
+    </pre>
+
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript">
+        /*
+        * Get URL Parameter
+        */
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var srcParam = urlParams.get('src');
+        var fromParam = urlParams.get('from');
+        var toParam = urlParams.get('to');
+
+        var fromTo = fromParam + "-" + toParam;
+        document.getElementById("pre").setAttribute("data-line", fromTo);
+
+        fetch("/Development/UvA/nl.uva.se/data/smallsql0.21_src/" + srcParam)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("code").innerHTML = data;
+            Prism.highlightAll();
+        });
+    </script>
+</body>
+</html>
