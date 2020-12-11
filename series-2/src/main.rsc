@@ -7,25 +7,34 @@ import Tuple;
 import Node;
 import Map;
 
+
 import basicSubtreeCloneDetector;
 import cloneVisualization;
 import utils::utils;
+import CloneSequenceDetector;
 
-void startAnalysis() {
+import lang::java::m3::AST;
+import lang::java::jdt::m3::AST;
+
+void main() {
 	loc testProj = |project://MyTest|;
 	loc currentProject = |project://MySimpleTest|;
 	loc smallsqlProj = |project://smallsql0.21_src|;
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
+	loc project = currentProject;
 	//loc project = simpleTestProj;
 	//loc project = smallsqlProj;
-	loc project = hsqldbProj;
+	//loc project = hsqldbProj;
 	
 	
 
 	// ############################## Type-1
-	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project), project);
+	set[Declaration] ast = collectAST(project);
+	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(ast, project);
+	cloneSequenceDetector(ast, clones);
+	
 	
 	
 	// ############################## Output
@@ -60,6 +69,6 @@ void startAnalysis() {
 	
 	
 	// ############################## Visualization
-	clonesToJson(clones, "<project.authority>");
-	clonesToJsonD3(clones);
+	//clonesToJson(clones, "<project.authority>");
+	//clonesToJsonD3(clones);
 }
