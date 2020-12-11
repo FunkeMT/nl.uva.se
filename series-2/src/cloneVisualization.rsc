@@ -86,7 +86,10 @@ str TMPL_EDGE = "
  *	PUBLIC
  *	###########
  */
-
+@doc{
+	Implementation for 'Graph' visualization.
+	Writes the given clone classes into a JSON file.
+}
 public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 	str json = "";
 	
@@ -165,7 +168,10 @@ public void clonesToJson(map[str, list[tuple[node, loc]]] clones, str project) {
 
 
 
-
+@doc{
+	Implementation for 'Circle' visualization.
+	Writes the given clone classes into a JSON file.
+}
 public void clonesToJsonD3(map[str, list[tuple[node, loc]]] clones) {
 	str CLONE_TMPL = "{\"name\":\"###NAME###\",\"size\":1,\"imports\":[###EDGES###],\"snippet\":\"###SNIPPET###\"}";
 	
@@ -199,8 +205,6 @@ public void clonesToJsonD3(map[str, list[tuple[node, loc]]] clones) {
 		
 	}
 	clonesStr = replaceLast(clonesStr, ",", "");
-	
-	
 	
 
 	json = "[

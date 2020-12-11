@@ -19,8 +19,8 @@ void startAnalysis() {
 	
 	//loc project = testProj;
 	//loc project = simpleTestProj;
-	loc project = smallsqlProj;
-	//loc project = hsqldbProj;
+	//loc project = smallsqlProj;
+	loc project = hsqldbProj;
 	
 	
 
@@ -40,7 +40,7 @@ void startAnalysis() {
 		println("Snippet:");
 		list[str] cloneLines = readFileLines(clones[key][0][1]);
 		str snippet = "";
-		for (line <- cleanCodeLines(cloneLines)) snippet += "<line>\n";
+		for (line <- cloneLines) snippet += "<line>\n";
 		println(snippet);
 		
 		println("##");
@@ -60,6 +60,6 @@ void startAnalysis() {
 	
 	
 	// ############################## Visualization
-	clonesToJson(clones, "<project>");
+	clonesToJson(clones, "<project.authority>");
 	clonesToJsonD3(clones);
 }
