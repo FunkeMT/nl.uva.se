@@ -51,12 +51,61 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			}
 		}
 	}
+	int prevCount = 0;
+	int prevCloneCount = 0;
+	int count = size(clones);
+	int cloneCountCalc = cloneCount(clones);
 	
-	
-	return removeEmptyClones(clones);
+	while (prevCount != count || prevCloneCount != cloneCountCalc) {
+		clones = removeEmptyClones(removeDuplicateSubClones(clones));
+		prevCount = count;
+		prevCloneCount = cloneCountCalc;
+		count = size(clones);
+		cloneCountCalc = cloneCount(clones);
+	}
+	return clones;
+}
+int cloneCount(map[str, list[tuple[node, loc]]] clones) {
+	int tot = 0;
+	for (hash <- clones) {
+		tot += size(clones[hash]);
+	}
+	return tot;
 }
 
 
+map[str, list[tuple[node, loc]]] removeDuplicateSubClones(map[str, list[tuple[node, loc]]] clones) {
+
+	for (hash <- clones) {
+		list[tuple[node, loc]] items = [];
+		for (base <- clones[hash]) {
+			loc baseLoc = base[1]; 
+			bool isInside = false;
+			for (hash2 <- clones) {
+				if (hash == hash2) continue;
+				for (clone <- clones[hash2]) {
+					loc cloneLoc = clone[1];
+
+					// If the clone is within the subtree, remove the clone.
+					bool withinSameLineArea = cloneLoc.begin.line < baseLoc.end.line &&
+							cloneLoc.end.line > baseLoc.begin.line;
+					bool exactSameLineArea = cloneLoc.begin.line == baseLoc.begin.line &&
+							cloneLoc.end.line == baseLoc.end.line;
+				
+					isInside = isInside || !((baseLoc.uri != cloneLoc.uri) ||
+						(!withinSameLineArea) || (exactSameLineArea && 
+						!(cloneLoc.end.column <= baseLoc.end.column &&
+						cloneLoc.begin.column >= baseLoc.begin.column)));
+					if (isInside) break;
+				}
+				if (isInside) break;
+			}
+			if (!isInside) items += [base];
+		}
+		clones[hash] = items;
+	}
+	return clones;
+}
 
 
 /**
