@@ -19,7 +19,7 @@ import utils::utils;
  *	CONFIG
  *	###########
  */
-public int MASS_THRESHOLD = 12;
+public int MASS_THRESHOLD = 2;
 
 
 /**

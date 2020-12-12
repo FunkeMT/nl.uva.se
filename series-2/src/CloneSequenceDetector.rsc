@@ -58,44 +58,55 @@ void cloneSequenceDetector(set[Declaration] ast, map[str, list[tuple[node, loc]]
 	//2. For k = MinimumSequenceLengthThreshold
 	//		to MaximumSequenceLength
 	tuple[list[list[node]]lists, int maxSentenceLength] sequences = setupSeqList(ast);
-	println(sequences.lists);
-	println(sequences.maxSentenceLength);
+	//println(sequences.lists);
+	//println(sequences.maxSentenceLength);
 
 	//println(setupSeqList(ast));
 
 	//3. Place all subsequences of length k
 	//	 into buckets according to subsequence hash
 	for(int k <- [MinimumSequenceLengthThreshold .. sequences.maxSentenceLength + 1]) {
-		//list	
-		println("???????????????????????");
-		println("???????????????????????");
-		println("???????????????????????");
-		println("???????????????????????");
-		list[value] a = [
+		println("?????????");
+		println("?????????");
+		println("?????????");
+		list[list[list[node]]] subSe = [
 	        subSequence | 
 	        \start <- [0..size(sequences.lists)], 
 	        subSequence := sequences.lists[\start .. (\start + k)], 
 	        size(subSequence) == k
 	    ];
-	    pretty(a);
-	    int b = 1; 
-		//println([
-	 //       subSequence | 
-	 //       \start <- [0..size(sequences.lists)], 
-	 //       subSequence := sequences.lists[\start .. (\start + k)], 
-	 //       size(subSequence) == k
-	 //   ]);
-		println("???????????????????????");
-		println("???????????????????????");
-		println("???????????????????????");
-		println("???????????????????????");
-	    break;
-	//	for (key <- clonesIn) {
-	//		for (clone <- clonesIn[key]) {
-	//			int i = 1;
-	//		}
-	//	}
-		println("");
+	    println("?????????");
+	    println("?????????");
+	    println("?????????");
+		
+		
+		map[str, list[list[list[node]]]] sequenceBuckets = ();
+		list[list[list[node]]] emptySequences = [];
+		for (subS <- subSe) {
+			str hash = ("" | it + toString(delAnnotationsRec(st)) | st <- subS);
+			sequenceBuckets[hash] ? emptySequences += [subS];
+		}
+		
+		for (bucketHash <- sequenceBuckets) {
+			sequencesIndeces = index(sequenceBuckets[bucketHash]);
+			
+			// * For each subsequence i and j in same bucket
+			for (originSeqIndex <- sequencesIndeces) {
+				for (cloneSeqIndex <- sequencesIndeces) {
+					if (originSeqIndex == cloneSeqIndex) continue;
+					list[list[node]] originSubSeq = sequenceBuckets[bucketHash][originSeqIndex];
+					list[list[node]] cloneSubSeq = sequenceBuckets[bucketHash][cloneSeqIndex];
+					
+					if (false) {
+						// * RemoveSequenceSubclonesOf(clones, i, j, k)
+                    	sequences.lists = removeSequenceSubclones(originSubSeq, cloneSubSeq, sequences.lists);
+                    	
+                    	// * AddSequenceClonePair(Clones, i, j, k)
+                    	sequences.lists = addClonePair(originSubSeq, cloneSubSeq, sequences.lists);
+					}
+				}
+			}
+		}
 	}
 
 	//4. For each subsequence i and j in same bucket
@@ -105,5 +116,5 @@ void cloneSequenceDetector(set[Declaration] ast, map[str, list[tuple[node, loc]]
 	//		AddSequenceClonePair(Clones,i,j,k)
 	//	 }
 	
-	println("Test");
+	println(sequences.lists);
 }
