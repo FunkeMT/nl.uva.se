@@ -12,25 +12,34 @@ import lang::java::jdt::m3::AST;
 
 
 
-/**
- * ToDo
- */
+
+@doc{
+	Collects the AST from a given Eclipse location.
+}
 set[Declaration] collectAST(loc project) {
-	//M3 model = createM3FromEclipseProject(project);
-	
 	set[Declaration] ast = createAstsFromEclipseProject(project, true);
-	
-	//list[Declaration] ast = [];
-	//for (m <- model.declarations) {
-	//	if (m[0].scheme == "java+compilationUnit") {
-	//		ast += createAstFromFile(m[0], true);
-	//	}
-	//}
-	
 	return ast;
 }
 
+@doc{
+	Collects the modules ('java CompilationUnit') from a given Eclipse location.
+}
+list[loc] collectModules(loc project) {
+	M3 model = createM3FromEclipseProject(project);
+	list[loc] moduleLocs = [];
+	
+	for (m <- model.declarations) {
+		if (m[0].scheme == "java+compilationUnit") {
+			moduleLocs += m[0];
+		}
+	}
+	
+	return moduleLocs;
+}
 
+@doc{
+	Cleans the given code lines (list) from blank lines and comments.
+}
 list[str] cleanCodeLines(list[str] codeLines) {
 	/*
 	 * 1) Filter blank lines

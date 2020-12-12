@@ -14,12 +14,8 @@ import lang::java::jdt::m3::AST;
 
 import utils::utils;
 
-/**
- *	###########
- *	CONFIG
- *	###########
- */
-public int MASS_THRESHOLD = 2;
+
+int MASS_THRESHOLD = 0;
 
 
 /**
@@ -36,7 +32,9 @@ public int MASS_THRESHOLD = 2;
 	Takes an AST, detect clones and returns the clones grouped by clone-classes.
 }
 map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
-	set[Declaration] ast, loc baseLocation) {	
+	set[Declaration] ast, loc baseLocation, int mass_threshold) {
+	MASS_THRESHOLD = mass_threshold;
+	
 	// Bucket List
 	map[str, list[tuple[node, loc]]] hashBucket = setupBucket((), ast,
 		baseLocation);

@@ -54,6 +54,7 @@
         display: inline-block;
         /* width: 100%; */
     }
+
     /* Start source: https://codeconvey.com/pure-css-range-slider-with-2-handles/ */
     label {
         float: left;
@@ -249,6 +250,7 @@
             <div class="filter-area">
                 <h1>Filtering</h1>
                 <div class="item">
+                    <!--
                     <span>Show type:</span>
                     <form class="pure-form inline">
                         <label for="type-selection-1" class="pure-radio">
@@ -256,6 +258,7 @@
                         <label for="type-selection-2" class="pure-radio">
                             <input type="radio" id="type-selection-2" class="type-selection" name="type-selection" value="type-2" /> Type-2</label>
                     </form>
+                    -->
                     <div style="clear: both;"></div>
                     <div id="sliders">
 
@@ -464,7 +467,7 @@
 
     document.title = results["project-name"] + " results";
     document.getElementById("project-data").innerHTML = "<pre>"+JSON.stringify({
-        "name": results["project-name"],
+        "name": results["Project-Name"],
         "overall": results.metadata,
     }, null, ' ')+"</pre>";
     // create an array with nodes
