@@ -23,7 +23,7 @@ import lang::java::jdt::m3::AST;
  *	CONFIG
  *	###########
  */
-int MASS_THRESHOLD = 2;
+int MASS_THRESHOLD = 12;
 
 loc testProj = |project://MyTest|;
 loc currentProject = |project://MySimpleTest|;
@@ -34,16 +34,15 @@ loc hsqldbProj = |project://hsqldb-2.3.1|;
 
 void main() {
 	//loc project = testProj;
-	loc project = currentProject;
+	//loc project = currentProject;
 	//loc project = simpleTestProj;
-	//loc project = smallsqlProj;
+	loc project = smallsqlProj;
 	//loc project = hsqldbProj;
 	
 	
 
 	// ############################## Type-1
-	set[Declaration] ast = collectAST(project);
-	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(ast, project, MASS_THRESHOLD);
+	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(collectAST(project), project, MASS_THRESHOLD);
 	//cloneSequenceDetector(ast, clones);
 	
 	
