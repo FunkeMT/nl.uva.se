@@ -110,9 +110,9 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 					newLocs += [<location.cloneIndex, [location.flatTreeIndex[0] - 1] + location.flatTreeIndex>];
 				}
 				locs[hash] = newLocs;
-				println("We can move up!");
+				//println("We can move up!");
 			}
-			println("-");
+			//println("-");
 			
 		}
 	}
@@ -138,16 +138,35 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 					newLocs += [<location.cloneIndex, location.flatTreeIndex + [location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1]>];
 				}
 				locs[hash] = newLocs;
-				println("We can move down!");
+				//println("We can move down!");
 			}
-			println("+");
+			//println("+");
 		}
 	}
-	
+	map[str, list[tuple[node, loc]]] results = ();
+	for (hash <- locs) {
+		if (!results[hash]?) {
+			results[hash] = [];
+		}
 
+		for (location <- locs[hash]) {
+			list[Statement] statements = [];
+			int totLength = 0;
+			for (i <- location.flatTreeIndex) {
+				statements += [flatTree[i]];
+				totLength += flatTree[i].src.length;
+			}
+			Statement b = block(statements);
+			b.src = statements[0].src;
+			b.src.length = totLength;
+			b.src.end.line = statements[size(statements)-1].src.end.line;
+			results[hash] += [<b, b.src>]; 
+			//b.src = statements[0];
+		}
+	}
 	//println(nodeFlatTreeLoc);
 	
-	return clones;
+	return results;
 }
 int cloneCount(map[str, list[tuple[node, loc]]] clones) {
 	int tot = 0;
