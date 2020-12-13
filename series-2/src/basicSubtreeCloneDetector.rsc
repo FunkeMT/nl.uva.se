@@ -89,7 +89,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			cloneIndex = cloneIndex + 1;
 		}
 	}
-		for (hash <- locs) {
+	for (hash <- locs) {
 		bool moveUp = true;
 		while (moveUp) {
 			moveUp = false;
@@ -145,6 +145,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 	}
 	map[str, list[tuple[node, loc]]] results = ();
 	for (hash <- locs) {
+		if (size(locs[hash]) == 1) continue;
 		if (!results[hash]?) {
 			results[hash] = [];
 		}
@@ -161,7 +162,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			b.src.length = endPos - statements[0].src.offset;
 			//b.src.length = (statements[size(statements) - 1].src.offset - statements[0].src.offset) + statements[size(statements) - 1].src.length;
 			////b.src.length = statements[size(statements) - 1].src.length + statements[size(statements) - 1].src.offset;
-			//b.src.end.line = statements[size(statements)-1].src.end.line;
+			b.src.end.line = statements[size(statements)-1].src.end.line;
 			results[hash] += [<b, b.src>]; 
 			//b.src = statements[0];
 		}

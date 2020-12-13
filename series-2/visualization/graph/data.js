@@ -3,11 +3,11 @@ var results = {
 	"Project-Name": "smallsql0.21_src",
 	"metadata": {
         "Volume": 23717,
-        "%-Duplicated-Lines": 3,
-        "Number-Duplicated-Lines": 940,
-        "Number-Clones": 289,
-        "Number-Clone-Classes": 105,
-        "Biggest-Clone-Lines": 462,
+        "%-Duplicated-Lines": 2,
+        "Number-Duplicated-Lines": 478,
+        "Number-Clones": 288,
+        "Number-Clone-Classes": 104,
+        "Biggest-Clone-Lines": 19,
         "Biggest-Clone-Class": 20
     }
 ,
@@ -47,37 +47,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -110,25 +110,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 57,
-    "toLine": 59
+    "toLine": 66
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 54,
-    "toLine": 56
+    "toLine": 61
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,]
 }
@@ -145,43 +145,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -214,25 +214,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 436,
-    "toLine": 439
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 478,
-    "toLine": 481
+    "toLine": 482
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Command.java",
     "fromLine": 138,
-    "toLine": 141
+    "toLine": 142
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 494,
-    "toLine": 497
+    "toLine": 498
 }
 ,]
 }
@@ -249,25 +249,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 436,
-    "toLine": 439
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 478,
-    "toLine": 481
+    "toLine": 482
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Command.java",
     "fromLine": 138,
-    "toLine": 141
+    "toLine": 142
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 494,
-    "toLine": 497
+    "toLine": 498
 }
 ,]
 }
@@ -284,25 +284,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 436,
-    "toLine": 439
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 478,
-    "toLine": 481
+    "toLine": 482
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Command.java",
     "fromLine": 138,
-    "toLine": 141
+    "toLine": 142
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 494,
-    "toLine": 497
+    "toLine": 498
 }
 ,]
 }
@@ -335,13 +335,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
     "fromLine": 142,
-    "toLine": 146
+    "toLine": 147
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
     "fromLine": 153,
-    "toLine": 157
+    "toLine": 158
 }
 ,]
 }
@@ -358,13 +358,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
     "fromLine": 142,
-    "toLine": 146
+    "toLine": 147
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
     "fromLine": 153,
-    "toLine": 157
+    "toLine": 158
 }
 ,]
 }
@@ -397,13 +397,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 62,
-    "toLine": 66
+    "toLine": 67
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 62,
-    "toLine": 66
+    "toLine": 67
 }
 ,]
 }
@@ -420,13 +420,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,]
 }
@@ -443,13 +443,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,]
 }
@@ -523,43 +523,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -576,43 +576,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -776,13 +776,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSCallableStatement.java",
     "fromLine": 131,
-    "toLine": 133
+    "toLine": 141
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSCallableStatement.java",
     "fromLine": 113,
-    "toLine": 115
+    "toLine": 123
 }
 ,]
 }
@@ -799,13 +799,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSCallableStatement.java",
     "fromLine": 131,
-    "toLine": 133
+    "toLine": 141
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSCallableStatement.java",
     "fromLine": 113,
-    "toLine": 115
+    "toLine": 123
 }
 ,]
 }
@@ -838,37 +838,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -901,13 +901,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSStatement.java",
     "fromLine": 271,
-    "toLine": 274
+    "toLine": 281
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSPreparedStatement.java",
     "fromLine": 249,
-    "toLine": 252
+    "toLine": 259
 }
 ,]
 }
@@ -940,13 +940,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1332,
-    "toLine": 1336
+    "toLine": 1335
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1239,
-    "toLine": 1243
+    "toLine": 1242
 }
 ,]
 }
@@ -963,13 +963,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1332,
-    "toLine": 1336
+    "toLine": 1335
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1239,
-    "toLine": 1243
+    "toLine": 1242
 }
 ,]
 }
@@ -986,19 +986,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1862,
-    "toLine": 1862
+    "toLine": 1864
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1874,
-    "toLine": 1874
+    "toLine": 1876
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1868,
-    "toLine": 1868
+    "toLine": 1870
 }
 ,]
 }
@@ -1015,19 +1015,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1862,
-    "toLine": 1862
+    "toLine": 1864
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1874,
-    "toLine": 1874
+    "toLine": 1876
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1868,
-    "toLine": 1868
+    "toLine": 1870
 }
 ,]
 }
@@ -1044,19 +1044,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1862,
-    "toLine": 1862
+    "toLine": 1864
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1874,
-    "toLine": 1874
+    "toLine": 1876
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1868,
-    "toLine": 1868
+    "toLine": 1870
 }
 ,]
 }
@@ -1073,13 +1073,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 849,
-    "toLine": 853
+    "toLine": 852
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 839,
-    "toLine": 843
+    "toLine": 842
 }
 ,]
 }
@@ -1096,13 +1096,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 849,
-    "toLine": 853
+    "toLine": 852
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 839,
-    "toLine": 843
+    "toLine": 842
 }
 ,]
 }
@@ -1119,13 +1119,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 674,
-    "toLine": 674
+    "toLine": 675
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1104,
-    "toLine": 1104
+    "toLine": 1105
 }
 ,]
 }
@@ -1142,13 +1142,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 674,
-    "toLine": 674
+    "toLine": 675
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1104,
-    "toLine": 1104
+    "toLine": 1105
 }
 ,]
 }
@@ -1165,13 +1165,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1932,
-    "toLine": 1937
+    "toLine": 1936
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 352,
-    "toLine": 357
+    "toLine": 356
 }
 ,]
 }
@@ -1188,13 +1188,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1932,
-    "toLine": 1937
+    "toLine": 1936
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 352,
-    "toLine": 357
+    "toLine": 356
 }
 ,]
 }
@@ -1289,25 +1289,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 436,
-    "toLine": 439
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 478,
-    "toLine": 481
+    "toLine": 482
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Command.java",
     "fromLine": 138,
-    "toLine": 141
+    "toLine": 142
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandSelect.java",
     "fromLine": 494,
-    "toLine": 497
+    "toLine": 498
 }
 ,]
 }
@@ -1340,13 +1340,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestAlterTable2.java",
     "fromLine": 45,
-    "toLine": 45
+    "toLine": 48
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestAlterTable2.java",
     "fromLine": 75,
-    "toLine": 75
+    "toLine": 78
 }
 ,]
 }
@@ -1363,13 +1363,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestAlterTable2.java",
     "fromLine": 45,
-    "toLine": 45
+    "toLine": 48
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestAlterTable2.java",
     "fromLine": 75,
-    "toLine": 75
+    "toLine": 78
 }
 ,]
 }
@@ -1402,19 +1402,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 109,
-    "toLine": 109
+    "toLine": 110
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 114,
-    "toLine": 114
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 119,
-    "toLine": 119
+    "toLine": 120
 }
 ,]
 }
@@ -1431,19 +1431,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 109,
-    "toLine": 109
+    "toLine": 110
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 114,
-    "toLine": 114
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 119,
-    "toLine": 119
+    "toLine": 120
 }
 ,]
 }
@@ -1460,19 +1460,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 109,
-    "toLine": 109
+    "toLine": 110
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 114,
-    "toLine": 114
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTimestampDiff.java",
     "fromLine": 119,
-    "toLine": 119
+    "toLine": 120
 }
 ,]
 }
@@ -1646,13 +1646,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTokenizer.java",
     "fromLine": 147,
-    "toLine": 150
+    "toLine": 149
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTokenizer.java",
     "fromLine": 87,
-    "toLine": 90
+    "toLine": 89
 }
 ,]
 }
@@ -1669,13 +1669,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTokenizer.java",
     "fromLine": 147,
-    "toLine": 150
+    "toLine": 149
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTokenizer.java",
     "fromLine": 87,
-    "toLine": 90
+    "toLine": 89
 }
 ,]
 }
@@ -1708,13 +1708,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SmallSQLException.java",
     "fromLine": 145,
-    "toLine": 145
+    "toLine": 146
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SmallSQLException.java",
     "fromLine": 182,
-    "toLine": 182
+    "toLine": 183
 }
 ,]
 }
@@ -1731,13 +1731,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SmallSQLException.java",
     "fromLine": 145,
-    "toLine": 145
+    "toLine": 146
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SmallSQLException.java",
     "fromLine": 182,
-    "toLine": 182
+    "toLine": 183
 }
 ,]
 }
@@ -1770,25 +1770,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 57,
-    "toLine": 59
+    "toLine": 66
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 54,
-    "toLine": 56
+    "toLine": 61
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,]
 }
@@ -1805,43 +1805,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -1936,13 +1936,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSResultSet.java",
     "fromLine": 372,
-    "toLine": 372
+    "toLine": 373
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSResultSet.java",
     "fromLine": 413,
-    "toLine": 413
+    "toLine": 414
 }
 ,]
 }
@@ -1959,13 +1959,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSResultSet.java",
     "fromLine": 372,
-    "toLine": 372
+    "toLine": 373
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSResultSet.java",
     "fromLine": 413,
-    "toLine": 413
+    "toLine": 414
 }
 ,]
 }
@@ -1998,13 +1998,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,]
 }
@@ -2021,13 +2021,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,]
 }
@@ -2044,13 +2044,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 629,
-    "toLine": 629
+    "toLine": 639
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 670,
-    "toLine": 670
+    "toLine": 680
 }
 ,]
 }
@@ -2067,13 +2067,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 629,
-    "toLine": 629
+    "toLine": 639
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 670,
-    "toLine": 670
+    "toLine": 680
 }
 ,]
 }
@@ -2090,73 +2090,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2173,73 +2173,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2256,73 +2256,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2339,73 +2339,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2422,73 +2422,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2505,73 +2505,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2588,73 +2588,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2671,73 +2671,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2754,73 +2754,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2837,73 +2837,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -2920,73 +2920,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -3003,73 +3003,73 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 125,
-    "toLine": 127
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 184,
-    "toLine": 186
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 237,
-    "toLine": 239
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 358,
-    "toLine": 360
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 394,
-    "toLine": 396
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 443,
-    "toLine": 445
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 498,
-    "toLine": 500
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 553,
-    "toLine": 555
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 600,
-    "toLine": 602
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 676,
-    "toLine": 678
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 635,
-    "toLine": 637
+    "toLine": 639
 }
 ,]
 }
@@ -3086,13 +3086,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 178,
-    "toLine": 178
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 119,
-    "toLine": 119
+    "toLine": 129
 }
 ,]
 }
@@ -3109,13 +3109,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 178,
-    "toLine": 178
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 119,
-    "toLine": 119
+    "toLine": 129
 }
 ,]
 }
@@ -3132,13 +3132,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,]
 }
@@ -3155,13 +3155,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,]
 }
@@ -3178,79 +3178,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3267,79 +3267,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3356,79 +3356,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3445,79 +3445,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3534,79 +3534,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3623,79 +3623,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3712,79 +3712,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3801,79 +3801,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3890,79 +3890,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -3979,79 +3979,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -4068,79 +4068,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -4157,79 +4157,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -4246,79 +4246,79 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 126,
-    "toLine": 126
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 151,
-    "toLine": 151
+    "toLine": 154
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 185,
-    "toLine": 185
+    "toLine": 188
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 238,
-    "toLine": 238
+    "toLine": 241
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 298,
-    "toLine": 298
+    "toLine": 301
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 359,
-    "toLine": 359
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 398
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 444,
-    "toLine": 444
+    "toLine": 447
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 499,
-    "toLine": 499
+    "toLine": 502
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 554,
-    "toLine": 554
+    "toLine": 557
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 601,
-    "toLine": 601
+    "toLine": 604
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 677,
-    "toLine": 677
+    "toLine": 680
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 636,
-    "toLine": 636
+    "toLine": 639
 }
 ,]
 }
@@ -4335,13 +4335,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 412,
-    "toLine": 412
+    "toLine": 413
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 519,
-    "toLine": 519
+    "toLine": 520
 }
 ,]
 }
@@ -4358,13 +4358,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 412,
-    "toLine": 412
+    "toLine": 413
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 519,
-    "toLine": 519
+    "toLine": 520
 }
 ,]
 }
@@ -4381,13 +4381,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,]
 }
@@ -4404,13 +4404,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 618,
-    "toLine": 618
+    "toLine": 625
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
-    "toLine": 655
+    "toLine": 662
 }
 ,]
 }
@@ -4427,13 +4427,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 487,
-    "toLine": 487
+    "toLine": 494
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 434,
-    "toLine": 434
+    "toLine": 441
 }
 ,]
 }
@@ -4450,13 +4450,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 487,
-    "toLine": 487
+    "toLine": 494
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 434,
-    "toLine": 434
+    "toLine": 441
 }
 ,]
 }
@@ -5128,13 +5128,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 726,
-    "toLine": 730
+    "toLine": 729
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 292,
-    "toLine": 297
+    "toLine": 296
 }
 ,]
 }
@@ -5151,13 +5151,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 726,
-    "toLine": 730
+    "toLine": 729
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 292,
-    "toLine": 297
+    "toLine": 296
 }
 ,]
 }
@@ -5197,13 +5197,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 322,
-    "toLine": 328
+    "toLine": 327
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 208,
-    "toLine": 214
+    "toLine": 213
 }
 ,]
 }
@@ -5220,13 +5220,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 322,
-    "toLine": 328
+    "toLine": 327
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 208,
-    "toLine": 214
+    "toLine": 213
 }
 ,]
 }
@@ -5305,37 +5305,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -5368,13 +5368,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandInsert.java",
     "fromLine": 166,
-    "toLine": 170
+    "toLine": 169
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandInsert.java",
     "fromLine": 156,
-    "toLine": 160
+    "toLine": 159
 }
 ,]
 }
@@ -5391,13 +5391,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandInsert.java",
     "fromLine": 166,
-    "toLine": 170
+    "toLine": 169
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/CommandInsert.java",
     "fromLine": 156,
-    "toLine": 160
+    "toLine": 159
 }
 ,]
 }
@@ -5533,19 +5533,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
     "fromLine": 76,
-    "toLine": 80
+    "toLine": 79
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
     "fromLine": 104,
-    "toLine": 108
+    "toLine": 107
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
     "fromLine": 46,
-    "toLine": 50
+    "toLine": 49
 }
 ,]
 }
@@ -5813,25 +5813,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 57,
-    "toLine": 59
+    "toLine": 66
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 54,
-    "toLine": 56
+    "toLine": 61
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,]
 }
@@ -5848,43 +5848,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -5917,13 +5917,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/TableView.java",
     "fromLine": 105,
-    "toLine": 113
+    "toLine": 112
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescription.java",
     "fromLine": 186,
-    "toLine": 194
+    "toLine": 193
 }
 ,]
 }
@@ -5956,13 +5956,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionSubstring.java",
     "fromLine": 80,
-    "toLine": 80
+    "toLine": 82
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionSubstring.java",
     "fromLine": 59,
-    "toLine": 59
+    "toLine": 61
 }
 ,]
 }
@@ -5979,13 +5979,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionSubstring.java",
     "fromLine": 80,
-    "toLine": 80
+    "toLine": 82
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionSubstring.java",
     "fromLine": 59,
-    "toLine": 59
+    "toLine": 61
 }
 ,]
 }
@@ -6119,13 +6119,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
     "fromLine": 173,
-    "toLine": 176
+    "toLine": 175
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
     "fromLine": 112,
-    "toLine": 115
+    "toLine": 114
 }
 ,]
 }
@@ -6142,13 +6142,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
     "fromLine": 173,
-    "toLine": 176
+    "toLine": 175
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
     "fromLine": 112,
-    "toLine": 115
+    "toLine": 114
 }
 ,]
 }
@@ -6181,19 +6181,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 363,
-    "toLine": 363
+    "toLine": 364
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 377,
-    "toLine": 377
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 398,
-    "toLine": 398
+    "toLine": 399
 }
 ,]
 }
@@ -6210,19 +6210,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 363,
-    "toLine": 363
+    "toLine": 364
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 377,
-    "toLine": 377
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 398,
-    "toLine": 398
+    "toLine": 399
 }
 ,]
 }
@@ -6239,19 +6239,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 363,
-    "toLine": 363
+    "toLine": 364
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 377,
-    "toLine": 377
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 398,
-    "toLine": 398
+    "toLine": 399
 }
 ,]
 }
@@ -6360,13 +6360,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 375,
-    "toLine": 375
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 399
 }
 ,]
 }
@@ -6383,13 +6383,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 375,
-    "toLine": 375
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 399
 }
 ,]
 }
@@ -6406,13 +6406,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 375,
-    "toLine": 375
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 399
 }
 ,]
 }
@@ -6429,13 +6429,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 375,
-    "toLine": 375
+    "toLine": 378
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 399
 }
 ,]
 }
@@ -6452,13 +6452,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 564,
-    "toLine": 564
+    "toLine": 565
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 597,
-    "toLine": 597
+    "toLine": 598
 }
 ,]
 }
@@ -6475,13 +6475,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 564,
-    "toLine": 564
+    "toLine": 565
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/StoreImpl.java",
     "fromLine": 597,
-    "toLine": 597
+    "toLine": 598
 }
 ,]
 }
@@ -6661,37 +6661,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -6724,13 +6724,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Money.java",
     "fromLine": 67,
-    "toLine": 71
+    "toLine": 70
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Money.java",
     "fromLine": 61,
-    "toLine": 65
+    "toLine": 64
 }
 ,]
 }
@@ -6747,13 +6747,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Money.java",
     "fromLine": 67,
-    "toLine": 71
+    "toLine": 70
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Money.java",
     "fromLine": 61,
-    "toLine": 65
+    "toLine": 64
 }
 ,]
 }
@@ -6926,13 +6926,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MutableNumeric.java",
     "fromLine": 235,
-    "toLine": 240
+    "toLine": 239
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MutableNumeric.java",
     "fromLine": 167,
-    "toLine": 172
+    "toLine": 171
 }
 ,]
 }
@@ -6949,13 +6949,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MutableNumeric.java",
     "fromLine": 235,
-    "toLine": 240
+    "toLine": 239
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MutableNumeric.java",
     "fromLine": 167,
-    "toLine": 172
+    "toLine": 171
 }
 ,]
 }
@@ -6988,13 +6988,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 104,
-    "toLine": 109
+    "toLine": 111
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 84,
-    "toLine": 89
+    "toLine": 91
 }
 ,]
 }
@@ -7011,13 +7011,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 104,
-    "toLine": 109
+    "toLine": 111
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 84,
-    "toLine": 89
+    "toLine": 91
 }
 ,]
 }
@@ -7034,13 +7034,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 255,
-    "toLine": 258
+    "toLine": 257
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 241,
-    "toLine": 244
+    "toLine": 243
 }
 ,]
 }
@@ -7057,13 +7057,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 255,
-    "toLine": 258
+    "toLine": 257
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 241,
-    "toLine": 244
+    "toLine": 243
 }
 ,]
 }
@@ -7080,13 +7080,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 104,
-    "toLine": 109
+    "toLine": 111
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 84,
-    "toLine": 89
+    "toLine": 91
 }
 ,]
 }
@@ -7103,13 +7103,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 104,
-    "toLine": 109
+    "toLine": 111
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "fromLine": 84,
-    "toLine": 89
+    "toLine": 91
 }
 ,]
 }
@@ -7142,25 +7142,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 57,
-    "toLine": 59
+    "toLine": 66
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 54,
-    "toLine": 56
+    "toLine": 61
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 51,
-    "toLine": 53
+    "toLine": 59
 }
 ,]
 }
@@ -7177,43 +7177,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -7285,13 +7285,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/GroupResult.java",
     "fromLine": 111,
-    "toLine": 116
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/GroupResult.java",
     "fromLine": 89,
-    "toLine": 94
+    "toLine": 93
 }
 ,]
 }
@@ -7308,13 +7308,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/GroupResult.java",
     "fromLine": 111,
-    "toLine": 116
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/GroupResult.java",
     "fromLine": 89,
-    "toLine": 94
+    "toLine": 93
 }
 ,]
 }
@@ -7330,24 +7330,30 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 13
+        "cloneClassesType1": 12
     },
     "results": {
         "type-1": [
             
 {
     "metadata": {
-        "cc": 60,
-        "volume": 462,
-        "mass": 9151,
-        "clones": 1,
-        "snippet": "{\n\t\tConnection con = AllTests.getConnection();\n        Connection con2 = AllTests.createConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"create table transactions (ID  INTEGER NOT NULL, Name VARCHAR(100), FirstName VARCHAR(100), Points INTEGER, LicenseID INTEGER, PRIMARY KEY(ID))\");\n\t\t\tcon.commit();\n\t\t\tcon2.setAutoCommit(false);\n\t\t\tPreparedStatement pr = con2.prepareStatement(\"insert into transactions (id,Name,FirstName,Points,LicenseID) values (?,?,?,?,?)\");\n\t\t\tpr.setInt( \t\t1, 0 );\n\t\t\tpr.setString( \t2, \"Pilot_1\" );\n\t\t\tpr.setString( \t3, \"Herkules\" );\n\t\t\tpr.setInt( \t\t4, 1 );\n\t\t\tpr.setInt( \t\t5, 1 );\n\t\t\tpr.addBatch();\n\t\t\tpr.executeBatch();\n\t\t\tcon2.commit();\n\t\t}finally{\n            con2.close();\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tpublic void testCommit() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Select v From transactions\");\n\t\t\tcon.commit();\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tpublic void testCommitWithOneCommitRow() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Select v From transactions\");\n\t\t\tcon.commit();\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tpublic void testRollback() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t    con.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Select v From transactions\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) (Select v From transactions)\");\n\t\t\tcon.rollback();\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tpublic void testRollbackWithOneCommitRow() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Select v From transactions\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) (Select v From transactions)\");\n\t\t\tcon.rollback();\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tprivate void testInsertRow_Last(Connection con, boolean callLastBefore) throws Exception{\n\t\ttry{\t\t\t\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tResultSet rs = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)\n\t\t\tif(callLastBefore) rs.last();\n\t\t\trs.moveToInsertRow();\n\t\t\trs.updateString(\"v\", \"qwert2\");\n\t\t\trs.insertRow();\n\t\t\trs.last();\n\t\t\tassertEquals(\"qwert2\", rs.getString(\"v\"));\n\t\t\tassertFalse( rs.next() );\n\t\t\tassertTrue( rs.previous() );\n\t\t\tassertEquals(\"qwert2\", rs.getString(\"v\"));\n\t\t\trs.beforeFirst();\n\t\t\tassertTrue( rs.next() );\n\t\t\tassertEquals(\"qwert2\", rs.getString(\"v\"));\n\t\t\tassertFalse( rs.next() );\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t}\n\t}\n\tpublic void testInsertRow_Last() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttestInsertRow_Last(con, false);\n\t\ttestInsertRow_Last(con, true);\n\t\tcon.setAutoCommit(false);\n\t\ttestInsertRow_Last(con, false);\n\t\tcon.setAutoCommit(true);\n\t\tcon.setAutoCommit(false);\n\t\ttestInsertRow_Last(con, true);\n\t\tcon.setAutoCommit(true);\n\t}\n\tpublic void testInsertAndUpdate() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Create Table transactions ( v varchar(20))\");\n\t\t\tassertEquals( 1, con.createStatement().executeUpdate(\"Insert Into transactions(v) Values('qwert')\") );\n\t\t\tassertEquals( 1, con.createStatement().executeUpdate(\"Update transactions set v='qwert1'\") );\n            assertEquals( 1, con.createStatement().executeUpdate(\"Update transactions set v='qwert2'\") );\n\t\t\tSavepoint savepoint = con.setSavepoint();\n\t\t\tassertEquals( 1, con.createStatement().executeUpdate(\"Update transactions set v='qwert 3'\") );\n\t\t\tcon.rollback( savepoint );\n\t\t\tcon.commit();\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n    public void testUpdateAndSavepoint() throws Exception{\n        Connection con = AllTests.getConnection();\n        try{\n            con.createStatement().execute(\"Create Table transactions ( v varchar(20))\");\n            assertEquals(1, con.createStatement().executeUpdate(\"Insert Into transactions(v) Values('qwert')\"));\n            con.setAutoCommit(false);\n            assertEquals(1, con.createStatement().executeUpdate(\"Update transactions set v='qwert1'\"));\n            assertEquals(1, con.createStatement().executeUpdate(\"Update transactions set v='qwert2'\"));\n            Savepoint savepoint = con.setSavepoint();\n            assertEquals(1, con.createStatement().executeUpdate(\"Update transactions set v='qwert 3'\"));\n            assertEquals(1, con.createStatement().executeUpdate(\"Update transactions set v='qwert 4'\"));\n            assertEquals(1, con.createStatement().executeUpdate(\"Update transactions set v='qwert 5'\"));\n            con.rollback(savepoint);\n            con.commit();\n        }finally{\n            dropTable(con, \"transactions\");\n            con.setAutoCommit(true);\n        }\n    }\n\tpublic void testInsertRow_withWrongWhere() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.setAutoCommit(false);\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tResultSet rs = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)\n\t\t\trs.moveToInsertRow();\n\t\t\trs.updateString(\"v\", \"qwert2\");\n\t\t\trs.insertRow();\n\t\t\trs.beforeFirst();\n\t\t\tassertTrue( rs.next() );\n\t\t\tassertEquals(\"qwert2\", rs.getString(\"v\"));\n\t\t\tassertFalse( rs.next() );\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t\tcon.setAutoCommit(true);\n\t\t}\n\t}\n\tpublic void testInsertRow_withRightWhere() throws Exception{\n\t\tConnection con = AllTests.getConnection();\n\t\ttry{\t\t\t\n\t\t\tcon.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert2')\");\n\t\t\tResultSet rs = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)\n\t\t\trs.moveToInsertRow();\n\t\t\trs.updateString(\"v\", \"qwert\");\n\t\t\trs.insertRow();\n\t\t\trs.beforeFirst();\n\t\t\tassertTrue( rs.next() );\n\t\t\tassertEquals(\"qwert\", rs.getString(\"v\"));\n\t\t\tassertFalse( rs.next() );\n\t\t}finally{\n\t\t\ttry{\n\t\t\t\tcon.createStatement().execute(\"Drop Table transactions\");\n\t\t\t}catch(Throwable e){e.printStackTrace();}\n\t\t}\n\t}\n\tpublic void testReadUncommited() throws Exception{\n\t\tConnection con1 = AllTests.getConnection();\n\t\tConnection con2 = AllTests.createConnection();\n\t\ttry{\t\t\n\t\t\tcon2.setTransactionIsolation( Connection.TRANSACTION_READ_UNCOMMITTED );\n\t\t\tcon1.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon1.setAutoCommit(false);\n\t\t\tcon1.createStatement().execute(\"Insert Into transactions(v) Values('qwert2')\");\n\t\t\tassertTrue( rs2.next() );\n\t\t\tassertEquals( 1, rs2.getInt(1) );\n\t\t}finally{\n\t\t    dropTable(con1, \"transactions\");\n\t\t\tcon1.setAutoCommit(true);\n\t\t\tcon2.close();\n\t\t}\n\t}\n\tpublic void testReadCommited() throws Exception{\n\t\tConnection con1 = AllTests.getConnection();\n\t\tConnection con2 = AllTests.createConnection();\n\t\ttry{\t\t\n\t\t\tcon2.setTransactionIsolation( Connection.TRANSACTION_READ_COMMITTED );\n\t\t\tcon1.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon1.setAutoCommit(false);\n\t\t\tcon1.createStatement().execute(\"Insert Into transactions(v) Values('qwert2')\");\n\t\t\tassertTrue( rs2.next() );\n\t\t\tassertEquals( 0, rs2.getInt(1) );\n\t\t}finally{\n            dropTable(con1, \"transactions\");\n\t\t\tcon1.setAutoCommit(true);\n\t\t\tcon2.close();\n\t\t}\n\t}\n    public void testReadSerialized() throws Exception{\n        Connection con1 = AllTests.getConnection();\n        Connection con2 = AllTests.createConnection();\n        try{        \n            con1.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n            con1.createStatement().execute(\"Insert Into transactions(v) Values('qwert2')\");\n            con1.setTransactionIsolation( Connection.TRANSACTION_SERIALIZABLE );\n            con1.setAutoCommit(false);\n            assertTrue( rs1.next() );\n            assertTrue( rs2.next() );\n            try{\n                con2.createStatement().execute(\"Insert Into transactions(v) Values('qwert3')\");\n                fail(\"TRANSACTION_SERIALIZABLE does not lock the table\");\n            }catch(SQLException ex){\n                assertSQLException(\"01000\", 0, ex);\n            }\n        }finally{\n            con2.close();\n            dropTable(con1, \"transactions\");\n            con1.setAutoCommit(true);\n        }\n    }\n\tpublic void testReadWriteLock() throws Exception{\n\t\tConnection con1 = AllTests.getConnection();\n\t\tConnection con2 = AllTests.createConnection();\n\t\ttry{\t\t\n\t\t\tcon1.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon1.createStatement().execute(\"Insert Into transactions(v) Values('qwert1')\");\n\t\t\tcon1.setAutoCommit(false);\n\t\t\tcon1.createStatement().execute(\"Update transactions Set v = 'qwert'\");\n\t\t\tlong time = System.currentTimeMillis();\n\t\t\ttry{\n\t\t\t}catch(SQLException ex){\n\t\t\t    assertSQLException(\"01000\", 0, ex);\n\t\t\t}\t\t\n\t\t\tassertTrue(\"Wait time to small\", System.currentTimeMillis()-time>=5000);\n\t\t}finally{\n\t\t    con2.close();\n\t\t\tcon1.setAutoCommit(true);\n\t\t\tdropTable(con1, \"transactions\");\n"
+        "cc": 1,
+        "volume": 7,
+        "mass": 53,
+        "clones": 2,
+        "snippet": "con.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tResultSet rs = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)\n"
     },
     "edges": [
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
-    "fromLine": 43,
-    "toLine": 74
+    "fromLine": 349,
+    "toLine": 355
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
+    "fromLine": 199,
+    "toLine": 205
 }
 ,]
 }
@@ -7364,36 +7370,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 349,
-    "toLine": 349
+    "toLine": 355
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 199,
-    "toLine": 199
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 7,
-        "mass": 53,
-        "clones": 2,
-        "snippet": "con.createStatement().execute(\"Create Table transactions (i int identity, v varchar(20))\");\n\t\t\tcon.createStatement().execute(\"Insert Into transactions(v) Values('qwert')\");\n\t\t\tResultSet rs = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
-    "fromLine": 349,
-    "toLine": 349
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
-    "fromLine": 199,
-    "toLine": 199
+    "toLine": 205
 }
 ,]
 }
@@ -7410,13 +7393,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 400
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 221,
-    "toLine": 221
+    "toLine": 226
 }
 ,]
 }
@@ -7433,13 +7416,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 396,
-    "toLine": 396
+    "toLine": 400
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 221,
-    "toLine": 221
+    "toLine": 226
 }
 ,]
 }
@@ -7456,13 +7439,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 441,
-    "toLine": 445
+    "toLine": 444
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 419,
-    "toLine": 423
+    "toLine": 422
 }
 ,]
 }
@@ -7479,13 +7462,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 441,
-    "toLine": 445
+    "toLine": 444
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 419,
-    "toLine": 423
+    "toLine": 422
 }
 ,]
 }
@@ -7502,37 +7485,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7549,37 +7532,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7596,37 +7579,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7643,37 +7626,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7690,37 +7673,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7737,37 +7720,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 98,
-    "toLine": 103
+    "toLine": 102
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 129,
-    "toLine": 134
+    "toLine": 133
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 157,
-    "toLine": 162
+    "toLine": 161
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 188,
-    "toLine": 193
+    "toLine": 192
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 365,
-    "toLine": 370
+    "toLine": 369
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestTransactions.java",
     "fromLine": 281,
-    "toLine": 286
+    "toLine": 285
 }
 ,]
 }
@@ -7800,37 +7783,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -7863,19 +7846,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
     "fromLine": 76,
-    "toLine": 80
+    "toLine": 79
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
     "fromLine": 104,
-    "toLine": 108
+    "toLine": 107
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
     "fromLine": 46,
-    "toLine": 50
+    "toLine": 49
 }
 ,]
 }
@@ -7908,19 +7891,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
     "fromLine": 76,
-    "toLine": 80
+    "toLine": 79
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
     "fromLine": 104,
-    "toLine": 108
+    "toLine": 107
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
     "fromLine": 46,
-    "toLine": 50
+    "toLine": 49
 }
 ,]
 }
@@ -7953,19 +7936,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 49,
-    "toLine": 51
+    "toLine": 67
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 168
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 114
 }
 ,]
 }
@@ -7982,19 +7965,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 49,
-    "toLine": 51
+    "toLine": 67
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 168
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 114
 }
 ,]
 }
@@ -8011,19 +7994,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 49,
-    "toLine": 51
+    "toLine": 67
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 150,
-    "toLine": 152
+    "toLine": 168
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 114
 }
 ,]
 }
@@ -8095,13 +8078,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionValue.java",
     "fromLine": 211,
-    "toLine": 216
+    "toLine": 215
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionValue.java",
     "fromLine": 154,
-    "toLine": 159
+    "toLine": 158
 }
 ,]
 }
@@ -8118,13 +8101,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionValue.java",
     "fromLine": 211,
-    "toLine": 216
+    "toLine": 215
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionValue.java",
     "fromLine": 154,
-    "toLine": 159
+    "toLine": 158
 }
 ,]
 }
@@ -8157,19 +8140,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 63,
-    "toLine": 63
+    "toLine": 64
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 71,
-    "toLine": 71
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 83,
-    "toLine": 83
+    "toLine": 84
 }
 ,]
 }
@@ -8186,19 +8169,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 63,
-    "toLine": 63
+    "toLine": 64
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 71,
-    "toLine": 71
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 83,
-    "toLine": 83
+    "toLine": 84
 }
 ,]
 }
@@ -8215,19 +8198,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 63,
-    "toLine": 63
+    "toLine": 64
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 71,
-    "toLine": 71
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 83,
-    "toLine": 83
+    "toLine": 84
 }
 ,]
 }
@@ -8244,13 +8227,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 69,
-    "toLine": 69
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 81,
-    "toLine": 81
+    "toLine": 84
 }
 ,]
 }
@@ -8267,13 +8250,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 69,
-    "toLine": 69
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 81,
-    "toLine": 81
+    "toLine": 84
 }
 ,]
 }
@@ -8290,13 +8273,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 69,
-    "toLine": 69
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 81,
-    "toLine": 81
+    "toLine": 84
 }
 ,]
 }
@@ -8313,13 +8296,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 69,
-    "toLine": 69
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/MemoryStream.java",
     "fromLine": 81,
-    "toLine": 81
+    "toLine": 84
 }
 ,]
 }
@@ -9023,13 +9006,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 423,
-    "toLine": 423
+    "toLine": 436
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 338,
-    "toLine": 338
+    "toLine": 351
 }
 ,]
 }
@@ -9046,13 +9029,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 423,
-    "toLine": 423
+    "toLine": 436
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 338,
-    "toLine": 338
+    "toLine": 351
 }
 ,]
 }
@@ -9069,13 +9052,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 134,
-    "toLine": 134
+    "toLine": 136
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 162,
-    "toLine": 162
+    "toLine": 164
 }
 ,]
 }
@@ -9092,13 +9075,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 134,
-    "toLine": 134
+    "toLine": 136
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 162,
-    "toLine": 162
+    "toLine": 164
 }
 ,]
 }
@@ -9115,13 +9098,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 597,
-    "toLine": 601
+    "toLine": 600
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 592,
-    "toLine": 596
+    "toLine": 595
 }
 ,]
 }
@@ -9138,13 +9121,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 597,
-    "toLine": 601
+    "toLine": 600
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 592,
-    "toLine": 596
+    "toLine": 595
 }
 ,]
 }
@@ -9161,19 +9144,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 213,
-    "toLine": 216
+    "toLine": 222
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 455,
-    "toLine": 458
+    "toLine": 463
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 241,
-    "toLine": 244
+    "toLine": 250
 }
 ,]
 }
@@ -9190,19 +9173,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 213,
-    "toLine": 216
+    "toLine": 222
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 455,
-    "toLine": 458
+    "toLine": 463
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 241,
-    "toLine": 244
+    "toLine": 250
 }
 ,]
 }
@@ -9219,19 +9202,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 213,
-    "toLine": 216
+    "toLine": 222
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 455,
-    "toLine": 458
+    "toLine": 463
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 241,
-    "toLine": 244
+    "toLine": 250
 }
 ,]
 }
@@ -9248,13 +9231,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 811,
-    "toLine": 816
+    "toLine": 815
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 187,
-    "toLine": 192
+    "toLine": 191
 }
 ,]
 }
@@ -9271,13 +9254,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 811,
-    "toLine": 816
+    "toLine": 815
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "fromLine": 187,
-    "toLine": 192
+    "toLine": 191
 }
 ,]
 }
@@ -9749,13 +9732,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexNode.java",
     "fromLine": 349,
-    "toLine": 349
+    "toLine": 351
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexNode.java",
     "fromLine": 368,
-    "toLine": 368
+    "toLine": 370
 }
 ,]
 }
@@ -9772,13 +9755,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexNode.java",
     "fromLine": 349,
-    "toLine": 349
+    "toLine": 351
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexNode.java",
     "fromLine": 368,
-    "toLine": 368
+    "toLine": 370
 }
 ,]
 }
@@ -10213,13 +10196,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/TableView.java",
     "fromLine": 105,
-    "toLine": 113
+    "toLine": 112
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescription.java",
     "fromLine": 186,
-    "toLine": 194
+    "toLine": 193
 }
 ,]
 }
@@ -10252,13 +10235,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/DateTime.java",
     "fromLine": 740,
-    "toLine": 744
+    "toLine": 743
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/DateTime.java",
     "fromLine": 675,
-    "toLine": 679
+    "toLine": 678
 }
 ,]
 }
@@ -10275,13 +10258,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/DateTime.java",
     "fromLine": 740,
-    "toLine": 744
+    "toLine": 743
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/DateTime.java",
     "fromLine": 675,
-    "toLine": 679
+    "toLine": 678
 }
 ,]
 }
@@ -10314,31 +10297,31 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 397
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 438,
-    "toLine": 438
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 474,
-    "toLine": 474
+    "toLine": 476
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 505,
-    "toLine": 505
+    "toLine": 507
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 542,
-    "toLine": 542
+    "toLine": 544
 }
 ,]
 }
@@ -10355,31 +10338,31 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 397
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 438,
-    "toLine": 438
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 474,
-    "toLine": 474
+    "toLine": 476
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 505,
-    "toLine": 505
+    "toLine": 507
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 542,
-    "toLine": 542
+    "toLine": 544
 }
 ,]
 }
@@ -10396,31 +10379,31 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 397
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 438,
-    "toLine": 438
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 474,
-    "toLine": 474
+    "toLine": 476
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 505,
-    "toLine": 505
+    "toLine": 507
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 542,
-    "toLine": 542
+    "toLine": 544
 }
 ,]
 }
@@ -10437,31 +10420,31 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 397
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 438,
-    "toLine": 438
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 474,
-    "toLine": 474
+    "toLine": 476
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 505,
-    "toLine": 505
+    "toLine": 507
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 542,
-    "toLine": 542
+    "toLine": 544
 }
 ,]
 }
@@ -10478,31 +10461,31 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 395,
-    "toLine": 395
+    "toLine": 397
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 438,
-    "toLine": 438
+    "toLine": 440
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 474,
-    "toLine": 474
+    "toLine": 476
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 505,
-    "toLine": 505
+    "toLine": 507
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Database.java",
     "fromLine": 542,
-    "toLine": 542
+    "toLine": 544
 }
 ,]
 }
@@ -10535,13 +10518,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 130,
-    "toLine": 130
+    "toLine": 134
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 143,
-    "toLine": 143
+    "toLine": 147
 }
 ,]
 }
@@ -10558,13 +10541,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 130,
-    "toLine": 130
+    "toLine": 134
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 143,
-    "toLine": 143
+    "toLine": 147
 }
 ,]
 }
@@ -10581,13 +10564,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 315,
-    "toLine": 315
+    "toLine": 316
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 323,
-    "toLine": 323
+    "toLine": 324
 }
 ,]
 }
@@ -10604,13 +10587,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 315,
-    "toLine": 315
+    "toLine": 316
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 323,
-    "toLine": 323
+    "toLine": 324
 }
 ,]
 }
@@ -10627,13 +10610,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 205,
-    "toLine": 212
+    "toLine": 211
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 102,
-    "toLine": 109
+    "toLine": 108
 }
 ,]
 }
@@ -10707,43 +10690,43 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescriptions.java",
     "fromLine": 71,
-    "toLine": 73
+    "toLine": 72
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Columns.java",
     "fromLine": 96,
-    "toLine": 98
+    "toLine": 97
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "fromLine": 68,
-    "toLine": 70
+    "toLine": 69
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Strings.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 72,
-    "toLine": 74
+    "toLine": 73
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ForeignKeys.java",
     "fromLine": 64,
-    "toLine": 66
+    "toLine": 65
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "fromLine": 79,
-    "toLine": 81
+    "toLine": 80
 }
 ,]
 }
@@ -10822,13 +10805,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Index.java",
     "fromLine": 128,
-    "toLine": 129
+    "toLine": 135
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Index.java",
     "fromLine": 101,
-    "toLine": 102
+    "toLine": 108
 }
 ,]
 }
@@ -10845,13 +10828,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Index.java",
     "fromLine": 128,
-    "toLine": 129
+    "toLine": 135
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Index.java",
     "fromLine": 101,
-    "toLine": 102
+    "toLine": 108
 }
 ,]
 }
@@ -10930,13 +10913,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSStatement.java",
     "fromLine": 271,
-    "toLine": 274
+    "toLine": 281
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSPreparedStatement.java",
     "fromLine": 249,
-    "toLine": 252
+    "toLine": 259
 }
 ,]
 }
@@ -10969,13 +10952,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 111,
-    "toLine": 111
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 139,
-    "toLine": 140
+    "toLine": 144
 }
 ,]
 }
@@ -10992,13 +10975,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 111,
-    "toLine": 111
+    "toLine": 115
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 139,
-    "toLine": 140
+    "toLine": 144
 }
 ,]
 }
@@ -11015,13 +10998,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 120,
-    "toLine": 131
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 89,
-    "toLine": 99
+    "toLine": 98
 }
 ,]
 }
@@ -11038,13 +11021,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 120,
-    "toLine": 131
+    "toLine": 129
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 89,
-    "toLine": 99
+    "toLine": 98
 }
 ,]
 }
@@ -11077,13 +11060,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 163,
-    "toLine": 165
+    "toLine": 166
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 154,
-    "toLine": 156
+    "toLine": 157
 }
 ,]
 }
@@ -11100,13 +11083,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 163,
-    "toLine": 165
+    "toLine": 166
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 154,
-    "toLine": 156
+    "toLine": 157
 }
 ,]
 }
@@ -11123,13 +11106,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "fromLine": 205,
-    "toLine": 212
+    "toLine": 211
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 102,
-    "toLine": 109
+    "toLine": 108
 }
 ,]
 }
@@ -11162,37 +11145,37 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionHour.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionMinute.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionDayOfMonth.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionYear.java",
     "fromLine": 49,
-    "toLine": 49
+    "toLine": 50
 }
 ,]
 }
@@ -11317,13 +11300,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 331,
-    "toLine": 332
+    "toLine": 341
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 376,
-    "toLine": 377
+    "toLine": 386
 }
 ,]
 }
@@ -11340,13 +11323,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 331,
-    "toLine": 332
+    "toLine": 341
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 376,
-    "toLine": 377
+    "toLine": 386
 }
 ,]
 }
@@ -11363,13 +11346,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 376,
-    "toLine": 377
+    "toLine": 386
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 331,
-    "toLine": 332
+    "toLine": 341
 }
 ,]
 }
@@ -11386,13 +11369,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 376,
-    "toLine": 377
+    "toLine": 386
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/LongTreeList.java",
     "fromLine": 331,
-    "toLine": 332
+    "toLine": 341
 }
 ,]
 }
@@ -11425,13 +11408,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 368,
-    "toLine": 368
+    "toLine": 379
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 386,
-    "toLine": 386
+    "toLine": 397
 }
 ,]
 }
@@ -11448,13 +11431,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 368,
-    "toLine": 368
+    "toLine": 379
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 386,
-    "toLine": 386
+    "toLine": 397
 }
 ,]
 }
@@ -11471,19 +11454,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 358,
-    "toLine": 364
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 388,
-    "toLine": 394
+    "toLine": 392
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 370,
-    "toLine": 376
+    "toLine": 374
 }
 ,]
 }
@@ -11500,19 +11483,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 358,
-    "toLine": 364
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 388,
-    "toLine": 394
+    "toLine": 392
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 370,
-    "toLine": 376
+    "toLine": 374
 }
 ,]
 }
@@ -11529,19 +11512,19 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 358,
-    "toLine": 364
+    "toLine": 362
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 388,
-    "toLine": 394
+    "toLine": 392
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 370,
-    "toLine": 376
+    "toLine": 374
 }
 ,]
 }
@@ -11672,25 +11655,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 67,
-    "toLine": 72
+    "toLine": 71
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 99,
-    "toLine": 104
+    "toLine": 103
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 173,
-    "toLine": 178
+    "toLine": 177
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 135,
-    "toLine": 140
+    "toLine": 139
 }
 ,]
 }
@@ -11707,25 +11690,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 67,
-    "toLine": 72
+    "toLine": 71
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 99,
-    "toLine": 104
+    "toLine": 103
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 173,
-    "toLine": 178
+    "toLine": 177
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 135,
-    "toLine": 140
+    "toLine": 139
 }
 ,]
 }
@@ -11742,25 +11725,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 67,
-    "toLine": 72
+    "toLine": 71
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 99,
-    "toLine": 104
+    "toLine": 103
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 173,
-    "toLine": 178
+    "toLine": 177
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 135,
-    "toLine": 140
+    "toLine": 139
 }
 ,]
 }
@@ -11777,25 +11760,25 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 67,
-    "toLine": 72
+    "toLine": 71
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 99,
-    "toLine": 104
+    "toLine": 103
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 173,
-    "toLine": 178
+    "toLine": 177
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestScrollable.java",
     "fromLine": 135,
-    "toLine": 140
+    "toLine": 139
 }
 ,]
 }
@@ -12614,13 +12597,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 62,
-    "toLine": 66
+    "toLine": 67
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 62,
-    "toLine": 66
+    "toLine": 67
 }
 ,]
 }
@@ -12637,13 +12620,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,]
 }
@@ -12660,13 +12643,13 @@ var results = {
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,
 {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "fromLine": 46,
-    "toLine": 46
+    "toLine": 59
 }
 ,]
 }
