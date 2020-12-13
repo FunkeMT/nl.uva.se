@@ -262,12 +262,29 @@
         top: 0;
         left: 0;
         width: 100vw;
-        z-index: 2;
+        z-index: 3;
         height: 100vh;
+    }
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255,255,255,0.75);
+        z-index: 10;
+    }
+    .loader img {
+        display: block;
+        width: 13vw;
+        margin: 22vh auto 0;
     }
     </style>
   </head>
   <body>
+    <div class="loader">
+        <img src="spinner.svg">
+    </div>
     <div class="pure-g">
         <div class="pure-u-3-5"><div id="mynetwork" class="graph"></div></div>
         <div class="pure-u-2-5 sidebar">
@@ -539,6 +556,9 @@
         },
     };
     var network = new vis.Network(container, data, options);
+    network.on('initRedraw', (e)=>{
+        document.querySelector(".loader").setAttribute("style","display:none");
+    });
 
     let explainations = {
         "cc": {
@@ -653,7 +673,7 @@
         "name": results["Project-Name"],
         "overall": results.metadata,
     }, null, ' ')+"</pre>");
-
+    
     network.on('click', (e) => {
         if (e.items.length + e.nodes.length == 0) return;
         let nodeEvent = e.nodes.length > 0;
