@@ -299,7 +299,7 @@
                 </div>
 
                 <div class="item">
-                    <h1>Visualization options</h1>
+                    <h1>Clone Filter</h1>
                     <form class="pure-form">
                         <div class="pure-u-1 pure-u-md-1-3">
                             <label for="relation-size">Relation size: </label>
@@ -315,15 +315,13 @@
             </div>
         </div>
     </div>
-    <div class="modal">
+    <div class="modal" style="display: none;">
         <div class="modalBox">
             <div class="heading">
                 <h1>Title</h1>
                 <span>Close</span>
             </div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <p></p>
         </div>
     </div>
     <script type="text/javascript">
@@ -333,6 +331,9 @@
         "ranges": {}
     };
     document.querySelector(".modalBox .heading span").onclick = (e) => {
+        document.querySelector(".modal").setAttribute("style", "display: none");
+    };
+    document.querySelector(".modal").onclick = (e) => {
         document.querySelector(".modal").setAttribute("style", "display: none");
     };
 
@@ -511,11 +512,6 @@
         return edges;
     }
 
-    document.title = results["Project-Name"] + " results";
-    document.getElementById("project-data").innerHTML = "<pre>"+JSON.stringify({
-        "name": results["Project-Name"],
-        "overall": results.metadata,
-    }, null, ' ')+"</pre>";
     // create an array with nodes
     var nodes = new vis.DataSet(getNodes());
 
@@ -544,6 +540,119 @@
     };
     var network = new vis.Network(container, data, options);
 
+    let explainations = {
+        "cc": {
+            "title": "Cyclometic Complexity",
+            "description": "Shows the Cyclometic Complexity of the found clone snippet"
+        },
+        "volume": {
+            "title": "Volume",
+            "description": "Shows the volume of the found clone snippet"
+        },
+        "mass": {
+            "title": "Mass",
+            "description": "Shows the mass of the found clone snippet"
+        },
+        "clones": {
+            "title": "Clones",
+            "description": "Shows the number of clones of the clone class"
+        },
+        "from": {
+            "title": "From location",
+            "description": "Shows one side of the found code class"
+        },
+        "to": {
+            "title": "To location",
+            "description": "Shows another side of the found code class"
+        },
+        "name": {
+            "title": "Project name",
+            "description": "Shows the name of the analyzed project"
+        },
+        "Volume": {
+            "title": "Volume",
+            "description": "Shows the total volume of the analyzed project"
+        },
+        "%-Duplicated-Lines": {
+            "title": "Percentage of duplicated lines",
+            "description": "Shows the total percentage of cloned code of the analyzed project"
+        },
+        "cloneClassesType1": {
+            "title": "Clone classes type-1",
+            "description": "Shows the number of type-1 clone classes"
+        },
+        "Java class": {
+            "title": "Java class",
+            "description": "The location of this Java class in the project"
+        },
+        "loc": {
+            "title": "Location of class",
+            "description": "The file location of one edge of the clone in the project"
+        },
+        "fromLine": {
+            "title": "From line",
+            "description": "Shows the starting line number of the clone"
+        },
+        "toLine": {
+            "title": "To line",
+            "description": "Shows the final line number of the clone"
+        },
+        "snippet": {
+            "title": "Code snippet",
+            "description": "The code snippet of the found clone"
+        },
+        //
+        "Number-Duplicated-Lines": {
+            "title": "Number of duplicated lines",
+            "description": "The calculated number of lines that are cloned within the code"
+        },
+        "Number-Clones": {
+            "title": "Number of clones",
+            "description": "The calculated number of clones within the whole project"
+        },
+        "Number-Clone-Classes": {
+            "title": "Number of clone classes",
+            "description": "The total number of clone classes within the whole project"
+        },
+        "Biggest-Clone-Lines": {
+            "title": "Biggest clone, number of lines",
+            "description": "The highest number of lines a clone class has"
+        },
+        "Biggest-Clone-Class": {
+            "title": "Biggest Clone Class",
+            "description": "The number of clones the clone class has that has most clones in it"
+        },
+    };
+    function modal(id) {
+        if (id == -1) return;
+        let info = explainations[Object.keys(explainations)[id]];
+        let modal = document.querySelector(".modal");
+        modal.setAttribute("style", "display: block");
+        modal.querySelector("h1").innerHTML = info.title;
+        modal.querySelector("p").innerHTML = info.description;
+        // console.log(explainations[Object.keys(explainations)[id]]);
+    }
+    function fixInfo(data) {
+        let lines = data.split("\n");
+        for (let i in lines) {
+            let parts = lines[i].split("\"");
+            if (parts.length <= 2) continue;
+            if (explainations.hasOwnProperty(parts[1])) {
+                parts[1] = "<a href=\"#\" onclick=\"modal("+Object.keys(explainations).indexOf(parts[1])+")\">" + parts[1] + "</a>";
+            }
+            lines[i] = parts.join("\"");
+            if (lines[i].startsWith("  \"snippet\": \"")) break;
+            // console.log(parts.join("\""));
+        }
+
+        return lines.join("\n");
+    }
+
+    document.title = results["Project-Name"] + " results";
+    document.getElementById("project-data").innerHTML = fixInfo("<pre>"+JSON.stringify({
+        "name": results["Project-Name"],
+        "overall": results.metadata,
+    }, null, ' ')+"</pre>");
 
     network.on('click', (e) => {
         if (e.items.length + e.nodes.length == 0) return;
@@ -565,9 +674,9 @@
             // console.log(snippit);
             // n.metadata.snippit = n.metadata.snippit.replace.replace("\\n", "\n");
             res = JSON.stringify({
-                "metadata": n.metadata,
                 "from": n.from,
                 "to": n.rawTo,
+                "metadata": n.metadata,
             }, null, ' ');
             res = res.split("\\n").join("\n").split("\\t").join("\t");
             
@@ -578,7 +687,7 @@
         }
         res = res.substring(2);
         res = res.substring(0, res.length-2);
-        document.getElementById("data").innerHTML = res;
+        document.getElementById("data").innerHTML = fixInfo(res);
     });
     function updateGraph() {
         let newEdges = getEdges();
