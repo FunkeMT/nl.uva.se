@@ -104,6 +104,15 @@ void main() {
 		println("Clones: <size(clones[key])>");
 		println("Snippet:");
 		list[str] cloneLines = readFileLines(clones[key][0][1]);
+		//visit(clones[key][0][0]) {
+		//	case Statement n: {
+		//		cloneLines += readFileLines(n.src);
+		//	}
+		//}
+		//for (n <- clones[key][0][0]) {
+		//	cloneLines += readFileLines(n.src);
+		//}
+		//readFileLines(clones[key][0][1]);
 		str snippet = "";
 		for (line <- cloneLines) snippet += "<line>\n";
 		println(snippet);

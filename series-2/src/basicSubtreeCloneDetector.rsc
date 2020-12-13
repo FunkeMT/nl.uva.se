@@ -96,7 +96,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			set[Statement] prevStatements = {};
 			bool neededEscape = false;
 			for (location <- locs[hash]) {
-				if (location.flatTreeIndex[0] - 1 < 0 || size(prevStatements) >1) {
+				if (location.flatTreeIndex[0] - 1 < 0 || size(prevStatements) >1 || flatTree[location.flatTreeIndex[0]].src.uri != flatTree[location.flatTreeIndex[0]-1].src.uri) {
 					neededEscape = true;
 					break;
 				}
@@ -124,7 +124,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			set[Statement] prevStatements = {};
 			bool neededEscape = false;
 			for (location <- locs[hash]) {
-				if (location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1 > flatTreeSize -1 || size(prevStatements) > 1) {
+				if (location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1 > flatTreeSize -1 || size(prevStatements) > 1 || flatTree[location.flatTreeIndex[size(location.flatTreeIndex) - 1]].src.uri != flatTree[location.flatTreeIndex[size(location.flatTreeIndex) - 1]+1].src.uri) {
 					neededEscape = true;
 					break;
 				}
@@ -151,15 +151,17 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 
 		for (location <- locs[hash]) {
 			list[Statement] statements = [];
-			int totLength = 0;
+			int offset = 0;
 			for (i <- location.flatTreeIndex) {
 				statements += [flatTree[i]];
-				totLength += flatTree[i].src.length;
 			}
 			Statement b = block(statements);
 			b.src = statements[0].src;
-			b.src.length = totLength;
-			b.src.end.line = statements[size(statements)-1].src.end.line;
+			int endPos = statements[size(statements) - 1].src.offset + statements[size(statements) - 1].src.length;
+			b.src.length = endPos - statements[0].src.offset;
+			//b.src.length = (statements[size(statements) - 1].src.offset - statements[0].src.offset) + statements[size(statements) - 1].src.length;
+			////b.src.length = statements[size(statements) - 1].src.length + statements[size(statements) - 1].src.offset;
+			//b.src.end.line = statements[size(statements)-1].src.end.line;
 			results[hash] += [<b, b.src>]; 
 			//b.src = statements[0];
 		}
