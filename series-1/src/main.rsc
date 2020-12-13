@@ -26,8 +26,8 @@ void startAnalysis() {
 	loc hsqldbProj = |project://hsqldb-2.3.1|;
 	
 	//loc project = testProj;
-	//loc project = smallsqlProj;
-	loc project = hsqldbProj;
+	loc project = smallsqlProj;
+	//loc project = hsqldbProj;
 	
 	tuple[list[loc] modules, list[loc] methods, list[Declaration] asts] modulesAndAsts = collectModulesAndAST(project);
 	

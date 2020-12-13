@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Network</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="data.js"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" crossorigin="anonymous">
+    <style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .graph{
+        height: 100vh
+    }
+    .filter-area, .infobox {
+        padding: 0 1em;
+    }
+    .sidebar {
+        background: #EEE;
+        height:100vh;
+        overflow-y: auto;
+    }
+    .infobox pre {
+        min-height: 1.2em;
+    }
+    pre {
+        overflow-x: auto;
+    }
+    option {
+        text-transform: capitalize;
+    }
+    .infobox .selection {
+        border: 1px solid #AAA;
+        background: #DDD;
+        overflow-x: scroll;
+    }
+    select {
+        float: right;
+    }
+    .pure-form.inline *{
+        float: left;
+    }
+    .pure-form.inline label {
+        margin: 0 1em 0 0;
+    }
+    .pure-form.inline {
+        display: inline-block;
+        /* width: 100%; */
+    }
+
+    /* Start source: https://codeconvey.com/pure-css-range-slider-with-2-handles/ */
+    label {
+        float: left;
+    }
+
+    [slider] {
+        position: relative;
+        height: 14px;
+        border-radius: 10px;
+        text-align: left;
+        margin: 45px 0 10px 0;
+        width: 80%;
+        margin-left: 80px;
+    }
+    
+    [slider] > div {
+        position: absolute;
+        left: 13px;
+        right: 15px;
+        height: 14px;
+    }
+    [slider] > div > [inverse-left] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+    }
+    
+    [slider] > div > [inverse-right] {
+        position: absolute;
+        right: 0;
+        height: 14px;
+        border-radius: 10px;
+        background-color: #CCC;
+        margin: 0 7px;
+    }
+    
+    [slider] > div > [range] {
+        position: absolute;
+        left: 0;
+        height: 14px;
+        border-radius: 14px;
+        background-color: #1ABC9C;
+    }
+    
+    [slider] > div > [thumb] {
+        position: absolute;
+        top: -7px;
+        z-index: 2;
+        height: 28px;
+        width: 28px;
+        text-align: left;
+        margin-left: -11px;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        background-color: #FFF;
+        border-radius: 50%;
+        outline: none;
+    }
+    div[slider] > input[type=range]::-ms-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+    }
+    
+    div[slider] > input[type=range]::-moz-range-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+    }
+    
+    div[slider] > input[type=range]::-webkit-slider-thumb {
+        pointer-events: all;
+        width: 28px;
+        height: 28px;
+        border-radius: 0px;
+        border: 0 none;
+        background: red;
+        -webkit-appearance: none;
+    }
+    
+    div[slider] > input[type=range]::-ms-fill-lower {
+        background: transparent;
+        border: 0 none;
+    }
+    
+    div[slider] > input[type=range]::-ms-fill-upper {
+        background: transparent;
+        border: 0 none;
+    }
+    [slider] > input[type=range] {
+        position: absolute;
+        pointer-events: none;
+        -webkit-appearance: none;
+        z-index: 3;
+        height: 14px;
+        top: -2px;
+        width: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        -khtml-opacity: 0;
+        opacity: 0;
+    }
+    
+    div[slider] > input[type=range]::-ms-track {
+        -webkit-appearance: none;
+        background: transparent;
+        color: transparent;
+    }
+    
+    div[slider] > input[type=range]::-moz-range-track {
+        -moz-appearance: none;
+        background: transparent;
+        color: transparent;
+    }
+    
+    div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+        background: transparent;
+        border: transparent;
+    }
+    
+    div[slider] > input[type=range]:focus {
+        outline: none;
+    }
+    div[slider] > input[type=range]::-ms-tooltip {
+        display: none;
+    }
+    
+    [slider] > div > [sign] {
+        opacity: 0;
+        position: absolute;
+        margin-left: -11px;
+        top: -39px;
+        z-index:3;
+        background-color: #1ABC9C;
+        color: #fff;
+        width: 28px;
+        height: 28px;
+        border-radius: 28px;
+        -webkit-border-radius: 28px;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    [slider] > div > [sign]:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        border-radius: 16px;
+        top: 19px;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        border-top-width: 16px;
+        border-top-style: solid;
+        border-top-color: #1ABC9C;
+    }
+    
+    [slider] > div > [sign] > span {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 28px;
+    }
+    
+    [slider]:hover > div > [sign] {
+        opacity: 1;
+    }
+    /* End source: https://codeconvey.com/pure-css-range-slider-with-2-handles/ */
+
+    .modalBox {
+        position: fixed;
+        top: 20vh;
+        left: 20vw;
+        width: 60vw;
+        background: #FFF;
+        padding: 1em;
+        border: 0.2em solid #CCC;
+    }
+    .modalBox .heading {
+        display: inline-block;
+        width: 100%;
+    }
+    .modalBox .heading h1 {
+        float: left;
+        margin: 0;
+    }
+    .modalBox .heading span {
+        float: right;
+        margin: 0.4em 0 0;
+        font-size: 0.8em;
+    }
+    .modal {
+        background: rgba(0,0,0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 3;
+        height: 100vh;
+    }
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255,255,255,0.75);
+        z-index: 10;
+    }
+    .loader img {
+        display: block;
+        width: 13vw;
+        margin: 22vh auto 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="loader">
+        <img src="spinner.svg">
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-3-5"><div id="mynetwork" class="graph"></div></div>
+        <div class="pure-u-2-5 sidebar">
+            <div class="infobox">
+                <pre id="project-data"></pre>
+            </div>
+            <div class="infobox">
+                <h1>Infobox</h1>
+                <pre id="data" class="selection"></pre>
+                <a id="externalURL" href="#" target="_blank"></a>
+            </div>
+            <div class="filter-area">
+                <h1>Filtering</h1>
+                <div class="item">
+                    <!--
+                    <span>Show type:</span>
+                    <form class="pure-form inline">
+                        <label for="type-selection-1" class="pure-radio">
+                            <input type="radio" id="type-selection-1" class="type-selection" name="type-selection" value="type-1" checked="" /> Type-1</label>
+                        <label for="type-selection-2" class="pure-radio">
+                            <input type="radio" id="type-selection-2" class="type-selection" name="type-selection" value="type-2" /> Type-2</label>
+                    </form>
+                    -->
+                    <div style="clear: both;"></div>
+                    <div id="sliders">
+
+                    </div>
+
+                </div>
+
+                <div class="item">
+                    <h1>Clone Filter</h1>
+                    <form class="pure-form">
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <label for="relation-size">Relation size: </label>
+                            <select id="relation-size" name="relation-size" class="pure-input-1-2 option-filler" id="relation-size">
+                                <option value="disabled">Disabled</option>
+                            </select>
+                        </div>
+                        <div class="pure-u-1 pure-u-md-1-3">
+                            <a href="#" onclick="network.stopSimulation()">Stop movement</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" style="display: none;">
+        <div class="modalBox">
+            <div class="heading">
+                <h1>Title</h1>
+                <span>Close</span>
+            </div>
+            <p></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var showState = {
+        "type": "type-1",
+        "relation-size": "clones",
+        "ranges": {}
+    };
+    document.querySelector(".modalBox .heading span").onclick = (e) => {
+        document.querySelector(".modal").setAttribute("style", "display: none");
+    };
+    document.querySelector(".modal").onclick = (e) => {
+        document.querySelector(".modal").setAttribute("style", "display: none");
+    };
+
+    let ranges = {};
+    for (let i in results.files) {
+        for (let k in results.files[i].metadata) {
+            for (let j in results.files[i].results["type-1"]) {
+                for (let field in results.files[i].results["type-1"][j].metadata) {
+                    if (field == "snippet") continue;
+                    let val = results.files[i].results["type-1"][j].metadata[field];
+                    if (!ranges.hasOwnProperty(field)) {
+                        ranges[field] = {
+                            min: val,
+                            max: val
+                        };
+                    }
+                    if (val < ranges[field].min) {
+                        ranges[field].min = val;
+                    }
+                    if (val > ranges[field].max) {
+                        ranges[field].max = val;
+                    }
+                }
+            }
+        }
+    }
+    let template = "<!-- Start source :https://codeconvey.com/pure-css-range-slider-with-2-handles/ -->" +
+        "<div>" +
+        "<label for=\"##ID##\">##NAME##:</label>" +
+        "<div slider id=\"##ID##\">" +
+        "    <div>" +
+        "        <div inverse-left style=\"width:70%;\"></div>" +
+        "        <div inverse-right style=\"width:70%;\"></div>" +
+        "        <div range style=\"left:30%;right:40%;\"></div>" +
+        "        <span thumb style=\"left:30%;\"></span>" +
+        "        <span thumb style=\"left:60%;\"></span>" +
+        "        <div sign style=\"left:30%;\">" +
+        "            <span id=\"value\">30</span>" +
+        "        </div>" +
+        "        <div sign style=\"left:60%;\">" +
+        "            <span id=\"value\">60</span>" +
+        "        </div>" +
+        "    </div>" +
+        "    <input type=\"range\" tabindex=\"0\" value=\"##MIN##\" max=\"##MAX##\" min=\"##MIN##\" step=\"1\" data-min=\"1\" data-id=\"##ID##\" oninput=\"" +
+        "        this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);" +
+        "        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);" +
+        "        var children = this.parentNode.childNodes[1].childNodes;" +
+        "        children[1].style.width=value+'%';" +
+        "        children[5].style.left=value+'%';" +
+        "        children[7].style.left=value+'%';children[11].style.left=value+'%';" +
+        "        children[11].childNodes[1].innerHTML=this.value;\" />" +
+        "    <input type=\"range\" tabindex=\"0\" value=\"##MAX##\" max=\"##MAX##\" min=\"##MIN##\" step=\"1\" data-min=\"0\" data-id=\"##ID##\" oninput=\"" +
+        "        this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));" +
+        "        var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);" +
+        "        var children = this.parentNode.childNodes[1].childNodes;" +
+        "        children[3].style.width=(100-value)+'%';" +
+        "        children[5].style.right=(100-value)+'%';" +
+        "        children[9].style.left=value+'%';children[13].style.left=value+'%';" +
+        "        children[13].childNodes[1].innerHTML=this.value;\" />" +
+        "</div>" +
+        "</div>" +
+        "<!-- End source :https://codeconvey.com/pure-css-range-slider-with-2-handles/ -->";
+    for (let field in ranges) {
+        // console.log(template.split("##ID##").join(field).replace("##NAME##", field));
+        console.log(field, ranges[field].min, ranges[field].max);
+        document.getElementById("sliders").innerHTML += template.split("##ID##").join(field).replace("##NAME##", field).split("##MAX##").join("" + ranges[field].max).split("##MIN##").join("" + ranges[field].min);
+        showState.ranges[field] = {
+            min: ranges[field].min,
+            max: ranges[field].max
+        };
+
+    }
+    document.getElementById("sliders").querySelectorAll("input").forEach(e => {
+        e.oninput();
+    });
+
+    function updateShowState() {
+        document.querySelectorAll(".type-selection").forEach((e)=>{
+            if (e.checked) {
+                showState["type"] = e.value;
+            }
+        });
+        showState["relation-size"] = document.getElementById("relation-size").value;
+        document.getElementById("sliders").querySelectorAll("input").forEach(e=>{
+            let subfield = e.getAttribute("data-min") == "1" ? "min" : "max";
+            let field = e.getAttribute("data-id");
+            showState.ranges[field][subfield] = e.value;
+        });
+    }
+    document.querySelectorAll(".option-filler").forEach(e=>{
+        for (let k in ranges) {
+            e.innerHTML += "<option value=\""+k+"\"" + ((k == "clones") ? " selected" : "")+ ">"+k+"</option>";
+        }
+    });
+    document.querySelectorAll("input").forEach(e=>{
+        e.onchange = event => {
+            updateShowState();
+            updateGraph();
+        };
+    })
+    document.querySelectorAll("select").forEach(e=>{
+        e.onchange = event => {
+            updateShowState();
+            updateGraph();
+        };
+    });
+
+    function cleanFilename(name) {
+        if (name.startsWith("project://")) {
+            name = name.substring(10);
+            let index = name.indexOf("/");
+            if (index != -1) {
+                name = name.substring(index + 1);
+            }
+        }
+        return name;
+    }
+
+    function getNodes() {
+        let nodes = [];
+        for (let i in results.files) {
+            results.files[i].filename = cleanFilename(results.files[i].filename);
+            let item = {
+                id: results.files[i].filename,
+                label: results.files[i].filename,
+                metadata: results.files[i].metadata,
+                title: null,
+                value: 1
+            };
+
+            nodes.push(item);
+        }
+        return nodes;
+    }
+    function getEdges() {
+        let edges = [];
+        let ids = [];
+        for (let i in results.files) {
+            let from = cleanFilename(results.files[i].filename);
+            for (let j in results.files[i].results[showState["type"]]) {
+                let skip = false;
+                for (let field in showState.ranges){
+                    if (results.files[i].results[showState["type"]][j].metadata[field] < showState.ranges[field].min || results.files[i].results[showState["type"]][j].metadata[field] > showState.ranges[field].max) {
+                        skip = true;
+                        break;
+                    }
+                    // showState.ranges[field]
+                }
+                if (skip) continue;
+                for (let k in results.files[i].results[showState["type"]][j].edges) {
+                    // console.log(results.files[i].results[showState["type"]][j].metadata);
+            //         if (!(results.files[i].metadata.cloneClassesType1 >= showState["class-count"].min && results.files[i].metadata.cloneClassesType1 <= showState["class-count"].max)) {
+            //     continue;
+            // }
+                    let to = cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc);
+                    let id = from + "->" + to;
+                    let label = results.files[i].results[showState["type"]][j].snippit;
+                    if (!ids.includes(id)) {
+                        let item = { id: id, from: from, to: to, value: 1, label: label, metadata: results.files[i].results[showState["type"]][j].metadata, rawTo: {
+                            "loc": cleanFilename(results.files[i].results[showState["type"]][j].edges[k].loc),
+                            "fromLine": results.files[i].results[showState["type"]][j].edges[k].fromLine,
+                            "toLine": results.files[i].results[showState["type"]][j].edges[k].toLine
+                        },
+                        toLineFrom: results.files[i].results[showState["type"]][j].edges[k].fromLine,
+                        toLineTo: results.files[i].results[showState["type"]][j].edges[k].toLine};
+                        if ("disabled" != showState["relation-size"]) {
+                            item["value"] = results.files[i].results[showState["type"]][j].metadata[showState["relation-size"]];
+                            item["title"] = showState["relation-size"] + ": " + item["value"];
+                        }
+                        edges.push(item);
+                        ids.push(id);
+                    }
+                }
+            }
+        }
+        return edges;
+    }
+
+    // create an array with nodes
+    var nodes = new vis.DataSet(getNodes());
+
+    // create an array with edges
+    var edges = new vis.DataSet(getEdges());
+
+    // create a network
+    var container = document.getElementById("mynetwork");
+    var data = {
+        nodes: nodes,
+        edges: edges,
+    };
+    var options = {
+        nodes: {
+            shape: "dot",
+            scaling: {
+              label: {
+                min: 8,
+                max: 20,
+              },
+            },
+          },
+        interaction: {
+            hover: true,
+        },
+    };
+    var network = new vis.Network(container, data, options);
+    network.on('initRedraw', (e)=>{
+        document.querySelector(".loader").setAttribute("style","display:none");
+    });
+
+    let explainations = {
+        "cc": {
+            "title": "Cyclometic Complexity",
+            "description": "Shows the Cyclometic Complexity of the found clone snippet"
+        },
+        "volume": {
+            "title": "Volume",
+            "description": "Shows the volume of the found clone snippet"
+        },
+        "mass": {
+            "title": "Mass",
+            "description": "Shows the mass of the found clone snippet"
+        },
+        "clones": {
+            "title": "Clones",
+            "description": "Shows the number of clones of the clone class"
+        },
+        "from": {
+            "title": "From location",
+            "description": "Shows one side of the found code class"
+        },
+        "to": {
+            "title": "To location",
+            "description": "Shows another side of the found code class"
+        },
+        "name": {
+            "title": "Project name",
+            "description": "Shows the name of the analyzed project"
+        },
+        "Volume": {
+            "title": "Volume",
+            "description": "Shows the total volume of the analyzed project"
+        },
+        "%-Duplicated-Lines": {
+            "title": "Percentage of duplicated lines",
+            "description": "Shows the total percentage of cloned code of the analyzed project"
+        },
+        "cloneClassesType1": {
+            "title": "Clone classes type-1",
+            "description": "Shows the number of type-1 clone classes"
+        },
+        "Java class": {
+            "title": "Java class",
+            "description": "The location of this Java class in the project"
+        },
+        "loc": {
+            "title": "Location of class",
+            "description": "The file location of one edge of the clone in the project"
+        },
+        "fromLine": {
+            "title": "From line",
+            "description": "Shows the starting line number of the clone"
+        },
+        "toLine": {
+            "title": "To line",
+            "description": "Shows the final line number of the clone"
+        },
+        "snippet": {
+            "title": "Code snippet",
+            "description": "The code snippet of the found clone"
+        },
+        //
+        "Number-Duplicated-Lines": {
+            "title": "Number of duplicated lines",
+            "description": "The calculated number of lines that are cloned within the code"
+        },
+        "Number-Clones": {
+            "title": "Number of clones",
+            "description": "The calculated number of clones within the whole project"
+        },
+        "Number-Clone-Classes": {
+            "title": "Number of clone classes",
+            "description": "The total number of clone classes within the whole project"
+        },
+        "Biggest-Clone-Lines": {
+            "title": "Biggest clone, number of lines",
+            "description": "The highest number of lines a clone class has"
+        },
+        "Biggest-Clone-Class": {
+            "title": "Biggest Clone Class",
+            "description": "The number of clones the clone class has that has most clones in it"
+        },
+    };
+    function modal(id) {
+        if (id == -1) return;
+        let info = explainations[Object.keys(explainations)[id]];
+        let modal = document.querySelector(".modal");
+        modal.setAttribute("style", "display: block");
+        modal.querySelector("h1").innerHTML = info.title;
+        modal.querySelector("p").innerHTML = info.description;
+        // console.log(explainations[Object.keys(explainations)[id]]);
+    }
+    function fixInfo(data) {
+        let lines = data.split("\n");
+        for (let i in lines) {
+            let parts = lines[i].split("\"");
+            if (parts.length <= 2) continue;
+            if (explainations.hasOwnProperty(parts[1])) {
+                parts[1] = "<a href=\"#\" onclick=\"modal("+Object.keys(explainations).indexOf(parts[1])+")\">" + parts[1] + "</a>";
+            }
+            lines[i] = parts.join("\"");
+            if (lines[i].startsWith("  \"snippet\": \"")) break;
+            // console.log(parts.join("\""));
+        }
+
+        return lines.join("\n");
+    }
+
+    document.title = results["Project-Name"] + " results";
+    document.getElementById("project-data").innerHTML = fixInfo("<pre>"+JSON.stringify({
+        "name": results["Project-Name"],
+        "overall": results.metadata,
+    }, null, ' ')+"</pre>");
+    
+    network.on('click', (e) => {
+        if (e.items.length + e.nodes.length == 0) return;
+        let nodeEvent = e.nodes.length > 0;
+        let res = "";
+        if (nodeEvent) {
+            let n = nodes.get(e.nodes[0]);
+            let data = n.metadata;
+            data["Java class"] = n.label;
+            res = JSON.stringify(data, null, ' ');
+
+            let url = "/series-2/visualization/circle/index.html?src=" + n.label;
+            document.getElementById("externalURL").innerHTML = "Show Circle-Visualization for this node ...";
+            document.getElementById("externalURL").setAttribute("href", url);
+        } else {
+            console.log(e);
+            let n = edges.get(e.items[0].edgeId);
+            // let snippet = n.metadata.snippet.replace("\\n","\n");
+            // console.log(snippit);
+            // n.metadata.snippit = n.metadata.snippit.replace.replace("\\n", "\n");
+            res = JSON.stringify({
+                "from": n.from,
+                "to": n.rawTo,
+                "metadata": n.metadata,
+            }, null, ' ');
+            res = res.split("\\n").join("\n").split("\\t").join("\t");
+            
+            let url = "/series-2/visualization/file/index.html?src=" 
+                + results["Project-Name"] + "/" + n.to + "&from=" + n.toLineFrom + "&to=" + n.toLineTo + "#pre." + n.toLineFrom;
+            document.getElementById("externalURL").innerHTML = "Show clone in file ...";
+            document.getElementById("externalURL").setAttribute("href", url);
+        }
+        res = res.substring(2);
+        res = res.substring(0, res.length-2);
+        document.getElementById("data").innerHTML = fixInfo(res);
+    });
+    function updateGraph() {
+        let newEdges = getEdges();
+        let ids = [];
+        let nodesWithEdges = new Set();
+        newEdges.forEach((e)=>{
+            ids.push(e.id);
+            nodesWithEdges.add(e.from);
+            nodesWithEdges.add(e.to);
+        });
+        let removables = [];
+        edges.forEach(e => {
+            if (!ids.includes(e.id)) {
+                removables.push(e.id);
+            }
+        });
+        edges.remove(removables);
+        edges.update(newEdges);
+
+
+        ids = [];
+        let newNodes = [];
+        let nodesTemp = getNodes();
+        for (let i in nodesTemp) {
+            if (!nodesWithEdges.has(nodesTemp[i].id)) continue;
+            newNodes.push(nodesTemp[i]);
+        }
+        // getNodes();
+        newNodes.forEach((e)=>{
+            ids.push(e.id);
+        });
+        removables = [];
+        nodes.forEach(e => {
+            if (!ids.includes(e.id)) {
+                removables.push(e.id);
+            }
+        });
+
+        nodes.remove(removables);
+        nodes.update(newNodes);
+    }
+
+    </script>
+  </body>
+</html>

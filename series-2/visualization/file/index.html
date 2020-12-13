@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="prism.css"/>
+</head>
+<body>
+    <div id="script-container"></div>
+
+    <script type="text/javascript" src="prism.js"></script>
+    <script type="text/javascript">
+        /*
+        * Get URL Parameter
+        */
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var srcParam = urlParams.get('src');
+        var fromParam = urlParams.get('from');
+        var toParam = urlParams.get('to');
+        var fromTo = fromParam + "-" + toParam;
+
+        fetch("/data/" + srcParam)
+        .then(response => response.text())
+        .then(data => {
+            var scriptTag = `<script type="text/plain" class="language-java" data-line="${fromTo}">${data}<\/script>`;
+            document.getElementById("script-container").innerHTML = scriptTag;
+            Prism.highlightAll();
+            document.getElementsByTagName("pre")[0].setAttribute("id", "pre");
+        });
+    </script>
+</body>
+</html>
