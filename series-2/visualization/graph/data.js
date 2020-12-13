@@ -3,11 +3,11 @@ var results = {
 	"Project-Name": "smallsql0.21_src",
 	"metadata": {
         "Volume": 23717,
-        "%-Duplicated-Lines": 2,
-        "Number-Duplicated-Lines": 506,
-        "Number-Clones": 369,
-        "Number-Clone-Classes": 142,
-        "Biggest-Clone-Lines": 12,
+        "%-Duplicated-Lines": 1,
+        "Number-Duplicated-Lines": 380,
+        "Number-Clones": 327,
+        "Number-Clone-Classes": 123,
+        "Biggest-Clone-Lines": 10,
         "Biggest-Clone-Class": 20
     }
 ,
@@ -328,57 +328,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 4
+        "cloneClassesType1": 2
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 5,
-        "mass": 24,
-        "clones": 2,
-        "snippet": "{\n\t\t\t\t\tbyte[] buffer = new byte[length];\n\t\t\t\t\tSystem.arraycopy(bytes, 0, buffer, 0, Math.min(bytes.length,length) );\n\t\t\t\t\treturn buffer;\n\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
-    "fromLine": 153,
-    "toLine": 157
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
-    "fromLine": 142,
-    "toLine": 146
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 5,
-        "mass": 24,
-        "clones": 2,
-        "snippet": "{\n\t\t\t\t\tbyte[] buffer = new byte[length];\n\t\t\t\t\tSystem.arraycopy(bytes, 0, buffer, 0, Math.min(bytes.length,length) );\n\t\t\t\t\treturn buffer;\n\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
-    "fromLine": 153,
-    "toLine": 157
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionConvert.java",
-    "fromLine": 142,
-    "toLine": 146
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 1,
@@ -436,80 +390,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 6
+        "cloneClassesType1": 3
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 4,
-        "volume": 11,
-        "mass": 46,
-        "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 50,
-    "toLine": 60
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 50,
-    "toLine": 60
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 21,
-        "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 55,
-    "toLine": 60
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 55,
-    "toLine": 60
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 21,
-        "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 50,
-    "toLine": 55
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 50,
-    "toLine": 55
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -590,40 +475,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 4
+        "cloneClassesType1": 3
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "{\n\t\tif (idx >= size)\n\t\t\tthrow new IndexOutOfBoundsException(\"Index: \"+idx+\", Size: \"+size);\n\t\treturn data[idx];\n\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
-    "fromLine": 60,
-    "toLine": 64
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/DataSources.java",
-    "fromLine": 48,
-    "toLine": 52
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
-    "fromLine": 64,
-    "toLine": 68
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -975,7 +831,7 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 13
+        "cloneClassesType1": 11
     },
     "results": {
         "type-1": [
@@ -1201,52 +1057,6 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
     "fromLine": 1105,
     "toLine": 1105
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 29,
-        "clones": 2,
-        "snippet": "try{\n            int maxRows = Integer.parseInt(token.getName(sql));\n            selCmd.setMaxRows(maxRows);\n        }catch(NumberFormatException e){\n            throw createSyntaxError(token, Language.STXADD_NOT_NUMBER, token.getName(sql));\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
-    "fromLine": 1932,
-    "toLine": 1937
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
-    "fromLine": 352,
-    "toLine": 357
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 29,
-        "clones": 2,
-        "snippet": "try{\n            int maxRows = Integer.parseInt(token.getName(sql));\n            selCmd.setMaxRows(maxRows);\n        }catch(NumberFormatException e){\n            throw createSyntaxError(token, Language.STXADD_NOT_NUMBER, token.getName(sql));\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
-    "fromLine": 1932,
-    "toLine": 1937
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLParser.java",
-    "fromLine": 352,
-    "toLine": 357
 }
 ,]
 }
@@ -2612,6 +2422,52 @@ var results = {
             
 {
     "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 19,
+        "clones": 2,
+        "snippet": "java.io.File file = new java.io.File(tableName+\".bin\");\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
+    "fromLine": 633,
+    "toLine": 633
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
+    "fromLine": 674,
+    "toLine": 674
+}
+,]
+}
+,
+{
+    "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 19,
+        "clones": 2,
+        "snippet": "java.io.File file = new java.io.File(tableName+\".bin\");\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
+    "fromLine": 633,
+    "toLine": 633
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
+    "fromLine": 674,
+    "toLine": 674
+}
+,]
+}
+,
+{
+    "metadata": {
         "cc": 2,
         "volume": 3,
         "mass": 13,
@@ -4943,52 +4799,6 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
     "fromLine": 655,
     "toLine": 655
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
-        "mass": 19,
-        "clones": 2,
-        "snippet": "java.io.File file = new java.io.File(tableName+\".bin\");\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
-    "fromLine": 633,
-    "toLine": 633
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
-    "fromLine": 674,
-    "toLine": 674
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
-        "mass": 19,
-        "clones": 2,
-        "snippet": "java.io.File file = new java.io.File(tableName+\".bin\");\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
-    "fromLine": 633,
-    "toLine": 633
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BenchTest.java",
-    "fromLine": 674,
-    "toLine": 674
 }
 ,]
 }
@@ -6230,40 +6040,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "final String getString() throws Exception{\n        Object obj = getObject();\n        if(obj == null) return null;\n        return obj.toString();\n    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
-    "fromLine": 76,
-    "toLine": 80
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
-    "fromLine": 104,
-    "toLine": 108
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
-    "fromLine": 46,
-    "toLine": 50
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -6313,29 +6094,6 @@ var results = {
     "metadata": {
         "cc": 1,
         "volume": 1,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
-    "fromLine": 110,
-    "toLine": 110
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
-    "fromLine": 678,
-    "toLine": 678
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
         "mass": 25,
         "clones": 2,
         "snippet": "String[] colNames = {\"TABLE_CAT\", \"TABLE_SCHEM\", \"TABLE_NAME\", \"COLUMN_NAME\", \"DATA_TYPE\", \"TYPE_NAME\", \"COLUMN_SIZE\", \"BUFFER_LENGTH\", \"DECIMAL_DIGITS\", \"NUM_PREC_RADIX\", \"NULLABLE\", \"REMARKS\", \"COLUMN_DEF\", \"SQL_DATA_TYPE\", \"SQL_DATETIME_SUB\", \"CHAR_OCTET_LENGTH\", \"ORDINAL_POSITION\", \"IS_NULLABLE\"};\n"
@@ -6351,6 +6109,29 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
     "fromLine": 753,
     "toLine": 753
+}
+,]
+}
+,
+{
+    "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 17,
+        "clones": 2,
+        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
+    "fromLine": 110,
+    "toLine": 110
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
+    "fromLine": 678,
+    "toLine": 678
 }
 ,]
 }
@@ -6643,34 +6424,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/IndexDescription.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 6,
-        "mass": 19,
-        "clones": 2,
-        "snippet": "if(raFile != null)\n\t\t\t\ttry{\n\t\t\t\t\traFile.close();\n\t\t\t\t}catch(Exception e2){\n\t\t\t\t\tDriverManager.println(e2.toString());\n\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/TableView.java",
-    "fromLine": 106,
-    "toLine": 111
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescription.java",
-    "fromLine": 187,
-    "toLine": 192
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 4,
@@ -6891,57 +6649,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 4
+        "cloneClassesType1": 2
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 4,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "if(!wasWhiteSpace){\n                                   tokens.add( new SQLToken( value, tokenStart, i) );\n                                   value = 0;\n                                }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
-    "fromLine": 173,
-    "toLine": 176
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
-    "fromLine": 112,
-    "toLine": 115
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 4,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "if(!wasWhiteSpace){\n                                   tokens.add( new SQLToken( value, tokenStart, i) );\n                                   value = 0;\n                                }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
-    "fromLine": 173,
-    "toLine": 176
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SQLTokenizer.java",
-    "fromLine": 112,
-    "toLine": 115
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 1,
@@ -7896,57 +7608,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 8
+        "cloneClassesType1": 6
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 4,
-        "mass": 23,
-        "clones": 2,
-        "snippet": "for (Iterator itr = diff.iterator(); itr.hasNext(); ) {\n                    msgBuf.append(itr.next());\n                    if (itr.hasNext()) msgBuf.append(',');\n                }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
-    "fromLine": 255,
-    "toLine": 258
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
-    "fromLine": 241,
-    "toLine": 244
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 4,
-        "mass": 23,
-        "clones": 2,
-        "snippet": "for (Iterator itr = diff.iterator(); itr.hasNext(); ) {\n                    msgBuf.append(itr.next());\n                    if (itr.hasNext()) msgBuf.append(',');\n                }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
-    "fromLine": 255,
-    "toLine": 258
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestLanguage.java",
-    "fromLine": 241,
-    "toLine": 244
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 1,
@@ -8817,40 +8483,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "final String getString() throws Exception{\n        Object obj = getObject();\n        if(obj == null) return null;\n        return obj.toString();\n    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
-    "fromLine": 76,
-    "toLine": 80
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
-    "fromLine": 104,
-    "toLine": 108
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
-    "fromLine": 46,
-    "toLine": 50
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -8891,40 +8528,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "final String getString() throws Exception{\n        Object obj = getObject();\n        if(obj == null) return null;\n        return obj.toString();\n    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionReturnFloat.java",
-    "fromLine": 76,
-    "toLine": 80
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionAbs.java",
-    "fromLine": 104,
-    "toLine": 108
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionFloor.java",
-    "fromLine": 46,
-    "toLine": 50
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -8965,98 +8573,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 6
+        "cloneClassesType1": 3
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 28,
-        "clones": 3,
-        "snippet": "        for(int i = 0; i < threadList.size(); i++){\n            Thread thread = (Thread)threadList.get(i);\n            thread.join(5000);\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 59,
-    "toLine": 63
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 160,
-    "toLine": 164
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 106,
-    "toLine": 110
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 28,
-        "clones": 3,
-        "snippet": "        for(int i = 0; i < threadList.size(); i++){\n            Thread thread = (Thread)threadList.get(i);\n            thread.join(5000);\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 59,
-    "toLine": 63
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 160,
-    "toLine": 164
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 106,
-    "toLine": 110
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 28,
-        "clones": 3,
-        "snippet": "        for(int i = 0; i < threadList.size(); i++){\n            Thread thread = (Thread)threadList.get(i);\n            thread.join(5000);\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 59,
-    "toLine": 63
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 160,
-    "toLine": 164
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestThreads.java",
-    "fromLine": 106,
-    "toLine": 110
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 1,
@@ -10168,103 +9689,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 18
+        "cloneClassesType1": 14
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 26,
-        "clones": 2,
-        "snippet": "while(rs.next()){\n\t\t\tString newValue = rs.getString(\"v\");\n\t\t\tassertTrue( oldValue.compareTo( newValue ) < 0 );\n\t\t\toldValue = newValue;\n\t\t\tcount++;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 811,
-    "toLine": 816
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 187,
-    "toLine": 192
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 26,
-        "clones": 2,
-        "snippet": "while(rs.next()){\n\t\t\tString newValue = rs.getString(\"v\");\n\t\t\tassertTrue( oldValue.compareTo( newValue ) < 0 );\n\t\t\toldValue = newValue;\n\t\t\tcount++;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 811,
-    "toLine": 816
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 187,
-    "toLine": 192
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 4,
-        "volume": 8,
-        "mass": 35,
-        "clones": 2,
-        "snippet": "while(oldValue != null && rs.next()){\n\t\t\tString newValue = rs.getString(\"v\");\n\t\t\tif(newValue != null){\n\t\t\t\tassertTrue( oldValue.compareTo( newValue ) > 0 );\n\t\t\t\tcount++;\n\t\t\t}\n\t\t\toldValue = newValue;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 239,
-    "toLine": 246
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 211,
-    "toLine": 218
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 4,
-        "volume": 8,
-        "mass": 35,
-        "clones": 2,
-        "snippet": "while(oldValue != null && rs.next()){\n\t\t\tString newValue = rs.getString(\"v\");\n\t\t\tif(newValue != null){\n\t\t\t\tassertTrue( oldValue.compareTo( newValue ) > 0 );\n\t\t\t\tcount++;\n\t\t\t}\n\t\t\toldValue = newValue;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 239,
-    "toLine": 246
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestOrderBy.java",
-    "fromLine": 211,
-    "toLine": 218
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -11159,29 +10588,6 @@ var results = {
     "metadata": {
         "cc": 1,
         "volume": 1,
-        "mass": 17,
-        "clones": 2,
-        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
-    "fromLine": 110,
-    "toLine": 110
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
-    "fromLine": 678,
-    "toLine": 678
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 1,
-        "volume": 1,
         "mass": 25,
         "clones": 2,
         "snippet": "String[] colNames = {\"TABLE_CAT\", \"TABLE_SCHEM\", \"TABLE_NAME\", \"COLUMN_NAME\", \"DATA_TYPE\", \"TYPE_NAME\", \"COLUMN_SIZE\", \"BUFFER_LENGTH\", \"DECIMAL_DIGITS\", \"NUM_PREC_RADIX\", \"NULLABLE\", \"REMARKS\", \"COLUMN_DEF\", \"SQL_DATA_TYPE\", \"SQL_DATETIME_SUB\", \"CHAR_OCTET_LENGTH\", \"ORDINAL_POSITION\", \"IS_NULLABLE\"};\n"
@@ -11197,6 +10603,29 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
     "fromLine": 753,
     "toLine": 753
+}
+,]
+}
+,
+{
+    "metadata": {
+        "cc": 1,
+        "volume": 1,
+        "mass": 17,
+        "clones": 2,
+        "snippet": "String[] colNames = {\"TABLE_CAT\",\"TABLE_SCHEM\",\"TABLE_NAME\",\"TABLE_TYPE\",\"REMARKS\",\"TYPE_CAT\",\"TYPE_SCHEM\",\"TYPE_NAME\",\"SELF_REFERENCING_COL_NAME\",\"REF_GENERATION\"};\n"
+    },
+    "edges": [
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/junit/TestDBMetaData.java",
+    "fromLine": 110,
+    "toLine": 110
+}
+,
+{
+	"loc": "project://smallsql0.21_src/src/smallsql/database/SSDatabaseMetaData.java",
+    "fromLine": 678,
+    "toLine": 678
 }
 ,]
 }
@@ -11633,34 +11062,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/TableView.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 6,
-        "mass": 19,
-        "clones": 2,
-        "snippet": "if(raFile != null)\n\t\t\t\ttry{\n\t\t\t\t\traFile.close();\n\t\t\t\t}catch(Exception e2){\n\t\t\t\t\tDriverManager.println(e2.toString());\n\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/TableView.java",
-    "fromLine": 106,
-    "toLine": 111
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexDescription.java",
-    "fromLine": 187,
-    "toLine": 192
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 4,
@@ -11978,7 +11384,7 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 8
+        "cloneClassesType1": 7
     },
     "results": {
         "type-1": [
@@ -12077,29 +11483,6 @@ var results = {
 ,
 {
     "metadata": {
-        "cc": 2,
-        "volume": 8,
-        "mass": 61,
-        "clones": 2,
-        "snippet": "static String bytes2hex( byte[] bytes ){\n        StringBuffer buf = new StringBuffer(bytes.length << 1);\n        for(int i=0; i<bytes.length; i++){\n            buf.append( digits[ (bytes[i] >> 4) & 0x0F ] );\n            buf.append( digits[ (bytes[i]     ) & 0x0F ] );\n        }\n        return buf.toString();\n    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 205,
-    "toLine": 212
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
-    "fromLine": 102,
-    "toLine": 109
-}
-,]
-}
-,
-{
-    "metadata": {
         "cc": 1,
         "volume": 1,
         "mass": 16,
@@ -12178,40 +11561,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 3
+        "cloneClassesType1": 2
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "{\n\t\tif (idx >= size)\n\t\t\tthrow new IndexOutOfBoundsException(\"Index: \"+idx+\", Size: \"+size);\n\t\treturn data[idx];\n\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
-    "fromLine": 60,
-    "toLine": 64
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/DataSources.java",
-    "fromLine": 48,
-    "toLine": 52
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
-    "fromLine": 64,
-    "toLine": 68
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -12510,59 +11864,13 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 8
+        "cloneClassesType1": 4
     },
     "results": {
         "type-1": [
             
 {
     "metadata": {
-        "cc": 3,
-        "volume": 12,
-        "mass": 47,
-        "clones": 2,
-        "snippet": "if(status.nodeValue != null){\n\t\t\t\t\t\tif(status.nodeValue instanceof IndexNode){\n\t\t\t\t\t\t\tlevel++;\n\t\t\t\t\t\t\tnodeStack.push(\n\t\t\t\t\t\t\t\tnew IndexNodeScrollStatus( \t(IndexNode)status.nodeValue, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(expressions.get(level).getAlias() != SQLTokenizer.DESC_STR), \n\t\t\t\t\t\t\t\t\t\t\t\t\t\tscroll, level));\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}else\n\t\t\t\t\t\t\treturn getReturnValue(status.nodeValue);\n\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 120,
-    "toLine": 131
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 89,
-    "toLine": 99
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 12,
-        "mass": 47,
-        "clones": 2,
-        "snippet": "if(status.nodeValue != null){\n\t\t\t\t\t\tif(status.nodeValue instanceof IndexNode){\n\t\t\t\t\t\t\tlevel++;\n\t\t\t\t\t\t\tnodeStack.push(\n\t\t\t\t\t\t\t\tnew IndexNodeScrollStatus( \t(IndexNode)status.nodeValue, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(expressions.get(level).getAlias() != SQLTokenizer.DESC_STR), \n\t\t\t\t\t\t\t\t\t\t\t\t\t\tscroll, level));\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}else\n\t\t\t\t\t\t\treturn getReturnValue(status.nodeValue);\n\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 120,
-    "toLine": 131
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 89,
-    "toLine": 99
-}
-,]
-}
-,
-{
-    "metadata": {
         "cc": 1,
         "volume": 1,
         "mass": 12,
@@ -12603,52 +11911,6 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
     "fromLine": 144,
     "toLine": 144
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 12,
-        "mass": 41,
-        "clones": 2,
-        "snippet": "{\n\t\t\t\t\t\tif(status.nodeValue instanceof IndexNode){\n\t\t\t\t\t\t\tlevel++;\n\t\t\t\t\t\t\tnodeStack.push(\n\t\t\t\t\t\t\t\tnew IndexNodeScrollStatus( \t(IndexNode)status.nodeValue, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(expressions.get(level).getAlias() != SQLTokenizer.DESC_STR), \n\t\t\t\t\t\t\t\t\t\t\t\t\t\tscroll, level));\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}else\n\t\t\t\t\t\t\treturn getReturnValue(status.nodeValue);\n\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 120,
-    "toLine": 131
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 89,
-    "toLine": 99
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 12,
-        "mass": 41,
-        "clones": 2,
-        "snippet": "{\n\t\t\t\t\t\tif(status.nodeValue instanceof IndexNode){\n\t\t\t\t\t\t\tlevel++;\n\t\t\t\t\t\t\tnodeStack.push(\n\t\t\t\t\t\t\t\tnew IndexNodeScrollStatus( \t(IndexNode)status.nodeValue, \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t(expressions.get(level).getAlias() != SQLTokenizer.DESC_STR), \n\t\t\t\t\t\t\t\t\t\t\t\t\t\tscroll, level));\n\t\t\t\t\t\t\tcontinue;\n\t\t\t\t\t\t}else\n\t\t\t\t\t\t\treturn getReturnValue(status.nodeValue);\n\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 120,
-    "toLine": 131
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/IndexScrollStatus.java",
-    "fromLine": 89,
-    "toLine": 99
 }
 ,]
 }
@@ -12710,7 +11972,7 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 8
+        "cloneClassesType1": 5
     },
     "results": {
         "type-1": [
@@ -12757,75 +12019,6 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
     "fromLine": 188,
     "toLine": 196
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 8,
-        "mass": 61,
-        "clones": 2,
-        "snippet": "static String bytes2hex( byte[] bytes ){\n        StringBuffer buf = new StringBuffer(bytes.length << 1);\n        for(int i=0; i<bytes.length; i++){\n            buf.append( digits[ (bytes[i] >> 4) & 0x0F ] );\n            buf.append( digits[ (bytes[i]     ) & 0x0F ] );\n        }\n        return buf.toString();\n    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 205,
-    "toLine": 212
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/junit/BasicTestCase.java",
-    "fromLine": 102,
-    "toLine": 109
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 3,
-        "mass": 26,
-        "clones": 2,
-        "snippet": "for(int i=0; i<length; i++){\n            result = (result << 8) | (bytes[i] & 0xFF);\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 163,
-    "toLine": 165
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 154,
-    "toLine": 156
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 3,
-        "mass": 26,
-        "clones": 2,
-        "snippet": "for(int i=0; i<length; i++){\n            result = (result << 8) | (bytes[i] & 0xFF);\n        }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 163,
-    "toLine": 165
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Utils.java",
-    "fromLine": 154,
-    "toLine": 156
 }
 ,]
 }
@@ -13297,59 +12490,13 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 10
+        "cloneClassesType1": 5
     },
     "results": {
         "type-1": [
             
 {
     "metadata": {
-        "cc": 4,
-        "volume": 7,
-        "mass": 36,
-        "clones": 2,
-        "snippet": "if(serializeConnections.size() > 0){\n                        Iterator values = locks.values().iterator();\n                        while(values.hasNext()){\n                            TableStorePage lock = (TableStorePage)values.next();\n                            if(lock.con != con) return null;\n                        }\n                    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 388,
-    "toLine": 394
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 370,
-    "toLine": 376
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 4,
-        "volume": 7,
-        "mass": 36,
-        "clones": 2,
-        "snippet": "if(serializeConnections.size() > 0){\n                        Iterator values = locks.values().iterator();\n                        while(values.hasNext()){\n                            TableStorePage lock = (TableStorePage)values.next();\n                            if(lock.con != con) return null;\n                        }\n                    }\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 388,
-    "toLine": 394
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 370,
-    "toLine": 376
-}
-,]
-}
-,
-{
-    "metadata": {
         "cc": 1,
         "volume": 1,
         "mass": 12,
@@ -13390,93 +12537,6 @@ var results = {
 	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
     "fromLine": 397,
     "toLine": 397
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 7,
-        "mass": 31,
-        "clones": 3,
-        "snippet": "{\n\t\t\t\t\t\t\tIterator values = locks.values().iterator();\n\t\t\t\t\t\t\twhile(values.hasNext()){\n\t\t\t\t\t\t\t\tTableStorePage lock = (TableStorePage)values.next();\n\t\t\t\t\t\t\t\tif(lock.con != con) return null;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 358,
-    "toLine": 364
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 388,
-    "toLine": 394
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 370,
-    "toLine": 376
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 7,
-        "mass": 31,
-        "clones": 3,
-        "snippet": "{\n\t\t\t\t\t\t\tIterator values = locks.values().iterator();\n\t\t\t\t\t\t\twhile(values.hasNext()){\n\t\t\t\t\t\t\t\tTableStorePage lock = (TableStorePage)values.next();\n\t\t\t\t\t\t\t\tif(lock.con != con) return null;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 358,
-    "toLine": 364
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 388,
-    "toLine": 394
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 370,
-    "toLine": 376
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 3,
-        "volume": 7,
-        "mass": 31,
-        "clones": 3,
-        "snippet": "{\n\t\t\t\t\t\t\tIterator values = locks.values().iterator();\n\t\t\t\t\t\t\twhile(values.hasNext()){\n\t\t\t\t\t\t\t\tTableStorePage lock = (TableStorePage)values.next();\n\t\t\t\t\t\t\t\tif(lock.con != con) return null;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 358,
-    "toLine": 364
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 388,
-    "toLine": 394
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Table.java",
-    "fromLine": 370,
-    "toLine": 376
 }
 ,]
 }
@@ -14619,80 +13679,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 6
+        "cloneClassesType1": 3
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 4,
-        "volume": 11,
-        "mass": 46,
-        "clones": 2,
-        "snippet": "if(places > 0){\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}else{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 50,
-    "toLine": 60
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 50,
-    "toLine": 60
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 21,
-        "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i>places; i--){\n\t\t\t}\n\t\t\tvalue \/= factor;\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 55,
-    "toLine": 60
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 55,
-    "toLine": 60
-}
-,]
-}
-,
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 6,
-        "mass": 21,
-        "clones": 2,
-        "snippet": "{\n\t\t\tfor(int i=0; i<places; i++){\n\t\t\t}\n\t\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionRound.java",
-    "fromLine": 50,
-    "toLine": 55
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/ExpressionFunctionTruncate.java",
-    "fromLine": 50,
-    "toLine": 55
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
@@ -14773,40 +13764,11 @@ var results = {
     "filename": "project://smallsql0.21_src/src/smallsql/database/DataSources.java",
     "metadata": {
         "volume": 0,
-        "cloneClassesType1": 2
+        "cloneClassesType1": 1
     },
     "results": {
         "type-1": [
             
-{
-    "metadata": {
-        "cc": 2,
-        "volume": 5,
-        "mass": 20,
-        "clones": 3,
-        "snippet": "{\n\t\tif (idx >= size)\n\t\t\tthrow new IndexOutOfBoundsException(\"Index: \"+idx+\", Size: \"+size);\n\t\treturn data[idx];\n\t}\n"
-    },
-    "edges": [
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/LongList.java",
-    "fromLine": 60,
-    "toLine": 64
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/DataSources.java",
-    "fromLine": 48,
-    "toLine": 52
-}
-,
-{
-	"loc": "project://smallsql0.21_src/src/smallsql/database/Expressions.java",
-    "fromLine": 64,
-    "toLine": 68
-}
-,]
-}
-,
 {
     "metadata": {
         "cc": 2,
