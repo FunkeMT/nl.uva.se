@@ -465,7 +465,7 @@
         return edges;
     }
 
-    document.title = results["project-name"] + " results";
+    document.title = results["Project-Name"] + " results";
     document.getElementById("project-data").innerHTML = "<pre>"+JSON.stringify({
         "name": results["Project-Name"],
         "overall": results.metadata,
@@ -526,7 +526,7 @@
             res = res.split("\\n").join("\n").split("\\t").join("\t");
             
             let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/file/index.html?src=" 
-                + results["project-name"] + "/" + n.to + "&from=" + n.toLineFrom + "&to=" + n.toLineTo + "#pre." + n.toLineFrom;
+                + results["Project-Name"] + "/" + n.to + "&from=" + n.toLineFrom + "&to=" + n.toLineTo + "#pre." + n.toLineFrom;
             document.getElementById("externalURL").innerHTML = "Show clone in file ...";
             document.getElementById("externalURL").setAttribute("href", url);
         }
