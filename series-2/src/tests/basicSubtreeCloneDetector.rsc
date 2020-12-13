@@ -94,10 +94,10 @@ test bool getSimilarityScore7() {
 	return getSimilarityScore(getBlock4(), getBlock3()) == 0;
 }
 test bool testMass1() {
-	return mass(getStatement1()) == 1;
+	return mass(getStatement1()) == 6;
 }
 test bool testMass2() {
-	return mass(getBlock1()) == 2;
+	return mass(getBlock1()) == 7;
 }
 test bool removeEmptyClones1() {
 	map[str, list[tuple[node, loc]]] clones = ();
@@ -204,7 +204,7 @@ test bool setupBucket1() {
 	set[Declaration] ast = {method(byte(), "methodName", [], [], getBlock1())};
 	loc baseLocation = getBlock1().src;
 	hashBucket = setupBucket(hashBucket, ast, baseLocation);
-	return countCloneKeys(hashBucket) == 1;
+	return countCloneKeys(hashBucket) == 3;
 }
 test bool setupBucket2() {
 	map[str, list[tuple[node, loc]]] hashBucket = ();
@@ -221,7 +221,7 @@ test bool addHashToBucket1() {
 	loc baseLocation = PROJECT_LOCATION;
 	int before = countCloneKeys(bucket); 
 	bucket = addHashToBucket(n, bucket, baseLocation);
-	return before + 1 == countCloneKeys(bucket);
+	return 1 == countCloneKeys(bucket);
 }
 test bool addHashToBucket1() {
 	node n = getBlock1();
@@ -229,7 +229,7 @@ test bool addHashToBucket1() {
 	loc baseLocation = PROJECT_LOCATION;
 	int before = countCloneKeys(bucket); 
 	bucket = addHashToBucket(n, bucket, baseLocation);
-	return before == countCloneKeys(bucket);
+	return before + 1 == countCloneKeys(bucket);
 }
 
 test bool basicSubtreeCloneDetector1() {
@@ -238,6 +238,6 @@ test bool basicSubtreeCloneDetector1() {
 		method(byte(), "methodName", [], [], getBlock3())
 		};
 	map[str, list[tuple[node, loc]]] clones = basicSubtreeCloneDetector(
-		ast, baseLocation);
+		ast, baseLocation, 1);
 	return countCloneKeys(clones) == 0;
 }
