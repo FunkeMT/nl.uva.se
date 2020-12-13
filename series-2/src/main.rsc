@@ -30,7 +30,43 @@ loc currentProject = |project://MySimpleTest|;
 loc smallsqlProj = |project://smallsql0.21_src|;
 loc hsqldbProj = |project://hsqldb-2.3.1|;
 
+//-===================-
+//-====== Stats ======-
+//-===================-
+//Project: smallsql0.21_src
+//Selected Mass Threshold: 3
+//Project Volume: 23717
+//Duplicated Lines: 2480
+//% of Duplicated Lines: 10.4566344800%
+//Number of Clone Classes: 1661
+//Biggest Clone (in lines): 12
+//Biggest Clone Class: 134
 
+
+// (no reduction)
+//Project: smallsql0.21_src
+//Selected Mass Threshold: 12
+//Project Volume: 23717
+//Duplicated Lines: 506
+//% of Duplicated Lines: 2.13349074500%
+//Number of Clone Classes: 142
+//Biggest Clone (in lines): 12
+//Biggest Clone Class: 20
+
+// (single itter reduction)
+//Project: smallsql0.21_src
+//Selected Mass Threshold: 12
+//Project Volume: 23717
+//Duplicated Lines: 380
+//% of Duplicated Lines: 1.60222625100%
+//Number of Clone Classes: 123
+//Biggest Clone (in lines): 10
+//Biggest Clone Class: 20
+
+/*
+        §§ Dupl. Blocks:        4304
+        §§ Duplication:         11.2016240300%
+*/
 
 void main() {
 	//loc project = testProj;

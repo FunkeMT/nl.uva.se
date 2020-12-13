@@ -72,14 +72,15 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 	}
 
 	//list[tuple[node, loc, int start, int end]];
-	list[tuple[str hash, int cloneIndex, int flatTreeIndex]] locs = [];
+	map[str, list[tuple[int cloneIndex, int flatTreeIndex]]] locs = ();
 	for (hash <- clones) {
 		int cloneIndex = 0;
 		for (clone <- clones[hash]) {
 			int i = 0;
 			for (n <- flatTree) {
 				if (n.src == clone[1]) {
-					locs += <hash, cloneIndex, i>;
+					if (!locs[hash]?) locs[hash] = [];
+					locs[hash] += [<cloneIndex, i>];
 					i = i + 1;
 					break;
 				}
@@ -87,6 +88,27 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			}
 			cloneIndex = cloneIndex + 1;
 		}
+	}
+	
+	for (hash <- locs) {
+		int offset = 1; 
+		set[Statement] prevStatements = {};
+		bool neededEscape = false;
+		for (location <- locs[hash]) {
+			if (location.flatTreeIndex - offset < 0) {
+				neededEscape = true;
+				break;
+			}
+			prevStatements += unsetRec(flatTree[location.flatTreeIndex - offset]);
+		}
+		if (!neededEscape && size(prevStatements) == 1) {
+			// We can move up!
+			println("We can move up!");
+			//for (location <- locs[hash]) {
+			//	location.flatTreeIndex -= offset;
+			//}
+		}
+		println(size(prevStatements));
 	}
 
 	//println(nodeFlatTreeLoc);
