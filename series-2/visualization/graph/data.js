@@ -3,12 +3,12 @@ var results = {
 	"Project-Name": "smallsql0.21_src",
 	"metadata": {
         "Volume": 23717,
-        "%-Duplicated-Lines": 1,
-        "Number-Duplicated-Lines": 380,
-        "Number-Clones": 327,
+        "%-Duplicated-Lines": 0,
+        "Number-Duplicated-Lines": 0,
+        "Number-Clones": 0,
         "Number-Clone-Classes": 123,
-        "Biggest-Clone-Lines": 10,
-        "Biggest-Clone-Class": 20
+        "Biggest-Clone-Lines": 0,
+        "Biggest-Clone-Class": 0
     }
 ,
 		

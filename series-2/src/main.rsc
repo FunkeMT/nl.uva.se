@@ -94,39 +94,39 @@ void main() {
 		"biggestCloneClass": 0
 	);
 	
-	println("-===================-");
-	println("-== Clone Classes ==-");
-	println("-===================-");
-	int i = 1;
-	for (key <- clones) {
-		println("######");
-		println("Clone-Class: <i>");
-		println("Clones: <size(clones[key])>");
-		println("Snippet:");
-		list[str] cloneLines = readFileLines(clones[key][0][1]);
-		str snippet = "";
-		for (line <- cloneLines) snippet += "<line>\n";
-		println(snippet);
-		
-		stats["numberOfDuplicatedLines"] += size(cloneLines);
-		if (size(cloneLines) > stats["biggestClonesLines"]) {
-			stats["biggestClonesLines"] = size(cloneLines);
-		}
-		
-		println("##");
-		for (dup <- clones[key]) {
-			println("Clone LOC:");
-			println(dup[1]);
-			stats["numberOfClones"] += 1;
-		}
-		println("######");
-		
-		if (size(clones[key]) > stats["biggestCloneClass"]) {
-			stats["biggestCloneClass"] = size(clones[key]);
-		}
-		
-		i += 1;
-	}
+	//println("-===================-");
+	//println("-== Clone Classes ==-");
+	//println("-===================-");
+	//int i = 1;
+	//for (key <- clones) {
+	//	println("######");
+	//	println("Clone-Class: <i>"); 
+	//	println("Clones: <size(clones[key])>");
+	//	println("Snippet:");
+	//	list[str] cloneLines = readFileLines(clones[key][0][1]);
+	//	str snippet = "";
+	//	for (line <- cloneLines) snippet += "<line>\n";
+	//	println(snippet);
+	//	
+	//	stats["numberOfDuplicatedLines"] += size(cloneLines);
+	//	if (size(cloneLines) > stats["biggestClonesLines"]) {
+	//		stats["biggestClonesLines"] = size(cloneLines);
+	//	}
+	//	
+	//	println("##");
+	//	for (dup <- clones[key]) {
+	//		println("Clone LOC:");
+	//		println(dup[1]);
+	//		stats["numberOfClones"] += 1;
+	//	}
+	//	println("######");
+	//	
+	//	if (size(clones[key]) > stats["biggestCloneClass"]) {
+	//		stats["biggestCloneClass"] = size(clones[key]);
+	//	}
+	//	
+	//	i += 1;
+	//}
 	
 	println("-===================-");
 	println("-====== Stats ======-");

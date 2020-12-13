@@ -72,7 +72,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 	}
 
 	//list[tuple[node, loc, int start, int end]];
-	map[str, list[tuple[int cloneIndex, int flatTreeIndex]]] locs = ();
+	map[str, list[tuple[int cloneIndex, list[int] flatTreeIndex]]] locs = ();
 	for (hash <- clones) {
 		int cloneIndex = 0;
 		for (clone <- clones[hash]) {
@@ -80,7 +80,7 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			for (n <- flatTree) {
 				if (n.src == clone[1]) {
 					if (!locs[hash]?) locs[hash] = [];
-					locs[hash] += [<cloneIndex, i>];
+					locs[hash] += [<cloneIndex, [i]>];
 					i = i + 1;
 					break;
 				}
@@ -89,27 +89,61 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 			cloneIndex = cloneIndex + 1;
 		}
 	}
-	
-	for (hash <- locs) {
-		int offset = 1; 
-		set[Statement] prevStatements = {};
-		bool neededEscape = false;
-		for (location <- locs[hash]) {
-			if (location.flatTreeIndex - offset < 0) {
-				neededEscape = true;
-				break;
+		for (hash <- locs) {
+		bool moveUp = true;
+		while (moveUp) {
+			moveUp = false;
+			set[Statement] prevStatements = {};
+			bool neededEscape = false;
+			for (location <- locs[hash]) {
+				if (location.flatTreeIndex[0] - 1 < 0 || size(prevStatements) >1) {
+					neededEscape = true;
+					break;
+				}
+				prevStatements += unsetRec(flatTree[location.flatTreeIndex[0] - 1]);
 			}
-			prevStatements += unsetRec(flatTree[location.flatTreeIndex - offset]);
+			if (!neededEscape && size(prevStatements) == 1) {
+				// We can move up!
+				moveUp = true;
+				list[tuple[int cloneIndex, list[int] flatTreeIndex]] newLocs = [];
+				for (location <- locs[hash]) {
+					newLocs += [<location.cloneIndex, [location.flatTreeIndex[0] - 1] + location.flatTreeIndex>];
+				}
+				locs[hash] = newLocs;
+				println("We can move up!");
+			}
+			println("-");
+			
 		}
-		if (!neededEscape && size(prevStatements) == 1) {
-			// We can move up!
-			println("We can move up!");
-			//for (location <- locs[hash]) {
-			//	location.flatTreeIndex -= offset;
-			//}
-		}
-		println(size(prevStatements));
 	}
+	for (hash <- locs) {
+		bool moveDown = true;
+		int flatTreeSize = size(flatTree);
+		while (moveDown) {
+			moveDown = false;
+			set[Statement] prevStatements = {};
+			bool neededEscape = false;
+			for (location <- locs[hash]) {
+				if (location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1 > flatTreeSize -1 || size(prevStatements) > 1) {
+					neededEscape = true;
+					break;
+				}
+				prevStatements += unsetRec(flatTree[location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1]);
+			}
+			if (!neededEscape && size(prevStatements) == 1) {
+				// We can move down!
+				moveDown = true;
+				list[tuple[int cloneIndex, list[int] flatTreeIndex]] newLocs = [];
+				for (location <- locs[hash]) {
+					newLocs += [<location.cloneIndex, location.flatTreeIndex + [location.flatTreeIndex[size(location.flatTreeIndex) - 1] + 1]>];
+				}
+				locs[hash] = newLocs;
+				println("We can move down!");
+			}
+			println("+");
+		}
+	}
+	
 
 	//println(nodeFlatTreeLoc);
 	
