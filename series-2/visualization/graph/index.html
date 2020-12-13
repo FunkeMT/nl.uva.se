@@ -664,7 +664,7 @@
             data["Java class"] = n.label;
             res = JSON.stringify(data, null, ' ');
 
-            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/circle/index.html?src=" + n.label;
+            let url = "/series-2/visualization/circle/index.html?src=" + n.label;
             document.getElementById("externalURL").innerHTML = "Show Circle-Visualization for this node ...";
             document.getElementById("externalURL").setAttribute("href", url);
         } else {
@@ -680,7 +680,7 @@
             }, null, ' ');
             res = res.split("\\n").join("\n").split("\\t").join("\t");
             
-            let url = "http://localhost:8000/Development/UvA/nl.uva.se/series-2/visualization/file/index.html?src=" 
+            let url = "/series-2/visualization/file/index.html?src=" 
                 + results["Project-Name"] + "/" + n.to + "&from=" + n.toLineFrom + "&to=" + n.toLineTo + "#pre." + n.toLineFrom;
             document.getElementById("externalURL").innerHTML = "Show clone in file ...";
             document.getElementById("externalURL").setAttribute("href", url);

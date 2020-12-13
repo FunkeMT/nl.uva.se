@@ -19,7 +19,7 @@
         var toParam = urlParams.get('to');
         var fromTo = fromParam + "-" + toParam;
 
-        fetch("../../../data/" + srcParam)
+        fetch("/data/" + srcParam)
         .then(response => response.text())
         .then(data => {
             var scriptTag = `<script type="text/plain" class="language-java" data-line="${fromTo}">${data}<\/script>`;
