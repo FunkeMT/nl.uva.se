@@ -23,12 +23,14 @@ import lang::java::jdt::m3::AST;
  *	CONFIG
  *	###########
  */
-int MASS_THRESHOLD = 12;
-
+int MASS_THRESHOLD = 25;
+//21.08.45
+//21.22.50//
 loc testProj = |project://MyTest|;
 loc currentProject = |project://MySimpleTest|;
 loc smallsqlProj = |project://smallsql0.21_src|;
-loc hsqldbProj = |project://hsqldb-2.3.1|;
+//loc hsqldbProj = |project://hsqldb-2.3.1|;
+loc hsqldbProj = |project://hsqldb|;
 
 //-===================-
 //-====== Stats ======-
@@ -72,8 +74,8 @@ void main() {
 	//loc project = testProj;
 	//loc project = currentProject;
 	//loc project = simpleTestProj;
-	loc project = smallsqlProj;
-	//loc project = hsqldbProj;
+	//loc project = smallsqlProj;
+	loc project = hsqldbProj;
 	
 	
 
