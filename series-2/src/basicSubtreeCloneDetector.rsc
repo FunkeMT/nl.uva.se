@@ -63,6 +63,34 @@ map[str, list[tuple[node, loc]]] basicSubtreeCloneDetector(
 		count = size(clones);
 		cloneCountCalc = cloneCount(clones);
 	}
+	
+	list[Statement] flatTree = [];
+	top-down visit (ast) {
+		case Statement n: {
+			flatTree += [n];
+		}
+	}
+
+	//list[tuple[node, loc, int start, int end]];
+	list[tuple[str hash, int cloneIndex, int flatTreeIndex]] locs = [];
+	for (hash <- clones) {
+		int cloneIndex = 0;
+		for (clone <- clones[hash]) {
+			int i = 0;
+			for (n <- flatTree) {
+				if (n.src == clone[1]) {
+					locs += <hash, cloneIndex, i>;
+					i = i + 1;
+					break;
+				}
+				i = i + 1;
+			}
+			cloneIndex = cloneIndex + 1;
+		}
+	}
+
+	//println(nodeFlatTreeLoc);
+	
 	return clones;
 }
 int cloneCount(map[str, list[tuple[node, loc]]] clones) {
